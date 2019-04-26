@@ -8,10 +8,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`Projeto`, `Universitário`, `Memorandum`, `Universidade de Aveiro`, `Departamento de Comunicação e Arte`, 
     `DECA`, `Novas Tecnologias da Comunicação`, `NTC`, `UC Projeto`]} />
-    <h1>Hi people</h1> 
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Changing.</p>
-    <Link to="/videos/">Go to page 2</Link>
+    
   </Layout>
 )
 
