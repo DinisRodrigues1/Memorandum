@@ -52,7 +52,7 @@ const FooterPRight = styled.p`
 
 const Footer = styled.footer`
     width: 100%;
-    height: 40%;
+    height: 50%;
     background-color: black;
     color: white;
     bottom: 0;
@@ -74,9 +74,12 @@ const Footer = styled.footer`
         height: 30%;
   }
 ` 
+const BodyBottom = styled.div`
+      bottom: 0;
+`
 
 
-const Layout = ({ children }) => (
+const Layout = () => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -88,7 +91,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <div>
+      <BodyBottom>
         <Header siteTitle={data.site.siteMetadata.title} />
         <Padding></Padding>
         <Navigation />
@@ -120,10 +123,10 @@ const Layout = ({ children }) => (
             <a href="https://www.gatsbyjs.org">Gatsby</a>
             </FooterPLeft>
             <FooterPRight>
-              Realizado no ambito de cenas e mais cenas para cenas cenadas
+              Realizado no ambito de cenas e mais cenas para cenas cenadas onde cenaram  
             </FooterPRight>
           </Footer>
-      </div>
+      </BodyBottom>
     )}
   />
   
