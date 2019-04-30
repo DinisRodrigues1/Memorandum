@@ -8,54 +8,111 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Header from "./header"
-import squareImg from './squareImg'
+import SquareImg from './squareImg'
 import Navigation from "./navigation"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import "./layout.css"
 
+const sizes = {
+  desktop: 992,
+  tablet: 768,
+  phone: 576,
+}
+
+// Iterate through the sizes and create a media template
+const media = Object.keys(sizes).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+    @media (max-width: ${sizes[label] / 16}em) {
+      ${css(...args)}
+    }
+  `
+
+  return acc
+}, {})
+
+const Content = styled.div`
+  height: 3em;
+  width: 3em;
+  background: papayawhip;
+
+  /* Now we have our methods on media and can use them instead of raw queries */
+  ${media.desktop`background: dodgerblue;`}
+  ${media.tablet`background: mediumseagreen;`}
+  ${media.phone`background: palevioletred;`}
+`;
 
 const Padding = styled.div`
-    padding: 3%
+    padding: 3%;
+`
+const SectionImage = styled(SquareImg)`  
+`
+const Text = styled.p`
 `
 
 const SectionLatestBody = styled.section`
-    padding-bottom: 10%
-    
+    padding-bottom: 10%;
+
 `
+
 const BodyDiv = styled.div`
     width: 60%;
     margin: auto;
     padding-top: 10%;
     padding-bottom: 6%
 `
-const AlignImageLeft = styled.div`
-    width: 100%;
-    height: 20%;
-    text-align: left;
-    float: left;
-    
-`
+
 
 const SectionLatestText = styled.article`
-    width: 100%;
-    height: 40%;
+    display: inline;
     text-align: justify;
-`  
+    
+    & > ${Text} {
+      display: inline;
+      
+    }
+
+`    
+const SectionImagePos = styled.div`
+      float: left;
+      margin: 1%;
+
+`
 
 const FooterPLeft = styled.p`
-    
+      width: 20%;
 `
 
 const FooterPRight = styled.p`
-    
+      width: 20%;
 `
 
 const Footer = styled.footer`
-    width: 100%;
-    height: 50%;
-    background-color: black;
-    color: white;
-    bottom: 0;
+    ${media.desktop`
+      width: 100%;
+      height: 30%;
+      background-color: black;
+      color: white;
+      bottom: 0;
+      position: relative;
+    `}
+    
+    ${media.tablet`
+      width: 100%;
+      height: 50%;
+      background-color: black;
+      color: white;
+      bottom: 0;
+      position: relative;
+    `}
+
+    ${media.phone`
+      width: 100%;
+      height: 40vh;
+      background-color: black;
+      color: white;
+      bottom: 0;
+      position: relative;`}
+    
 
     & > ${FooterPLeft} {
         float: left
@@ -64,6 +121,7 @@ const Footer = styled.footer`
         margin-bottom: 20px;
         padding: 2%;
         height: 30%;
+        margin-left: 10%;
     }
     & > ${FooterPRight} {
         float: right;
@@ -71,13 +129,14 @@ const Footer = styled.footer`
         display: inline-block;
         margin-bottom: 20px;
         padding: 2%;
+        margin-right: 10%;
         height: 30%;
   }
 ` 
 const BodyBottom = styled.div`
       bottom: 0;
+      font-family: Verdana, sans-serif;
 `
-
 
 const Layout = () => (
   <StaticQuery
@@ -97,11 +156,12 @@ const Layout = () => (
         <Navigation />
         <BodyDiv>
           <SectionLatestBody><h2>Última publicação</h2>
-                <AlignImageLeft>
-                    <squareImg/>
-                </AlignImageLeft>
+                    <Content />
                     <SectionLatestText>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                      <SectionImagePos>
+                      <SectionImage />
+                      </SectionImagePos>
+                      <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                       Nam tempor, lectus in imperdiet sollicitudin, ex est mattis 
                       tellus, in fermentum odio neque nec odio. Vestibulum vehicula 
                       rutrum feugiat. Sed hendrerit tempus lacus sed consequat. Aliquam 
@@ -112,7 +172,7 @@ const Layout = () => (
                       Proin sodales magna vitae accumsan mollis. Mauris placerat 
                       mattis lectus et efficitur. Pellentesque at ligula eget odio 
                       rhoncus commodo. Mauris vestibulum facilisis massa, a pulvinar 
-                      eros varius et. Donec et facilisis ligula.</p>
+                      eros varius et. Donec et facilisis ligula.</Text>
                     </SectionLatestText>
             </SectionLatestBody>
             </BodyDiv>
@@ -126,6 +186,7 @@ const Layout = () => (
               Realizado no ambito de cenas e mais cenas para cenas cenadas onde cenaram  
             </FooterPRight>
           </Footer>
+
       </BodyBottom>
     )}
   />

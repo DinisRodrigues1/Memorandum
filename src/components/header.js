@@ -2,8 +2,35 @@ import { Link } from "gatsby"
 import React from "react"
 import LogoOverlay from "./logoOverlay"
 import BgImage from "./BgImage"
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
+const sizes = {
+  desktop: 992,
+  tablet: 768,
+  phone: 576,
+}
+
+// Iterate through the sizes and create a media template
+const media = Object.keys(sizes).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+    @media (max-width: ${sizes[label] / 16}em) {
+      ${css(...args)}
+    }
+  `
+
+  return acc
+}, {})
+
+/*const Content = styled.div`
+  height: 3em;
+  width: 3em;
+  background: papayawhip;
+
+  /* Now we have our methods on media and can use them instead of raw queries *//*
+  ${media.desktop`background: dodgerblue;`}
+  ${media.tablet`background: mediumseagreen;`}
+  ${media.phone`background: palevioletred;`}
+`; */ // CAN BE USED FOR QUERIES. GOOD PRACTICE
 
 const HeadDiv = styled.div`
   height: 100vh;
@@ -11,6 +38,7 @@ const HeadDiv = styled.div`
 `  
 
 const LinkStyleOne = styled(Link)`
+  
     color: black;
     text-decoration: none;
     position: absolute:
@@ -19,10 +47,11 @@ const LinkStyleOne = styled(Link)`
     left: 2000px;
     font-family: Verdana, sans-serif;
     text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
-    grid-column: 1 / 1
+
 `
 
 const TextStyle = styled.span`
+  
     margin-left: 0.5%;
     color: black;
     position: absolute;
@@ -31,7 +60,6 @@ const TextStyle = styled.span`
     z-index: 1;
     fontFamily: Verdana, sans-serif;
     text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
-    grid-column: 1 / 1
 `
 
 const LinkStyleTwo = styled(Link)` 

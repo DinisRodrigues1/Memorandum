@@ -33,28 +33,23 @@ const imageMobile = styled(Image)`
 `
 
 
-const squareImg = ({imageMobile, imageDesktop}) => (
+const SquareImg = ({imageMobile, imageDesktop}) => (
     <StaticQuery 
     query={graphql`
     query {
         placeholderImage: file(relativePath: { eq: "0001.png" }) {
           childImageSharp {
-            fluid(maxWidth: 250, maxHeight: 250, quality: 100) {
-              ...GatsbyImageSharpFluid
+            fixed(width: 100, height: 100, quality: 100) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
       }
     `
     }
-    render={data => <Image fixed={data.placeholderImage.childImageSharp.fluid} className="Img"/>}
+    render={data => <Image fixed={data.placeholderImage.childImageSharp.fixed} className="Img"/>}
     />
 )
-
-
-
-
-    
 
   // Adjust image positioning (if image covers area with defined height) and add font-family for polyfill
   /*& > img {
@@ -64,4 +59,4 @@ const squareImg = ({imageMobile, imageDesktop}) => (
   }*/
 
 
-export default squareImg
+export default SquareImg
