@@ -25,8 +25,9 @@ const media = Object.keys(sizes).reduce((acc, label) => {
     @media (max-width: ${sizes[label] / 16}em) {
       ${css(...args)}
     }
-  `
 
+  `
+console.log(acc);
   return acc
 }, {})
 
@@ -87,18 +88,26 @@ const FooterPRight = styled.p`
 `
 
 const Footer = styled.footer`
+    width: 100%;
+    height: 30%;
+    background-color: black;
+    color: white;
+    bottom: 0;
+    position: relative;
+
     ${media.desktop`
       width: 100%;
-      height: 30%;
+      height: 15vh;
       background-color: black;
       color: white;
       bottom: 0;
       position: relative;
+      padding-top: 5%
     `}
     
     ${media.tablet`
       width: 100%;
-      height: 50%;
+      height: 40vh;
       background-color: black;
       color: white;
       bottom: 0;
@@ -111,7 +120,9 @@ const Footer = styled.footer`
       background-color: black;
       color: white;
       bottom: 0;
-      position: relative;`}
+      position: relative;
+      padding-top: 10%;`
+      }
     
 
     & > ${FooterPLeft} {
@@ -122,6 +133,7 @@ const Footer = styled.footer`
         padding: 2%;
         height: 30%;
         margin-left: 10%;
+        
     }
     & > ${FooterPRight} {
         float: right;
@@ -134,7 +146,6 @@ const Footer = styled.footer`
   }
 ` 
 const BodyBottom = styled.div`
-      bottom: 0;
       font-family: Verdana, sans-serif;
 `
 

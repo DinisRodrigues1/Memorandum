@@ -33,9 +33,26 @@ const media = Object.keys(sizes).reduce((acc, label) => {
 `; */ // CAN BE USED FOR QUERIES. GOOD PRACTICE
 
 const HeadDiv = styled.div`
-  height: 100vh;
-  width: 100vw;
+    height: 100vh;
+    width: 100vw;
+    ${media.desktop`
+    height: 32vh;
+    width: 100%;`}
+    ${media.tablet`background: mediumseagreen;`}
+    ${media.phone`background: palevioletred;`}
 `  
+const SpanBlock = styled.span`
+    position: absolute;
+    top: 1%;
+    left: 0.8%;
+
+    ${media.desktop`
+      position: absolute;
+      top: 0.6%;
+      left: 0.8%;`}
+    ${media.tablet`background: mediumseagreen;`}
+    ${media.phone`background: palevioletred;`}
+  `
 
 const LinkStyleOne = styled(Link)`
   
@@ -48,7 +65,13 @@ const LinkStyleOne = styled(Link)`
     font-family: Verdana, sans-serif;
     text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 
+    ${media.desktop`
+      top: 1%;
+      `}
+  ${media.tablet`background: mediumseagreen;`}
+  ${media.phone`background: palevioletred;`}
 `
+
 
 const TextStyle = styled.span`
   
@@ -60,6 +83,13 @@ const TextStyle = styled.span`
     z-index: 1;
     fontFamily: Verdana, sans-serif;
     text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+
+    ${media.desktop`
+      top: 0.6%;
+      left: 4.5%;
+      `}
+  ${media.tablet`background: mediumseagreen;`}
+  ${media.phone`background: palevioletred;`}
 `
 
 const LinkStyleTwo = styled(Link)` 
@@ -72,32 +102,21 @@ const LinkStyleTwo = styled(Link)`
     font-family: Verdana, sans-serif;
     text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 
+    ${media.desktop`
+      top: 0.6%;
+      left: 7.5%;
+      `}
+  ${media.tablet`background: mediumseagreen;`}
+  ${media.phone`background: palevioletred;`}
+
 `
 
-const Logo = styled(LogoOverlay)`
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 10%;
-    z-index: 1;
-    height: 10vh;
-    
+const Logo = styled(LogoOverlay)`    
 `
 
-const BgImg = styled(BgImage)`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: -1;
-    height: 100vh;
-    
-  `
-const SpanBlock = styled.span`
-    position: absolute;
-    top: 1%;
-    left: 0.8%;
-  `
+const BgImg = styled(BgImage)`    
+`
+
 const LogoBlock = styled.div`
     position: relative;
     top: -82%;
@@ -105,6 +124,15 @@ const LogoBlock = styled.div`
     height: 292px;
     width: 812px;
     margin: 0 auto;
+
+    ${media.desktop`
+      top: -85%;
+      height: 70%;
+      width: 70%;
+      margin: 0 auto;
+    `}
+    ${media.tablet`background: mediumseagreen;`}
+    ${media.phone`background: palevioletred;`}
   `
 
 

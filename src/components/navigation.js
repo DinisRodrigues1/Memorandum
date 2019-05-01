@@ -6,7 +6,7 @@ import styled from 'styled-components'
 
 const NavDiv = styled.div`
     height: 5vh;
-    width: 40vw;
+    width: 60vw;
     margin: 0 auto;
     text-align: center;
     z-index: 1;
