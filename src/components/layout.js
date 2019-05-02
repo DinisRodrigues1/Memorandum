@@ -12,6 +12,7 @@ import SquareImg from './squareImg'
 import Navigation from "./navigation"
 import styled, { css } from "styled-components"
 import "./layout.css"
+require("smooth-scroll")('a[href*="#"]')
 
 const sizes = {
   desktop: 992,
@@ -51,7 +52,7 @@ const Text = styled.p`
 `
 
 const SectionLatestBody = styled.section`
-    padding-bottom: 10%;
+    padding-bottom: 7.5%;
 
 `
 
@@ -62,6 +63,8 @@ const BodyDiv = styled.div`
     padding-bottom: 6%
 `
 
+const SectionTitle = styled.h2`
+    margin-bottom: 5%;`
 
 const SectionLatestText = styled.article`
     display: inline;
@@ -76,6 +79,11 @@ const SectionLatestText = styled.article`
 const SectionImagePos = styled.div`
       float: left;
       margin: 1%;
+
+`
+const SectionAbout = styled.section`
+    padding-top: 7.5%;
+    padding-bottom: 11%;
 
 `
 
@@ -166,26 +174,54 @@ const Layout = () => (
         <Padding></Padding>
         <Navigation />
         <BodyDiv>
-          <SectionLatestBody><h2>Última publicação</h2>
-                    <Content />
-                    <SectionLatestText>
-                      <SectionImagePos>
-                      <SectionImage />
-                      </SectionImagePos>
-                      <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                      Nam tempor, lectus in imperdiet sollicitudin, ex est mattis 
-                      tellus, in fermentum odio neque nec odio. Vestibulum vehicula 
-                      rutrum feugiat. Sed hendrerit tempus lacus sed consequat. Aliquam 
-                      eu aliquam nunc. Morbi quis venenatis enim, sed ultricies ante. 
-                      Etiam quis mi et nisl sagittis lacinia nec nec neque. Morbi et 
-                      sollicitudin orci. Cras vitae eleifend ligula. Proin vel turpis 
-                      facilisis erat scelerisque condimentum. Ut ut varius nibh. 
-                      Proin sodales magna vitae accumsan mollis. Mauris placerat 
-                      mattis lectus et efficitur. Pellentesque at ligula eget odio 
-                      rhoncus commodo. Mauris vestibulum facilisis massa, a pulvinar 
-                      eros varius et. Donec et facilisis ligula.</Text>
-                    </SectionLatestText>
-            </SectionLatestBody>
+          <SectionLatestBody>
+              <SectionTitle>Última publicação</SectionTitle>
+              <Content />
+                <SectionLatestText>
+                    <SectionImagePos>
+                    <SectionImage />
+                    </SectionImagePos>
+                    <Text>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Nam tempor, lectus in imperdiet sollicitudin, ex est mattis 
+                    tellus, in fermentum odio neque nec odio. Vestibulum vehicula 
+                    rutrum feugiat. Sed hendrerit tempus lacus sed consequat. Aliquam 
+                    eu aliquam nunc. Morbi quis venenatis enim, sed ultricies ante. 
+                    Etiam quis mi et nisl sagittis lacinia nec nec neque. Morbi et 
+                    sollicitudin orci. Cras vitae eleifend ligula. Proin vel turpis 
+                    facilisis erat scelerisque condimentum. Ut ut varius nibh. 
+                    Proin sodales magna vitae accumsan mollis. Mauris placerat 
+                    mattis lectus et efficitur. Pellentesque at ligula eget odio 
+                    rhoncus commodo. Mauris vestibulum facilisis massa, a pulvinar 
+                    eros varius et. Donec et facilisis ligula.
+                    </Text>
+                </SectionLatestText>
+          </SectionLatestBody>
+            <SectionAbout id="about">
+              <SectionTitle>O projeto</SectionTitle>
+              <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              Nam tempor, lectus in imperdiet sollicitudin, ex est mattis 
+              tellus, in fermentum odio neque nec odio. Vestibulum vehicula 
+              rutrum feugiat. Sed hendrerit tempus lacus sed consequat. Aliquam 
+              eu aliquam nunc. Morbi quis venenatis enim, sed ultricies ante. 
+              Etiam quis mi et nisl sagittis lacinia nec nec neque. Morbi et 
+              sollicitudin orci. Cras vitae eleifend ligula. Proin vel turpis 
+              facilisis erat scelerisque condimentum. Ut ut varius nibh. 
+              Proin sodales magna vitae accumsan mollis. Mauris placerat 
+              mattis lectus et efficitur. Pellentesque at ligula eget odio 
+              rhoncus commodo. Mauris vestibulum facilisis massa, a pulvinar 
+              eros varius et. Donec et facilisis ligula.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              Nam tempor, lectus in imperdiet sollicitudin, ex est mattis 
+              tellus, in fermentum odio neque nec odio. Vestibulum vehicula 
+              rutrum feugiat. Sed hendrerit tempus lacus sed consequat. Aliquam 
+              eu aliquam nunc. Morbi quis venenatis enim, sed ultricies ante.
+              Etiam quis mi et nisl sagittis lacinia nec nec neque. Morbi et 
+              sollicitudin orci. Cras vitae eleifend ligula. Proin vel turpis 
+              facilisis erat scelerisque condimentum. Ut ut varius nibh.
+              </p>
+            </SectionAbout>
             </BodyDiv>
           <Footer>
             <FooterPLeft>
@@ -203,6 +239,8 @@ const Layout = () => (
   />
   
 )
+
+
 
 
 export default Layout

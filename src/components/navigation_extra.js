@@ -34,14 +34,18 @@ const sizes = {
 const NavDiv = styled.div`
     height: 5vh;
     width: 60vw;
-    margin: 0 auto;
-    text-align: center;
+    
+    
     z-index: 1;
-    overflow: hidden
+    overflow: hidden;
+    
+
+    ${media.desktop`
+        width: 70vw;
+    `}
 `
 
-
-const Videos = styled(Link)`
+const Home = styled(Link)`
     text-decoration: none;
     color: black;
     font-family: Verdana, sans-serif;
@@ -49,6 +53,21 @@ const Videos = styled(Link)`
     border-bottom: 2px solid black;
     padding: 0 1rem 0 1rem;
     display: inline-block;
+`
+
+const Videos = styled(Link)`
+    text-decoration: none;
+    color: black;
+    font-family: Verdana, sans-serif;
+    z-index: 1;
+    margin-left: 15%;
+    border-bottom: 2px solid black;
+    padding: 0 1rem 0 1rem;
+    display: inline-block;
+
+    ${media.desktop`
+        margin-left: 3.5%;
+    `}
 `
 
 const Historias = styled(Link)`
@@ -61,10 +80,12 @@ const Historias = styled(Link)`
     padding: 0 1rem 0 1rem;
     display: inline-block;
 
-
+    ${media.desktop`
+        margin-left: 3.5%;
+    `}}
 `
 
-const Projeto = styled.a`
+const Projeto = styled(Link)`
     text-decoration: none;
     color: black;
     font-family: Verdana, sans-serif;
@@ -74,6 +95,9 @@ const Projeto = styled.a`
     padding: 0 1rem 0 1rem;
     display: inline-block;
 
+    ${media.desktop`
+        margin-left: 3.5%;
+    `}
 `
 
 const Sticky = styled.div`
@@ -86,9 +110,12 @@ const Sticky = styled.div`
 
 const Navigation = () => (
     <NavDiv innerRef={el => el.getBoundingClientRect()}>
+      <Home to ="/">{"Home"}</Home>
       <Videos to="/videos/">{"Vídeos"}</Videos>
       <Historias to="/historias/">{"Histórias"}</Historias>
-      <Projeto href="#about">O Projeto</Projeto>
+      <Projeto to="/#about">{"O Projeto"}</Projeto>
+      
+      
     </NavDiv>
     
 )
