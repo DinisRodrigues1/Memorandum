@@ -54,9 +54,11 @@ const PostLink = styled(Link)`
 `
 
 const PostContainer = styled.div`
+  border: medium solid #C8F7C5;
   font-family: Verdana, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  
 `
 const PostList = styled.div`
   font-family: Verdana, sans-serif;
@@ -66,13 +68,18 @@ const PostList = styled.div`
 `
 
 const PostTitle = styled.h1`
-  color: #C8F7C5;
+  margin-bottom: 5%;
+  color: #000;
   text-shadow:
-    -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
 `
+
+const PostDate = styled.span`
+  display: inline-block; 
+  margin-bottom: 3%;`
 
 const Historias = (props) => {
   const postList = props.data.allMarkdownRemark;
@@ -87,7 +94,7 @@ const Historias = (props) => {
         <PostLink to={node.fields.slug} className="link" >
         <PostList>
         <PostTitle>{node.frontmatter.title}</PostTitle>
-        <span>{node.frontmatter.date}</span>
+        <PostDate>{node.frontmatter.date}</PostDate>
         <p>{node.excerpt}</p>
         </PostList>
         </PostLink>

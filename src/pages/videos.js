@@ -72,7 +72,7 @@ const Videos = () => (
     <SEO title="Vídeos" />
     <Navigation />
     <PageTitle><hr/>Vídeos</PageTitle>
-    <VideoArticle>
+    <VideoArticle id="one">
     <VideoContainer>
     <IFrame width="100%" height="75%"
     src="https://www.youtube.com/embed/tgbNymZ7vqY"
@@ -89,7 +89,7 @@ const Videos = () => (
     </VideoArticle>
 
     <VideoArticle>
-    <VideoContainer>
+    <VideoContainer id="two">
     <IFrame width="100%" height="75%"
     src="https://www.youtube.com/embed/tgbNymZ7vqY"
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
