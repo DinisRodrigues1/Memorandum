@@ -114,8 +114,6 @@ const Navigation = () => (
       <Videos to="/videos/">{"Vídeos"}</Videos>
       <Historias to="/historias/">{"Histórias"}</Historias>
       <Projeto to="/#about">{"O Projeto"}</Projeto>
-      
-      
     </NavDiv>
     
 )

@@ -67,6 +67,7 @@ const LinkStyleOne = styled(Link)`
 
     ${media.desktop`
       top: 1%;
+      margin-left: 1vw;
       `}
   ${media.tablet`background: mediumseagreen;`}
   ${media.phone`background: palevioletred;`}
@@ -86,7 +87,7 @@ const TextStyle = styled.span`
 
     ${media.desktop`
       top: 0.6%;
-      left: 4.5%;
+      left: 5.5%;
       `}
   ${media.tablet`background: mediumseagreen;`}
   ${media.phone`background: palevioletred;`}
@@ -104,7 +105,7 @@ const LinkStyleTwo = styled(Link)`
 
     ${media.desktop`
       top: 0.6%;
-      left: 7.5%;
+      left: 8.5%;
       `}
   ${media.tablet`background: mediumseagreen;`}
   ${media.phone`background: palevioletred;`}

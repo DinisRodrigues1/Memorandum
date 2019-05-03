@@ -44,13 +44,66 @@ const OuterContainer = styled.div`
   margin: auto;
   `
 
+const PageTitle = styled.h2`
+    margin-top: 15%;
+    margin-bottom: 10%;
+`
+
+const VideoContainer = styled.div`
+    height: 90vh;
+    width: 100%;
+
+`
+
+const VideoArticle = styled.article`
+    margin-top: 10%
+`
+
+const VideoText = styled.p`
+    margin-top: -10%
+`
+
+const IFrame = styled.iframe`
+    display: block
+`
+
 const Videos = () => (
   <OuterContainer>
     <SEO title="Vídeos" />
     <Navigation />
-    <article></article>
-    <h2>Vídeos</h2>
-    
+    <PageTitle>Vídeos</PageTitle>
+    <VideoArticle>
+    <VideoContainer>
+    <IFrame width="100%" height="75%"
+    src="https://www.youtube.com/embed/tgbNymZ7vqY"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    frameBorder="0"
+    webkitallowfullscreen="true"
+    mozallowfullscreen="true"
+    allowFullScreen
+    >
+    </IFrame> 
+    </VideoContainer>
+    <VideoText>Something something this person</VideoText>
+    <hr />
+    </VideoArticle>
+
+    <VideoArticle>
+    <VideoContainer>
+    <IFrame width="100%" height="75%"
+    src="https://www.youtube.com/embed/tgbNymZ7vqY"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    frameBorder="0"
+    webkitallowfullscreen="true"
+    mozallowfullscreen="true"
+    allowFullScreen
+    >
+    </IFrame> 
+    </VideoContainer>
+    <VideoText>Something something this person</VideoText>
+    <hr />
+    </VideoArticle>
+  
     <Link to="/">Go back to the homepage</Link>
   </OuterContainer>
 )

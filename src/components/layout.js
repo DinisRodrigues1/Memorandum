@@ -78,7 +78,7 @@ const SectionLatestText = styled.article`
 `    
 const SectionImagePos = styled.div`
       float: left;
-      margin: 1%;
+      margin 1% 2%;
 
 `
 const SectionAbout = styled.section`
@@ -97,7 +97,7 @@ const FooterPRight = styled.p`
 
 const Footer = styled.footer`
     width: 100%;
-    height: 30%;
+    height: 40%;
     background-color: black;
     color: white;
     bottom: 0;
@@ -137,9 +137,9 @@ const Footer = styled.footer`
         float: left
         width: 46%;
         display: inline-block;
-        margin-bottom: 20px;
+        margin-bottom: 3%;
         padding: 2%;
-        height: 30%;
+        height: 40%;
         margin-left: 10%;
         
     }
@@ -147,10 +147,10 @@ const Footer = styled.footer`
         float: right;
         width: 46%;
         display: inline-block;
-        margin-bottom: 20px;
+        margin-bottom: 0px;
         padding: 2%;
         margin-right: 10%;
-        height: 30%;
+        height: 40%;
   }
 ` 
 const BodyBottom = styled.div`
@@ -230,7 +230,9 @@ const Layout = () => (
             <a href="https://www.gatsbyjs.org">Gatsby</a>
             </FooterPLeft>
             <FooterPRight>
-              Realizado no ambito de cenas e mais cenas para cenas cenadas onde cenaram  
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor, 
+            lectus in imperdiet sollicitudin, ex est mattis tellus, in fermentum 
+            odio neque nec odio.  
             </FooterPRight>
           </Footer>
 
