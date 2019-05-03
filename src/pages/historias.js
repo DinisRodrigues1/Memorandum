@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Navigation from "../components/navigation_extra"
 import SEO from "../components/seo"
 import styled, { css } from "styled-components"
@@ -42,15 +42,80 @@ const OuterContainer = styled.div`
   padding: 3% 0;
   width: 60%;
   margin: auto;
-  `
+`
 
-const Historias = () => (
+const PageTitle = styled.h2`
+  margin-top: 15%;
+  margin-bottom: 10%;
+`
+
+const PostLink = styled(Link)`
+  text-decoration: none;
+`
+
+const PostContainer = styled.div`
+  font-family: Verdana, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+`
+const PostList = styled.div`
+  font-family: Verdana, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: black;
+`
+
+const PostTitle = styled.h1`
+  color: #C8F7C5;
+  text-shadow:
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+`
+
+const Historias = (props) => {
+  const postList = props.data.allMarkdownRemark;
+  return (
   <OuterContainer>
     <SEO title="Histórias" />
     <Navigation />
-    <h1>This is stories</h1>
+    <PageTitle><hr/>Histórias</PageTitle>
+    <PostContainer>
+      {postList.edges.map(({ node }, i) => (
+        
+        <PostLink to={node.fields.slug} className="link" >
+        <PostList>
+        <PostTitle>{node.frontmatter.title}</PostTitle>
+        <span>{node.frontmatter.date}</span>
+        <p>{node.excerpt}</p>
+        </PostList>
+        </PostLink>
+    ))}
+    </PostContainer>
     <Link to="/">Go back to the homepage</Link>
   </OuterContainer>
-)
+  )
+}
+
 
 export default Historias
+
+export const listQuery = graphql`
+  query ListQuery {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          fields{
+            slug
+          }
+          excerpt(pruneLength: 250)
+          frontmatter {
+            date(formatString: "MMMM Do, YYYY")
+            title
+          }
+        }
+      }
+    }
+  }
+`

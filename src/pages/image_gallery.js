@@ -65,7 +65,7 @@ const ImgContainer = styled.div`
 `
 
 
-/* Encontrar lógica para video player */ 
+
 const ImageGallery = () => (
     <OuterContainer>
         <Navigation />
@@ -75,7 +75,7 @@ const ImageGallery = () => (
         <ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer>
         <ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer>
         </ImagesContainer>
-        <SEO title="Galeria de Imagens, Image Gallery" />
+        <SEO title="Galeria de Imagens" />
     </OuterContainer>
   
 )
