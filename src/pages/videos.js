@@ -42,7 +42,7 @@ const OuterContainer = styled.div`
   overflow-x: hidden;
   width: 60%;
   margin: auto;
-  `
+`
 
 const PageTitle = styled.h2`
     margin-top: 15%;
@@ -71,7 +71,7 @@ const Videos = () => (
   <OuterContainer>
     <SEO title="Vídeos" />
     <Navigation />
-    <PageTitle>Vídeos</PageTitle>
+    <PageTitle><hr/>Vídeos</PageTitle>
     <VideoArticle>
     <VideoContainer>
     <IFrame width="100%" height="75%"

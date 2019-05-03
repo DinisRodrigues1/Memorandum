@@ -39,7 +39,7 @@ const SquareImg = ({imageMobile, imageDesktop}) => (
     query {
         placeholderImage: file(relativePath: { eq: "0001.png" }) {
           childImageSharp {
-            fixed(width: 100, height: 100, quality: 100) {
+            fixed(width: 95, height: 95, quality: 100) {
               ...GatsbyImageSharpFixed
             }
           }

@@ -97,7 +97,7 @@ const FooterPRight = styled.p`
 
 const Footer = styled.footer`
     width: 100%;
-    height: 40%;
+    height: 20vh;
     background-color: black;
     color: white;
     bottom: 0;
@@ -105,7 +105,7 @@ const Footer = styled.footer`
 
     ${media.desktop`
       width: 100%;
-      height: 15vh;
+      height: 20vh;
       background-color: black;
       color: white;
       bottom: 0;
@@ -147,7 +147,6 @@ const Footer = styled.footer`
         float: right;
         width: 46%;
         display: inline-block;
-        margin-bottom: 0px;
         padding: 2%;
         margin-right: 10%;
         height: 40%;
@@ -175,6 +174,7 @@ const Layout = () => (
         <Navigation />
         <BodyDiv>
           <SectionLatestBody>
+            <hr/>
               <SectionTitle>Última publicação</SectionTitle>
               <Content />
                 <SectionLatestText>
@@ -198,6 +198,7 @@ const Layout = () => (
                 </SectionLatestText>
           </SectionLatestBody>
             <SectionAbout id="about">
+            <hr/>
               <SectionTitle>O projeto</SectionTitle>
               <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
