@@ -44,6 +44,33 @@ const OuterContainer = styled.div`
   margin: auto;
 `
 
+const BodyDiv = styled.div`
+  margin-top: 10%;
+  padding: 1% 1% 0 1%;
+  margin-bottom: 6%;
+  -moz-box-shadow:    0 0 7px 1px #D4D0AB;
+  -webkit-box-shadow: 0 0 7px 1px #D4D0AB;
+  box-shadow:         0 0 7px 1px #D4D0AB;
+  border: thin solid #f1f1f1;
+`
+
+const TextSep = styled.hr`
+   margin-left: -1.8%;
+   margin-right: -1.8%;
+   border: medium solid #DADFE1;
+   color: #DADFE1;
+   background-color: #DADFE1;
+`
+
+const TextSepSpecial = styled.hr`
+   margin-top: -14%;
+   margin-left: -1.8%;
+   margin-right: -1.8%;
+   border: medium solid #DADFE1;
+   color: #DADFE1;
+   background-color: #DADFE1;
+`
+
 const PageTitle = styled.h2`
   margin-top: 15%;
   margin-bottom: 10%;
@@ -79,7 +106,10 @@ const PostTitle = styled.h1`
 
 const PostDate = styled.span`
   display: inline-block; 
-  margin-bottom: 3%;`
+  margin-bottom: 3%;
+`
+
+
 
 const Historias = (props) => {
   const postList = props.data.allMarkdownRemark;
@@ -87,7 +117,8 @@ const Historias = (props) => {
   <OuterContainer>
     <SEO title="Histórias" />
     <Navigation />
-    <PageTitle><hr/>Histórias</PageTitle>
+    <BodyDiv>
+    <PageTitle><TextSepSpecial/>Histórias</PageTitle>
     <PostContainer>
       {postList.edges.map(({ node }, i) => (
         
@@ -98,9 +129,11 @@ const Historias = (props) => {
         <p>{node.excerpt}</p>
         </PostList>
         </PostLink>
+        
     ))}
+    <TextSep/>
     </PostContainer>
-    <Link to="/">Go back to the homepage</Link>
+    </BodyDiv>
   </OuterContainer>
   )
 }
@@ -118,7 +151,7 @@ export const listQuery = graphql`
           }
           excerpt(pruneLength: 250)
           frontmatter {
-            date(formatString: "MMMM Do, YYYY")
+            date(formatString: "dddd, DD/MM/YYYY", locale: "pt") 
             title
           }
         }
@@ -126,3 +159,6 @@ export const listQuery = graphql`
     }
   }
 `
+//add locale "en" to line 121 for english translation
+
+//Use example above for mass import of images

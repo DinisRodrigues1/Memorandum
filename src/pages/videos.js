@@ -41,9 +41,34 @@ const OuterContainer = styled.div`
   max-width: 100%;
   overflow-x: hidden;
   width: 60%;
-  margin: auto;
+  margin: 0 auto;
+  margin-bottom: 0;
+`
+const OuterVideoContainer = styled.div`
+  margin-top: 10%;
+  padding: 1% 1% 0 1%;
+  -moz-box-shadow:    0 0 7px 1px #D4D0AB;
+  -webkit-box-shadow: 0 0 7px 1px #D4D0AB;
+  box-shadow:         0 0 7px 1px #D4D0AB;
+  border: thin solid #f1f1f1;
 `
 
+const TextSep = styled.hr`
+   margin-left: -1.8%;
+   margin-right: -1.8%;
+   border: medium solid #DADFE1;
+   color: #DADFE1;
+   background-color: #DADFE1;
+`
+const TextSepSpecial = styled.hr`
+   margin-top: -14%;
+   margin-left: -1.8%;
+   margin-right: -1.8%;
+   border: medium solid #DADFE1;
+   color: #DADFE1;
+   background-color: #DADFE1;
+`
+   
 const PageTitle = styled.h2`
     margin-top: 15%;
     margin-bottom: 10%;
@@ -71,7 +96,8 @@ const Videos = () => (
   <OuterContainer>
     <SEO title="Vídeos" />
     <Navigation />
-    <PageTitle><hr/>Vídeos</PageTitle>
+    <OuterVideoContainer>
+    <PageTitle><TextSepSpecial/>Vídeos</PageTitle>
     <VideoArticle id="one">
     <VideoContainer>
     <IFrame width="100%" height="75%"
@@ -85,7 +111,7 @@ const Videos = () => (
     </IFrame> 
     </VideoContainer>
     <VideoText>Something something this person</VideoText>
-    <hr />
+    <TextSep/>
     </VideoArticle>
 
     <VideoArticle>
@@ -101,10 +127,9 @@ const Videos = () => (
     </IFrame> 
     </VideoContainer>
     <VideoText>Something something this person</VideoText>
-    <hr />
+    <TextSep />
     </VideoArticle>
-  
-    <Link to="/">Go back to the homepage</Link>
+    </OuterVideoContainer>
   </OuterContainer>
 )
 

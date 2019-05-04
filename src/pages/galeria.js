@@ -48,20 +48,49 @@ const PageTitle = styled.h2`
     margin-top: 15%;
     margin-bottom: 10%;
 `
+const BodyDiv = styled.div`
+  margin-top: 10%;
+  padding: 1% 1% 0 1%;
+  margin-bottom: 6%;
+  -moz-box-shadow:    0 0 7px 1px #D4D0AB;
+  -webkit-box-shadow: 0 0 7px 1px #D4D0AB;
+  box-shadow:         0 0 7px 1px #D4D0AB;
+  border: thin solid #f1f1f1;
+`
+
+const TextSep = styled.hr`
+   margin-left: -1.8%;
+   margin-right: -1.8%;
+   border: medium solid #DADFE1;
+   color: #DADFE1;
+   background-color: #DADFE1;
+`
+
+const TextSepSpecial = styled.hr`
+   margin-top: -14%;
+   margin-left: -1.8%;
+   margin-right: -1.8%;
+   border: medium solid #DADFE1;
+   color: #DADFE1;
+   background-color: #DADFE1;
+`
+
 
 const ImagesContainer = styled.section`
+    
     line-height: 0;
-    -webkit-column-count: 9;
-    -webkit-column-gap: 0px;
-    -moz-column-count: 9;
-    -moz-column-gap: 0px;
-    column-count: 9;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 0;
+    -moz-column-count: 4;
+    -moz-column-gap: 0;
+    column-count: 4;
     column-gap: 0;  
 `
 const ImgContainer = styled.div`
-    width: 100% !important;
-    height: 100% !important;
-    margin-bottom: 0;
+    margin: 0 auto;
+    width: 10em !important;
+    height: 5em !important;
+    margin-bottom: 1.2em;
 `
 
 
@@ -69,12 +98,14 @@ const ImgContainer = styled.div`
 const ImageGallery = () => (
     <OuterContainer>
         <Navigation />
-        <PageTitle><hr/>Galeria</PageTitle>
+        <BodyDiv>
+        <PageTitle><TextSepSpecial/>Galeria</PageTitle>
         <ImagesContainer>
         <ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer>
         <ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer>
-        <ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer>
+        <ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer>
         </ImagesContainer>
+        </BodyDiv>
         <SEO title="Galeria de Imagens" />
     </OuterContainer>
   

@@ -76,13 +76,6 @@ const Projeto = styled.a`
 
 `
 
-const Sticky = styled.div`
-    position: fixed;
-    top: 0;
-    width: 100%;
-
-`
-
 
 const Navigation = () => (
     <NavDiv innerRef={el => el.getBoundingClientRect()}>
@@ -93,21 +86,7 @@ const Navigation = () => (
     
 )
 
-window.onscroll = () => {
-    scrollAnim()
-}
 
-let navbar = NavDiv;
-
-
-let scrollAnim = () => {
-    if (window.pageYOffset >= navbar) {
-        console.log("here")
-        navbar = Sticky
-    } else {
-        navbar = NavDiv
-    }
-}
 
 
 export default Navigation

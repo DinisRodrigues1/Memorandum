@@ -98,6 +98,7 @@ const SectionLatestText = styled.article`
 const SectionImagePos = styled.div`
       float: left;
       margin 1% 2%;
+      border: medium solid #C8F7C5; //border for image --> can be later changed to match theme;
 
 `
 const SectionAbout = styled.section`
@@ -124,7 +125,7 @@ const Footer = styled.footer`
 
     ${media.desktop`
       width: 100%;
-      height: 20vh;
+      height: 27vh;
       background-color: black;
       color: white;
       bottom: 0;
@@ -183,7 +184,30 @@ const ClearFix = styled.div`
 const SocialLogos = styled.div`
       margin: 3% auto;
       text-align: center;
-      line-height: 30px;
+
+      ${media.desktop`
+      margin: 7% auto;
+    `}
+    
+    ${media.tablet`
+      width: 100%;
+      height: 40vh;
+      background-color: black;
+      color: white;
+      bottom: 0;
+      position: relative;
+    `}
+
+    ${media.phone`
+      width: 100%;
+      height: 40vh;
+      background-color: black;
+      color: white;
+      bottom: 0;
+      position: relative;
+      padding-top: 10%;`
+      }
+     
 `
 
 const FBook = styled.a`
@@ -195,7 +219,7 @@ const IGram = styled.a`
   `
 
 const YTube = styled.a`
-      margin-top: 30px;
+      
 
 `
 
