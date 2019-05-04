@@ -9,6 +9,9 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import SquareImg from './squareImg'
+import SocialImageFacebook from './socialImageFacebook'
+import SocialImageInstagram from './socialImageInstagram'
+import SocialImageYoutube from './socialImageYoutube'
 import Navigation from "./navigation"
 import styled, { css } from "styled-components"
 import "./layout.css"
@@ -58,9 +61,25 @@ const SectionLatestBody = styled.section`
 
 const BodyDiv = styled.div`
     width: 60%;
-    margin: auto;
-    padding-top: 10%;
-    padding-bottom: 6%
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 1% 1% 0 1%;
+    margin-bottom: 6%;
+    -moz-box-shadow:    0 0 7px 1px #D4D0AB;
+    -webkit-box-shadow: 0 0 7px 1px #D4D0AB;
+    box-shadow:         0 0 7px 1px #D4D0AB;
+    border: thin solid #f1f1f1;
+
+    & > ${TextSep} {
+      
+    }
+`
+const TextSep = styled.hr`
+   margin-left: -1.8%;
+   margin-right: -1.8%;
+   border: medium solid #DADFE1;
+   color: #DADFE1;
+   background-color: #DADFE1;
 `
 
 const SectionTitle = styled.h2`
@@ -97,7 +116,7 @@ const FooterPRight = styled.p`
 
 const Footer = styled.footer`
     width: 100%;
-    height: 20vh;
+    height: 41vh;
     background-color: black;
     color: white;
     bottom: 0;
@@ -156,6 +175,30 @@ const BodyBottom = styled.div`
       font-family: Verdana, sans-serif;
 `
 
+const ClearFix = styled.div`
+      clear: both;
+
+`
+
+const SocialLogos = styled.div`
+      margin: 3% auto;
+      text-align: center;
+      line-height: 30px;
+`
+
+const FBook = styled.a`
+      margin-right: 2%;
+`
+
+const IGram = styled.a`
+      margin-right: 2%;
+  `
+
+const YTube = styled.a`
+      margin-top: 30px;
+
+`
+
 const Layout = () => (
   <StaticQuery
     query={graphql`
@@ -174,7 +217,7 @@ const Layout = () => (
         <Navigation />
         <BodyDiv>
           <SectionLatestBody>
-            <hr/>
+            <TextSep/>
               <SectionTitle>Última publicação</SectionTitle>
               <Content />
                 <SectionLatestText>
@@ -198,7 +241,7 @@ const Layout = () => (
                 </SectionLatestText>
           </SectionLatestBody>
             <SectionAbout id="about">
-            <hr/>
+            <TextSep/>
               <SectionTitle>O projeto</SectionTitle>
               <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -235,6 +278,12 @@ const Layout = () => (
             lectus in imperdiet sollicitudin, ex est mattis tellus, in fermentum 
             odio neque nec odio.  
             </FooterPRight>
+            <ClearFix></ClearFix>
+            <SocialLogos>
+              <FBook href="https://www.facebook.com/projetomemorandum/"><SocialImageFacebook/></FBook>
+              <IGram href="https://www.instagram.com/projetomemorandum/"><SocialImageInstagram/></IGram>
+              <YTube href="https://www.youtube.com/channel/UCvAXx7q7CPpz0n5_I-OQX9w"><SocialImageYoutube/></YTube>
+            </SocialLogos>
           </Footer>
 
       </BodyBottom>

@@ -54,7 +54,7 @@ const PostLink = styled(Link)`
 `
 
 const PostContainer = styled.div`
-  border: medium solid #C8F7C5;
+  
   font-family: Verdana, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
