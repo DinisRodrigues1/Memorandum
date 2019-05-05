@@ -70,9 +70,11 @@ const BodyDiv = styled.div`
     box-shadow:         0 0 7px 1px #D4D0AB;
     border: thin solid #f1f1f1;
 
-    & > ${TextSep} {
-      
-    }
+    ${media.desktop`
+      width: 75%;  
+    
+    
+    `}
 `
 const TextSep = styled.hr`
    margin-left: -1.8%;
@@ -98,7 +100,7 @@ const SectionLatestText = styled.article`
 const SectionImagePos = styled.div`
       float: left;
       margin 1% 2%;
-      border: medium solid #C8F7C5; //border for image --> can be later changed to match theme;
+      border: thick solid #C8F7C5; //border for image --> can be later changed to match theme;
 
 `
 const SectionAbout = styled.section`
@@ -122,6 +124,10 @@ const Footer = styled.footer`
     color: white;
     bottom: 0;
     position: relative;
+    -moz-box-shadow:    0 -2px 4px 1px #D4D0AB;
+    -webkit-box-shadow: 0 -2px 4px 1px #D4D0AB;
+    box-shadow:         0 -2px 4px 1px #D4D0AB;
+    border-top: thin solid #f1f1f1;
 
     ${media.desktop`
       width: 100%;

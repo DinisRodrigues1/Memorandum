@@ -40,7 +40,7 @@ const OuterContainer = styled.div`
   -webkit-text-size-adjust: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   margin-bottom: 0;
 `

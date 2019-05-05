@@ -37,7 +37,13 @@ const NavDiv = styled.div`
     margin: 0 auto;
     text-align: center;
     z-index: 1;
-    overflow: hidden
+    overflow: hidden;
+
+    
+    ${media.desktop`
+        width: 80%;
+        
+    `}
 `
 
 

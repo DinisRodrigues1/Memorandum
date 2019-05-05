@@ -34,14 +34,15 @@ const sizes = {
 const NavDiv = styled.div`
     height: 5vh;
     width: 60vw;
-    
-    
     z-index: 1;
+    text-align: center;
+    margin: 0 auto;
     overflow: hidden;
     
-
+    
     ${media.desktop`
-        width: 70vw;
+        width: 80%;
+
     `}
 `
 
@@ -51,7 +52,7 @@ const Home = styled(Link)`
     font-family: Verdana, sans-serif;
     z-index: 1;
     border-bottom: 2px solid black;
-    padding: 0 1rem 0 1rem;
+    padding: 0 1.1rem 0 1.1rem;
     display: inline-block;
 `
 
@@ -62,7 +63,7 @@ const Videos = styled(Link)`
     z-index: 1;
     margin-left: 15%;
     border-bottom: 2px solid black;
-    padding: 0 1rem 0 1rem;
+    padding: 0 1.1rem 0 1.1rem;
     display: inline-block;
 
     ${media.desktop`
@@ -77,7 +78,7 @@ const Historias = styled(Link)`
     z-index: 1;
     margin-left: 15%;
     border-bottom: 2px solid black;
-    padding: 0 1rem 0 1rem;
+    padding: 0 1.1rem 0 1.1rem;
     display: inline-block;
 
     ${media.desktop`
@@ -92,7 +93,7 @@ const Projeto = styled(Link)`
     z-index: 1;
     margin-left: 15%;
     border-bottom: 2px solid black;
-    padding: 0 1rem 0 1rem;
+    padding: 0 1.2rem 0 1.2rem;
     display: inline-block;
 
     ${media.desktop`
