@@ -41,9 +41,23 @@ const OuterContainer = styled.div`
   -webkit-text-size-adjust: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  width: 60%;
+  width: 80%;
   margin: auto;
+
+  ${media.desktop`
+    width: 82%;
+  `}
+
+  ${media.tablet`
+    width: 85%;
+  `}
+
+  ${media.phone`
+    width: 95%;
+  `}
 `
+
+
 const PageTitle = styled.h2`
     margin-top: 15%;
     margin-bottom: 10%;
@@ -77,14 +91,31 @@ const TextSepSpecial = styled.hr`
 
 
 const ImagesContainer = styled.section`
-    
     line-height: 0;
-    -webkit-column-count: 4;
+    -webkit-column-count: 5;
     -webkit-column-gap: 0;
-    -moz-column-count: 4;
+    -moz-column-count: 5;
     -moz-column-gap: 0;
-    column-count: 4;
+    column-count: 5;
     column-gap: 0;  
+
+    ${media.desktop`
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    `}
+
+    ${media.tablet`
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    `}
+
+    ${media.phone`
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    `}
 `
 const ImgContainer = styled.div`
     margin: 0 auto;

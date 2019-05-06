@@ -48,6 +48,10 @@ const Content = styled.div`
 
 const Padding = styled.div`
     padding: 3%;
+
+    ${media.tablet`
+      padding: 8%;
+    `}
 `
 const SectionImage = styled(SquareImg)`  
 `
@@ -60,7 +64,7 @@ const SectionLatestBody = styled.section`
 `
 
 const BodyDiv = styled.div`
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
     margin-top: 10%;
     padding: 1% 1% 0 1%;
@@ -71,18 +75,22 @@ const BodyDiv = styled.div`
     border: thin solid #f1f1f1;
 
     ${media.desktop`
-      width: 75%;  
-    
-    
+      width: 82%;  
+
     `}
 
     ${media.tablet`
-      width: 80%;
+      width: 85%;
+
+    `}
+
+    ${media.phone`
+      width: 95%;
     `}
 `
 const TextSep = styled.hr`
-   margin-left: -1.8%;
-   margin-right: -1.8%;
+   margin-left: -1.5%;
+   margin-right: -1.5%;
    border: medium solid #DADFE1;
    color: #DADFE1;
    background-color: #DADFE1;
@@ -150,11 +158,12 @@ const Footer = styled.footer`
       color: white;
       bottom: 0;
       position: relative;
+      padding: top: 7%;
     `}
 
     ${media.phone`
       width: 100%;
-      height: 40vh;
+      height: 60vh;
       background-color: black;
       color: white;
       bottom: 0;
@@ -171,6 +180,15 @@ const Footer = styled.footer`
         padding: 2%;
         height: 40%;
         margin-left: 10%;
+
+        ${media.phone`
+          width: 50%;
+          float: none;
+          height: 20%;
+          margin: 0 auto;
+          display: block;
+          `}
+
         
     }
     & > ${FooterPRight} {
@@ -179,7 +197,17 @@ const Footer = styled.footer`
         display: inline-block;
         padding: 2%;
         margin-right: 10%;
-        height: 40%;
+        height: 30%;
+
+        ${media.phone`
+          width: 78%;
+          height: 25%;
+          float: none;
+          margin: 0 auto;
+          display: block;
+          text-align: center;
+        `}
+
   }
 ` 
 const BodyBottom = styled.div`
@@ -187,7 +215,7 @@ const BodyBottom = styled.div`
 `
 
 const ClearFix = styled.div`
-      clear: both;
+      clear: both; 
 
 `
 
@@ -200,23 +228,13 @@ const SocialLogos = styled.div`
     `}
     
     ${media.tablet`
-      width: 100%;
-      height: 40vh;
-      background-color: black;
-      color: white;
-      bottom: 0;
-      position: relative;
+      margin: 10% auto;
     `}
 
     ${media.phone`
-      width: 100%;
-      height: 40vh;
-      background-color: black;
-      color: white;
-      bottom: 0;
-      position: relative;
-      padding-top: 10%;`
-      }
+      margin: 18% auto;
+
+    `}
      
 `
 
@@ -277,27 +295,26 @@ const Layout = () => (
             <SectionAbout id="about">
             <TextSep/>
               <SectionTitle>O projeto</SectionTitle>
+              <p></p>
               <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Nam tempor, lectus in imperdiet sollicitudin, ex est mattis 
-              tellus, in fermentum odio neque nec odio. Vestibulum vehicula 
-              rutrum feugiat. Sed hendrerit tempus lacus sed consequat. Aliquam 
-              eu aliquam nunc. Morbi quis venenatis enim, sed ultricies ante. 
-              Etiam quis mi et nisl sagittis lacinia nec nec neque. Morbi et 
-              sollicitudin orci. Cras vitae eleifend ligula. Proin vel turpis 
-              facilisis erat scelerisque condimentum. Ut ut varius nibh. 
-              Proin sodales magna vitae accumsan mollis. Mauris placerat 
-              mattis lectus et efficitur. Pellentesque at ligula eget odio 
-              rhoncus commodo. Mauris vestibulum facilisis massa, a pulvinar 
-              eros varius et. Donec et facilisis ligula.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Nam tempor, lectus in imperdiet sollicitudin, ex est mattis 
-              tellus, in fermentum odio neque nec odio. Vestibulum vehicula 
-              rutrum feugiat. Sed hendrerit tempus lacus sed consequat. Aliquam 
-              eu aliquam nunc. Morbi quis venenatis enim, sed ultricies ante.
-              Etiam quis mi et nisl sagittis lacinia nec nec neque. Morbi et 
-              sollicitudin orci. Cras vitae eleifend ligula. Proin vel turpis 
-              facilisis erat scelerisque condimentum. Ut ut varius nibh.
+              <p><b>Como nasceu?</b></p>
+              <p>O Memorandum nasceu no âmbito do projeto final da licenciatura de Novas 
+              Tecnologias da Comunicação, da Universidade de Aveiro.
+              Este projeto nasce pelas mãos de Diana Nicolau, Dinis Rodrigues, Inês Melo 
+              e Joaquim Miranda com a, indispensável, orientação de Maria João Antunes ().</p>
+              <p></p>
+              <p><b>O que é?</b></p>
+              <p>O Memorandum é um projeto que visa fortalecer o elo entre gerações passadas e 
+              as contemporâneas através da preservação de tradições, vivências e saberes. 
+              Este projeto pretende colmatar a perda de conhecimento relativo às vivências 
+              dos que nos antecederam, retratando assuntos de diferentes naturezas – sejam 
+              eles Histórias, Tradições, Costumes e Profissões. 
+              Procuramos ser uma plataforma de partilha intergeracional, com o propósito de, 
+              através do registo via fotografia e vídeo, manter vivas tradições e vivências 
+              de tempos passados.</p>
+              <p>O Memorandum assenta, não só, numa temática pouco explorada atualmente, como 
+              também, num formato audiovisual inovador e apelativo procurando a aproximação ao 
+              seu público alvo.</p>
               </p>
             </SectionAbout>
             </BodyDiv>
@@ -308,9 +325,7 @@ const Layout = () => (
             <a href="https://www.gatsbyjs.org">Gatsby</a>
             </FooterPLeft>
             <FooterPRight>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor, 
-            lectus in imperdiet sollicitudin, ex est mattis tellus, in fermentum 
-            odio neque nec odio.  
+            Projeto Memorandum: projetomemorandum@gmail.com
             </FooterPRight>
             <ClearFix></ClearFix>
             <SocialLogos>

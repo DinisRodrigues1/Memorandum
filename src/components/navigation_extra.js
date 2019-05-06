@@ -44,6 +44,10 @@ const NavDiv = styled.div`
         width: 80%;
 
     `}
+
+    ${media.tablet`
+        width: 85%;
+    `}
 `
 
 const Home = styled(Link)`
@@ -125,7 +129,7 @@ const Historias = styled(Link)`
     `}}
 `
 
-const Projeto = styled(Link)`
+const Galeria = styled(Link)`
     text-decoration: none;
     color: black;
     font-family: Verdana, sans-serif;
@@ -153,12 +157,6 @@ const Projeto = styled(Link)`
     `}
 `
 
-const Sticky = styled.div`
-    position: fixed;
-    top: 0;
-    width: 100%;
-
-`
 
 
 const Navigation = () => (
@@ -166,26 +164,10 @@ const Navigation = () => (
       <Home to ="/">{"Home"}</Home>
       <Videos to="/videos/">{"Vídeos"}</Videos>
       <Historias to="/historias/">{"Histórias"}</Historias>
-      <Projeto to="/#about">{"O Projeto"}</Projeto>
+      <Galeria to="/galeria/">{"Galeria"}</Galeria>
     </NavDiv>
     
 )
-
-window.onscroll = () => {
-    scrollAnim()
-}
-
-let navbar = NavDiv;
-
-
-let scrollAnim = () => {
-    if (window.pageYOffset >= navbar) {
-        console.log("here")
-        navbar = Sticky
-    } else {
-        navbar = NavDiv
-    }
-}
 
 
 export default Navigation

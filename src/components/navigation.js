@@ -46,7 +46,7 @@ const NavDiv = styled.div`
     `}
 
     ${media.tablet`
-        
+        width: 85%;
 
     `}
 `
@@ -101,7 +101,7 @@ const Historias = styled(Link)`
     }
 `
 
-const Projeto = styled.a`
+const Galeria = styled(Link)`
     text-decoration: none;
     color: black;
     font-family: Verdana, sans-serif;
@@ -130,7 +130,7 @@ const Navigation = () => (
     <NavDiv innerRef={el => el.getBoundingClientRect()}>
       <Videos to="/videos/">{"Vídeos"}</Videos>
       <Historias to="/historias/">{"Histórias"}</Historias>
-      <Projeto href="#about">O Projeto</Projeto>
+      <Galeria to="/galeria/">{"Galeria"}</Galeria>
     </NavDiv>
     
 )

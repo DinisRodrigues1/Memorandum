@@ -43,6 +43,20 @@ const OuterContainer = styled.div`
   width: 80%;
   margin: 0 auto;
   margin-bottom: 0;
+
+  ${media.desktop`
+      width: 82%;
+      padding: 5% 0;
+  `}
+
+  ${media.tablet`
+      width: 85%;
+      padding: 7% 0;
+      `}
+  
+  ${media.phone`
+      width: 95%;
+      padding: 9% 0;`}
 `
 const OuterVideoContainer = styled.div`
   margin-top: 10%;
@@ -78,6 +92,17 @@ const VideoContainer = styled.div`
     height: 90vh;
     width: 100%;
 
+    ${media.desktop`
+      height: 60vh;
+    `}
+    
+    ${media.tablet`
+      height: 55vh;
+    `}
+
+    ${media.phone`
+      height: 50vh;
+    `}
 `
 
 const VideoArticle = styled.article`

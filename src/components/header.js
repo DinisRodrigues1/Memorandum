@@ -46,7 +46,7 @@ const HeadDiv = styled.div`
     `}
     
     ${media.phone`
-      
+      height: 28vh;
       `}
 `  
 const SpanBlock = styled.span`
@@ -60,9 +60,11 @@ const SpanBlock = styled.span`
     `}
 
     ${media.tablet`
-      top: 0.8%;
+      top: 1.5%;
     `}
-    ${media.phone``}
+    ${media.phone`
+      top: 2.5%;
+    `}
   `
 
 const LinkStyleOne = styled(Link)`
@@ -81,10 +83,14 @@ const LinkStyleOne = styled(Link)`
     `}
 
     ${media.tablet`
-      top: 2%
+      top: 1.5%
       margin-left: 1.5vw
     `}
-  ${media.phone``}
+
+    ${media.phone`
+      top: 3%;
+      margin-left; 2vw;
+    `}
 `
 
 
@@ -104,10 +110,13 @@ const TextStyle = styled.span`
     `}
 
     ${media.tablet`
-      top: 2%;
+      top: 1.5%;
       left: 6%;
     `}
-  ${media.phone``}
+  ${media.phone`
+      top: 2.5%;
+      left: 8%;
+  `}
 `
 
 const LinkStyleTwo = styled(Link)` 
@@ -126,10 +135,14 @@ const LinkStyleTwo = styled(Link)`
     `}
 
     ${media.tablet`
-      top: 2%;
+      top: 1.5%;
       left: 9%;
     `}
-  ${media.phone``}
+
+    ${media.phone`
+      top: 2.5%;
+      left: 11%;
+    `}
 
 `
 
@@ -153,12 +166,19 @@ const LogoBlock = styled.div`
       width: 70%;
       margin: 0 auto;
     `}
+
     ${media.tablet`
-      top: -102%;
+      top: -105%;
       height: 65%;
       width: 65%;
-      margin: 0 auto;`}
-    ${media.phone``}
+      margin: 0 auto;
+    `}
+
+    ${media.phone`
+      top: -75%;
+      height: 60%;
+      width: 60%;
+    `}
   `
 
 

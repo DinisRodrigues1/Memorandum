@@ -40,8 +40,23 @@ const OuterContainer = styled.div`
   max-width: 100%;
   overflow-x: hidden;
   padding: 3% 0;
-  width: 60%;
+  width: 80%;
   margin: auto;
+
+  ${media.desktop`
+    width: 82%;
+    padding: 5% 0;
+  `}
+
+  ${media.tablet`
+    width: 85%;
+    padding: 7% 0;
+  `}
+
+  ${media.phone`
+    width: 95%;
+    padding: 9% 0;
+  `}
 `
 
 const BodyDiv = styled.div`
