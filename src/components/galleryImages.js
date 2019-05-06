@@ -1,12 +1,12 @@
 import React from 'react'
-import { graphql, StaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { StaticQuery, graphql } from "gatsby"
+import Img from 'gatsby-image'
 
-const galImages = () => (
+const GalImages = () => (
 <StaticQuery
 query={graphql`
   query {
-    galImages: allFile(filter: {extension: {regex: "/(jpg)|(NEF)|(JPG/"}, relativeDirectory: {eq: "galleryImages"}}) ) {
+    carImages: allFile(filter: {sourceInstanceName: {eq: "galImages"}}) {
       edges {
         node {
           childImageSharp {
@@ -19,8 +19,14 @@ query={graphql`
     }
   }
 `}
-render={data => <Img galImages={data.galImages.edges} />}
+render={data => (
+  <div>
+  {data.carImages.edges.map(({ node }, i) => (
+  <Img key={i} fluid={node.childImageSharp.fluid} />
+))}
+</div>
+)}
 />
 );
 
-export default galImages
+export default GalImages

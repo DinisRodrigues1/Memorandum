@@ -1,11 +1,9 @@
 import React from "react"
-import PropTypes from 'prop-types';
 import Navigation from "../components/navigation_extra"
-import BgImage from "../components/bgImage"
-import ImagesGal from "../components/galleryImages"
 import SEO from "../components/seo"
-
 import styled, { css } from "styled-components"
+import GalImages from '../components/galleryImages'
+
 
 const sizes = {
   desktop: 992,
@@ -74,13 +72,6 @@ const BodyDiv = styled.div`
   border: thin solid #f1f1f1;
 `
 
-const TextSep = styled.hr`
-   margin-left: -1.8%;
-   margin-right: -1.8%;
-   border: medium solid #DADFE1;
-   color: #DADFE1;
-   background-color: #DADFE1;
-`
 
 const TextSepSpecial = styled.hr`
    margin-top: -14%;
@@ -127,30 +118,23 @@ const ImgContainer = styled.div`
 `
 
 
-
-const ImageGallery = () => (
+const ImageGallery = () => {    
+   
+    return (
     <OuterContainer>
         <Navigation />
         <BodyDiv>
         <PageTitle><TextSepSpecial/>Galeria</PageTitle>
         <ImagesContainer>
-        {ImagesGal.map(image => (
-          <ImgContainer>
-          <Img
-            key={image.node.childImageSharp.fluid.src}
-            fluid={image.node.childImageSharp.fluid}
-          />
-          </ImgContainer>
-        }))
-        <ImgContainer><ImagesGal/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer>
-        <ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer>
-        <ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer>
-        </ImagesContainer>
+        <GalImages />
+       </ImagesContainer>
         </BodyDiv>
         <SEO title="Galeria de Imagens" />
     </OuterContainer>
   
-)
+        );
+       }
+
 
 export default ImageGallery
 
