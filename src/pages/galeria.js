@@ -116,6 +116,9 @@ const ImgContainer = styled.div`
     height: 5em !important;
     margin-bottom: 1.2em;
 `
+const MarginDiv = styled.div`
+    padding: 2% 0;
+    `
 
 
 const ImageGallery = () => {    
@@ -128,6 +131,7 @@ const ImageGallery = () => {
         <ImagesContainer>
         <GalImages />
        </ImagesContainer>
+       <MarginDiv></MarginDiv>
         </BodyDiv>
         <SEO title="Galeria de Imagens" />
     </OuterContainer>
