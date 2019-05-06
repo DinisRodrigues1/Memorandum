@@ -39,10 +39,15 @@ const NavDiv = styled.div`
     z-index: 1;
     overflow: hidden;
 
-    
+
     ${media.desktop`
         width: 80%;
         
+    `}
+
+    ${media.tablet`
+        
+
     `}
 `
 
@@ -52,9 +57,24 @@ const Videos = styled(Link)`
     color: black;
     font-family: Verdana, sans-serif;
     z-index: 1;
-    border-bottom: 2px solid black;
-    padding: 0 1rem 0 1rem;
+    border-bottom: 2px solid #DADFE1;
+    padding: 0 1rem 2px 1rem;
     display: inline-block;
+    background:
+    linear-gradient(
+        to bottom, #DADFE1 0%,
+        #DADFE1 100%
+      );
+     background-position: 0 100%;
+     background-repeat: repeat-x;
+     background-size: 2px 2px;
+    transition: background-size .2s;
+
+    &:hover {
+        background-size: 4px 50px;
+    }
+
+    
 `
 
 const Historias = styled(Link)`
@@ -63,11 +83,22 @@ const Historias = styled(Link)`
     font-family: Verdana, sans-serif;
     z-index: 1;
     margin-left: 15%;
-    border-bottom: 2px solid black;
-    padding: 0 1rem 0 1rem;
+    border-bottom: 2px solid #DADFE1;
+    padding: 0 1rem 2px 1rem;
     display: inline-block;
+    background:
+    linear-gradient(
+        to bottom, #DADFE1 0%,
+        #DADFE1 100%
+      );
+     background-position: 0 100%;
+     background-repeat: repeat-x;
+     background-size: 2px 2px;
+    transition: background-size .2s;
 
-
+    &:hover {
+        background-size: 4px 50px;
+    }
 `
 
 const Projeto = styled.a`
@@ -76,10 +107,22 @@ const Projeto = styled.a`
     font-family: Verdana, sans-serif;
     z-index: 1;
     margin-left: 15%;
-    border-bottom: 2px solid black;
-    padding: 0 1rem 0 1rem;
+    border-bottom: 2px solid #DADFE1;
+    padding: 0 1rem 2px 1rem;
     display: inline-block;
+    background:
+    linear-gradient(
+        to bottom, #DADFE1 0%,
+        #DADFE1 100%
+      );
+     background-position: 0 100%;
+     background-repeat: repeat-x;
+     background-size: 2px 2px;
+    transition: background-size .2s;
 
+    &:hover {
+        background-size: 4px 50px;
+    }
 `
 
 

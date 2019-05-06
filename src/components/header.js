@@ -35,11 +35,19 @@ const media = Object.keys(sizes).reduce((acc, label) => {
 const HeadDiv = styled.div`
     height: 100vh;
     width: 100vw;
+
     ${media.desktop`
-    height: 32vh;
-    width: 100%;`}
-    ${media.tablet`background: mediumseagreen;`}
-    ${media.phone`background: palevioletred;`}
+      height: 32vh;
+      width: 100%;
+    `}
+    
+    ${media.tablet`
+      height: 30vh;
+    `}
+    
+    ${media.phone`
+      
+      `}
 `  
 const SpanBlock = styled.span`
     position: absolute;
@@ -47,15 +55,17 @@ const SpanBlock = styled.span`
     left: 0.8%;
 
     ${media.desktop`
-      position: absolute;
       top: 0.6%;
-      left: 0.8%;`}
-    ${media.tablet`background: mediumseagreen;`}
-    ${media.phone`background: palevioletred;`}
+      left: 0.8%;
+    `}
+
+    ${media.tablet`
+      top: 0.8%;
+    `}
+    ${media.phone``}
   `
 
 const LinkStyleOne = styled(Link)`
-  
     color: black;
     text-decoration: none;
     position: absolute:
@@ -63,19 +73,22 @@ const LinkStyleOne = styled(Link)`
     top: 1%;
     left: 2000px;
     font-family: Verdana, sans-serif;
-    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;
 
     ${media.desktop`
       top: 1%;
       margin-left: 1vw;
-      `}
-  ${media.tablet`background: mediumseagreen;`}
-  ${media.phone`background: palevioletred;`}
+    `}
+
+    ${media.tablet`
+      top: 2%
+      margin-left: 1.5vw
+    `}
+  ${media.phone``}
 `
 
 
 const TextStyle = styled.span`
-  
     margin-left: 0.5%;
     color: black;
     position: absolute;
@@ -83,14 +96,18 @@ const TextStyle = styled.span`
     left: 2.5%;
     z-index: 1;
     fontFamily: Verdana, sans-serif;
-    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;
 
     ${media.desktop`
       top: 0.6%;
       left: 5.5%;
-      `}
-  ${media.tablet`background: mediumseagreen;`}
-  ${media.phone`background: palevioletred;`}
+    `}
+
+    ${media.tablet`
+      top: 2%;
+      left: 6%;
+    `}
+  ${media.phone``}
 `
 
 const LinkStyleTwo = styled(Link)` 
@@ -101,14 +118,18 @@ const LinkStyleTwo = styled(Link)`
     z-index: 1;
     top: 1%;
     font-family: Verdana, sans-serif;
-    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;
 
     ${media.desktop`
       top: 0.6%;
       left: 8.5%;
-      `}
-  ${media.tablet`background: mediumseagreen;`}
-  ${media.phone`background: palevioletred;`}
+    `}
+
+    ${media.tablet`
+      top: 2%;
+      left: 9%;
+    `}
+  ${media.phone``}
 
 `
 
@@ -132,8 +153,12 @@ const LogoBlock = styled.div`
       width: 70%;
       margin: 0 auto;
     `}
-    ${media.tablet`background: mediumseagreen;`}
-    ${media.phone`background: palevioletred;`}
+    ${media.tablet`
+      top: -102%;
+      height: 65%;
+      width: 65%;
+      margin: 0 auto;`}
+    ${media.phone``}
   `
 
 

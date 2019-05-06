@@ -75,6 +75,10 @@ const BodyDiv = styled.div`
     
     
     `}
+
+    ${media.tablet`
+      width: 80%;
+    `}
 `
 const TextSep = styled.hr`
    margin-left: -1.8%;
