@@ -12,6 +12,7 @@ import SquareImg from './squareImg'
 import SocialImageFacebook from './socialImageFacebook'
 import SocialImageInstagram from './socialImageInstagram'
 import SocialImageYoutube from './socialImageYoutube'
+import MailImage from './mailImage'
 import Navigation from "./navigation"
 import styled, { css } from "styled-components"
 import "./layout.css"
@@ -182,9 +183,9 @@ const Footer = styled.footer`
         margin-left: 10%;
 
         ${media.phone`
-          width: 50%;
+          width: 66%;
           float: none;
-          height: 20%;
+          height: 25%;
           margin: 0 auto;
           display: block;
           `}
@@ -200,7 +201,7 @@ const Footer = styled.footer`
         height: 30%;
 
         ${media.phone`
-          width: 78%;
+          width: 80%;
           height: 25%;
           float: none;
           margin: 0 auto;
@@ -325,7 +326,7 @@ const Layout = () => (
             <a href="https://www.gatsbyjs.org">Gatsby</a>
             </FooterPLeft>
             <FooterPRight>
-            Projeto Memorandum: projetomemorandum@gmail.com
+              <MailImage/>&nbsp; projetomemorandum@gmail.com
             </FooterPRight>
             <ClearFix></ClearFix>
             <SocialLogos>

@@ -1,8 +1,10 @@
 import React from "react"
-import { Link } from "gatsby"
+import PropTypes from 'prop-types';
 import Navigation from "../components/navigation_extra"
 import BgImage from "../components/bgImage"
+import ImagesGal from "../components/galleryImages"
 import SEO from "../components/seo"
+
 import styled, { css } from "styled-components"
 
 const sizes = {
@@ -92,11 +94,11 @@ const TextSepSpecial = styled.hr`
 
 const ImagesContainer = styled.section`
     line-height: 0;
-    -webkit-column-count: 5;
+    -webkit-column-count: 6;
     -webkit-column-gap: 0;
-    -moz-column-count: 5;
+    -moz-column-count: 6;
     -moz-column-gap: 0;
-    column-count: 5;
+    column-count: 6;
     column-gap: 0;  
 
     ${media.desktop`
@@ -132,7 +134,15 @@ const ImageGallery = () => (
         <BodyDiv>
         <PageTitle><TextSepSpecial/>Galeria</PageTitle>
         <ImagesContainer>
-        <ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer>
+        {ImagesGal.map(image => (
+          <ImgContainer>
+          <Img
+            key={image.node.childImageSharp.fluid.src}
+            fluid={image.node.childImageSharp.fluid}
+          />
+          </ImgContainer>
+        }))
+        <ImgContainer><ImagesGal/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer>
         <ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer>
         <ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer><ImgContainer><BgImage/></ImgContainer>
         </ImagesContainer>
@@ -143,3 +153,4 @@ const ImageGallery = () => (
 )
 
 export default ImageGallery
+
