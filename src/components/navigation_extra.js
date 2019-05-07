@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
-import React from "react"
+import React, { Component } from "react"
 import styled, { css } from 'styled-components'
+import LogoImage from './logoImage'
 
 const sizes = {
     desktop: 992,
@@ -37,6 +38,48 @@ const NavDiv = styled.div`
     ${media.tablet`
         width: 85%;
     `}
+
+    ${media.phone`
+        height: 8.5vh;
+
+    `}
+`
+
+const UnList = styled.ul`
+    list-style-type: none;
+    overflow: hidden; 
+    margin: 0;
+    padding: 0;
+
+    ${media.phone`
+    
+    `}
+
+`
+
+const NavItems = styled.div`
+
+
+`
+
+const ListItems = styled.li`
+    display: inline;  
+    
+    ${media.phone`
+    display: block;`}
+
+`
+
+const LogoImageStyle = styled.button`
+    display: none;
+  
+    ${media.phone`
+      display: inline-block;  
+      padding-top: 0.25em;
+      background: none; 
+      border: none;
+ 
+    `}
 `
 
 const Home = styled(Link)`
@@ -60,6 +103,11 @@ const Home = styled(Link)`
     &:hover {
         background-size: 4px 50px;
     }
+
+    ${media.phone`
+    margin: 0;
+    margin-top: 1.5em;
+    `}
 `
 
 const Videos = styled(Link)`
@@ -88,6 +136,12 @@ const Videos = styled(Link)`
     ${media.desktop`
         margin-left: 3.5%;
     `}
+
+    ${media.phone`
+    margin: 0;
+    margin-top: 1.5em;
+    `}
+
 `
 
 const Historias = styled(Link)`
@@ -115,7 +169,12 @@ const Historias = styled(Link)`
 
     ${media.desktop`
         margin-left: 3.5%;
-    `}}
+    `}
+
+    ${media.phone`
+    margin: 0;
+    margin-top: 1.5em;
+    `}
 `
 
 const Galeria = styled(Link)`
@@ -144,19 +203,61 @@ const Galeria = styled(Link)`
     ${media.desktop`
         margin-left: 3.5%;
     `}
+
+    ${media.phone`
+        margin: 0;
+        margin-top: 1.5em;
+    `}
+`
+const MobileMenu = styled.div`
+    background-color: #FFFFFF;
+    position: absolute;
+    z-index: 2;
+    padding: 1% 1% 0 1%;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 10em;
+    -moz-box-shadow:    1px 1px 7px 1px #D4D0AB;
+    -webkit-box-shadow: 1px 1px 7px 1px #D4D0AB;
+    box-shadow:         1px 1px 7px 1px #D4D0AB;
+    border: thin solid #f1f1f1;
+    padding-bottom: 5%;
+
+   
 `
 
 
+class Navigation extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { showMenu: false };
+      }
 
-const Navigation = () => (
-    <NavDiv innerRef={el => el.getBoundingClientRect()}>
-      <Home to ="/">{"Home"}</Home>
-      <Videos to="/videos/">{"Vídeos"}</Videos>
-      <Historias to="/historias/">{"Histórias"}</Historias>
-      <Galeria to="/galeria/">{"Galeria"}</Galeria>
-    </NavDiv>
-    
-)
-
+    render() {
+     const { showMenu } = this.state
+     return (
+    <NavDiv>
+        <NavItems>
+        <UnList>
+        <LogoImageStyle  onClick={() => this.setState({ showMenu: !showMenu})}>
+        <LogoImage/>
+            { showMenu ? true : false }
+        </LogoImageStyle>
+        { showMenu && (
+        <MobileMenu>   
+        <ListItems><Home to ="/">{"Home"}</Home></ListItems>
+        <ListItems><Videos to="/videos/">{"Vídeos"}</Videos></ListItems>
+        <ListItems><Historias to="/historias/">{"Histórias"}</Historias></ListItems>
+        <ListItems><Galeria to="/galeria/">{"Galeria"}</Galeria></ListItems>
+        </MobileMenu>
+        )}
+        </UnList>
+        </NavItems>
+    </NavDiv> 
+    )
+    }
+}
 
 export default Navigation

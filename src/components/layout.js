@@ -102,7 +102,8 @@ const SectionLatestText = styled.article`
 `    
 const SectionImagePos = styled.div`
       float: left;
-      margin 1% 2%;
+      margin 1% 1%;
+      padding-top: 0.5%;
       border: thick solid #C8F7C5; //border for image --> can be later changed to match theme;
 
 `
