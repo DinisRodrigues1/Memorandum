@@ -21,16 +21,6 @@ const media = Object.keys(sizes).reduce((acc, label) => {
   return acc
 }, {})
 
-/*const Content = styled.div`
-  height: 3em;
-  width: 3em;
-  background: papayawhip;
-
-  /* Now we have our methods on media and can use them instead of raw queries *//*
-  ${media.desktop`background: dodgerblue;`}
-  ${media.tablet`background: mediumseagreen;`}
-  ${media.phone`background: palevioletred;`}
-`; */ // CAN BE USED FOR QUERIES. GOOD PRACTICE
 
 const HeadDiv = styled.div`
     height: 100vh;

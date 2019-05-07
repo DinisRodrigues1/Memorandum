@@ -22,16 +22,6 @@ const sizes = {
     return acc
   }, {})
   
-  const Content = styled.div`
-    height: 3em;
-    width: 3em;
-    background: papayawhip;
-  
-    /* Now we have our methods on media and can use them instead of raw queries */
-    ${media.desktop`background: dodgerblue;`}
-    ${media.tablet`background: mediumseagreen;`}
-    ${media.phone`background: palevioletred;`}
-  `;
 
 const OuterContainer = styled.div`
     padding: 3% 0;
@@ -66,6 +56,15 @@ const OuterPostContainer = styled.div`
     box-shadow:         0 0 7px 1px #D4D0AB;
     border: thin solid #f1f1f1;
 `
+const TextSepSpecial = styled.hr`
+   margin-top: -14%;
+   margin-left: -1.8%;
+   margin-right: -1.8%;
+   border: medium solid #DADFE1;
+   color: #DADFE1;
+   background-color: #DADFE1;
+`
+
 const PageTitle = styled.h2`
     margin-top: 15%;
     margin-bottom: 10%;
@@ -81,7 +80,7 @@ function Story(props) {
             <SEO title="Galeria de Imagens" />
             <Navigation />
             <OuterPostContainer>
-            <PageTitle><hr/>Histórias</PageTitle>
+            <PageTitle><TextSepSpecial/>Histórias</PageTitle>
                 <div>
                     <h2>{title}</h2>
                     <div dangerouslySetInnerHTML={{ __html: post.html }} />

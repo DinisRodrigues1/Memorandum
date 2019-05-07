@@ -3,6 +3,7 @@ import Navigation from "../components/navigation_extra"
 import SEO from "../components/seo"
 import styled, { css } from "styled-components"
 import GalImages from '../components/galleryImages'
+import { graphql } from 'gatsby'
 
 
 const sizes = {
@@ -23,16 +24,6 @@ console.log(acc);
   return acc
 }, {})
 
-const Content = styled.div`
-  height: 3em;
-  width: 3em;
-  background: papayawhip;
-
-  /* Now we have our methods on media and can use them instead of raw queries */
-  ${media.desktop`background: dodgerblue;`}
-  ${media.tablet`background: mediumseagreen;`}
-  ${media.phone`background: palevioletred;`}
-`;
 
 const OuterContainer = styled.div`
   padding: 3% 0;
@@ -110,18 +101,13 @@ const ImagesContainer = styled.section`
     column-count: 2;
     `}
 `
-const ImgContainer = styled.div`
-    margin: 0 auto;
-    width: 10em !important;
-    height: 5em !important;
-    margin-bottom: 1.2em;
-`
+
 const MarginDiv = styled.div`
     padding: 2% 0;
     `
 
 
-const ImageGallery = () => {    
+const ImageGallery = ({ data }) => {    
    
     return (
     <OuterContainer>
@@ -140,5 +126,17 @@ const ImageGallery = () => {
        }
 
 
+
 export default ImageGallery
 
+
+/*export const query = graphql`
+      query Gallery($locale: String) {
+        file(name: { eq: $locale }, relativeDirectory: { eq: "galeria" }) {
+          edges {
+            hello
+          }
+        }
+      }
+    `
+*/ 

@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Navigation from "../components/navigation_extra"
 import SEO from "../components/seo"
 import styled, { css } from "styled-components"
@@ -22,16 +21,6 @@ console.log(acc);
   return acc
 }, {})
 
-const Content = styled.div`
-  height: 3em;
-  width: 3em;
-  background: papayawhip;
-
-  /* Now we have our methods on media and can use them instead of raw queries */
-  ${media.desktop`background: dodgerblue;`}
-  ${media.tablet`background: mediumseagreen;`}
-  ${media.phone`background: palevioletred;`}
-`;
 
 const OuterContainer = styled.div`
   padding: 3% 0;

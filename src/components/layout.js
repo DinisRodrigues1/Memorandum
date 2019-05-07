@@ -36,16 +36,6 @@ console.log(acc);
   return acc
 }, {})
 
-const Content = styled.div`
-  height: 3em;
-  width: 3em;
-  background: papayawhip;
-
-  /* Now we have our methods on media and can use them instead of raw queries */
-  ${media.desktop`background: dodgerblue;`}
-  ${media.tablet`background: mediumseagreen;`}
-  ${media.phone`background: palevioletred;`}
-`;
 
 const Padding = styled.div`
     padding: 3%;
@@ -141,6 +131,7 @@ const Footer = styled.footer`
     -webkit-box-shadow: 0 -2px 4px 1px #D4D0AB;
     box-shadow:         0 -2px 4px 1px #D4D0AB;
     border-top: thin solid #f1f1f1;
+    padding-top: 1%;
 
     ${media.desktop`
       width: 100%;
@@ -175,7 +166,7 @@ const Footer = styled.footer`
 
     & > ${FooterPLeft} {
         float: left
-        width: 46%;
+        width: 65%;
         display: inline-block;
         margin-bottom: 3%;
         padding: 2%;
@@ -194,10 +185,10 @@ const Footer = styled.footer`
     }
     & > ${FooterPRight} {
         float: right;
-        width: 46%;
+        width: 56%;
         display: inline-block;
         padding: 2%;
-        margin-right: 10%;
+        margin-right: -16%;
         height: 30%;
 
         ${media.phone`
@@ -272,7 +263,6 @@ const Layout = () => (
           <SectionLatestBody>
             <TextSep/>
               <SectionTitle>Última publicação</SectionTitle>
-              <Content />
                 <SectionLatestText>
                     <SectionImagePos>
                     <SectionImage />
@@ -299,13 +289,13 @@ const Layout = () => (
               <p></p>
               <p>
               <p><b>Como nasceu?</b></p>
-              <p>O Memorandum nasceu no âmbito do projeto final da licenciatura de Novas 
+              <p><strong>Memorandum</strong> nasceu no âmbito do projeto final da licenciatura em Novas 
               Tecnologias da Comunicação, da Universidade de Aveiro.
               Este projeto nasce pelas mãos de Diana Nicolau, Dinis Rodrigues, Inês Melo 
-              e Joaquim Miranda com a, indispensável, orientação de Maria João Antunes ().</p>
+              e Joaquim Miranda sob a proposta e orientação de Maria João Antunes.</p>
               <p></p>
               <p><b>O que é?</b></p>
-              <p>O Memorandum é um projeto que visa fortalecer o elo entre gerações passadas e 
+              <p><strong>Memorandum</strong> é um projeto que visa fortalecer o elo entre gerações passadas e 
               as contemporâneas através da preservação de tradições, vivências e saberes. 
               Este projeto pretende colmatar a perda de conhecimento relativo às vivências 
               dos que nos antecederam, retratando assuntos de diferentes naturezas – sejam 
@@ -313,9 +303,9 @@ const Layout = () => (
               Procuramos ser uma plataforma de partilha intergeracional, com o propósito de, 
               através do registo via fotografia e vídeo, manter vivas tradições e vivências 
               de tempos passados.</p>
-              <p>O Memorandum assenta, não só, numa temática pouco explorada atualmente, como 
-              também, num formato audiovisual inovador e apelativo procurando a aproximação ao 
-              seu público alvo.</p>
+              <p><strong>Memorandum</strong> assenta, não só, numa temática pouco explorada atualmente, como 
+              também, num formato audiovisual inovador e apelativo, procurando a aproximação ao 
+              seu público alvo <i>(Jovens entre os 18 e 24 anos)</i>.</p>
               </p>
             </SectionAbout>
             </BodyDiv>
