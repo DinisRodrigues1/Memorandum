@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import React, { Component } from "react"
 import styled, { css } from 'styled-components'
+import LogoImage from './logoImage'
 
 const sizes = {
     desktop: 992,
@@ -40,8 +41,7 @@ const NavDiv = styled.div`
 
     ${media.phone`
         height: 8.5vh;
-        display: none;
-
+    
     `}
 `
 
@@ -52,7 +52,7 @@ const UnList = styled.ul`
     padding: 0;
 
     ${media.phone`
-    
+        float: right;
     `}
 
 `
@@ -70,7 +70,17 @@ const ListItems = styled.li`
 
 `
 
-
+const LogoImageStyle = styled.button`
+    display: none;
+  
+    ${media.phone`
+      display: inline-block;  
+      padding-top: 0.25em;
+      background: none; 
+      border: none;
+ 
+    `}
+`
 
 const Home = styled(Link)`
     text-decoration: none;
@@ -199,19 +209,46 @@ const Galeria = styled(Link)`
         margin-top: 1.5em;
     `}
 `
+const MobileMenu = styled.div`
+    background-color: #FFFFFF;
+    position: absolute;
+    z-index: 2;
+    padding: 1% 1% 0 1%;
+    right: 5%; 
+    width: 10em; 
+    -moz-box-shadow:    1px 1px 7px 1px #D4D0AB;
+    -webkit-box-shadow: 1px 1px 7px 1px #D4D0AB;
+    box-shadow:         1px 1px 7px 1px #D4D0AB;
+    border: thin solid #f1f1f1;
+    padding-bottom: 5%;
+
+`
 
 
-class Navigation extends Component {
+class NavMobile extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { showMenu: false };
+      }
 
     render() {
+     const { showMenu } = this.state
      return (
     <NavDiv>
         <NavItems>
         <UnList>
+        <LogoImageStyle  onClick={() => this.setState({ showMenu: !showMenu})}>
+        <LogoImage/>
+            { showMenu ? true : false }
+        </LogoImageStyle>
+        { showMenu && (
+        <MobileMenu>   
         <ListItems><Home to ="/">{"Home"}</Home></ListItems>
         <ListItems><Videos to="/videos/">{"Vídeos"}</Videos></ListItems>
         <ListItems><Historias to="/historias/">{"Histórias"}</Historias></ListItems>
         <ListItems><Galeria to="/galeria/">{"Galeria"}</Galeria></ListItems>
+        </MobileMenu>
+        )}
         </UnList>
         </NavItems>
     </NavDiv> 
@@ -219,4 +256,4 @@ class Navigation extends Component {
     }
 }
 
-export default Navigation
+export default NavMobile

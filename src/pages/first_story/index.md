@@ -3,6 +3,7 @@ title: "Test Post"
 description: post is related to gatsbyjs
 date: '2019-05-03'
 image: ''
+lang: en
 ---
 
 

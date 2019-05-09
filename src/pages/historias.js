@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import Navigation from "../components/navigation_extra"
 import SEO from "../components/seo"
 import styled, { css } from "styled-components"
+import NavMobile from '../components/nav_extra_mobile'
 
 const sizes = {
   desktop: 992,
@@ -122,6 +123,7 @@ const Historias = (props) => {
   <OuterContainer>
     <SEO title="Histórias" />
     <Navigation />
+    <NavMobile />
     <BodyDiv>
     <PageTitle><TextSepSpecial/>Histórias</PageTitle>
     <PostContainer>

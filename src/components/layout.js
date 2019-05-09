@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Header from "./header"
@@ -16,7 +9,8 @@ import MailImage from './mailImage'
 import Navigation from "./navigation"
 import styled, { css } from "styled-components"
 import "./layout.css"
-require("smooth-scroll")('a[href*="#"]')
+import NavMobile from './nav_mobile'
+
 
 const sizes = {
   desktop: 992,
@@ -260,6 +254,7 @@ const Layout = () => (
         <Header siteTitle={data.site.siteMetadata.title} />
         <Padding></Padding>
         <Navigation />
+        <NavMobile/>
         <BodyDiv>
           <SectionLatestBody>
             <TextSep/>
@@ -289,13 +284,13 @@ const Layout = () => (
               <SectionTitle>O projeto</SectionTitle>
               <p></p>
               <p>
-              <p><b>Como nasceu?</b></p>
+              <p><b>Nascimento</b></p>
               <p><strong>Memorandum</strong> nasceu no âmbito do projeto final da licenciatura em Novas 
               Tecnologias da Comunicação, da Universidade de Aveiro.
               Este projeto nasce pelas mãos de Diana Nicolau, Dinis Rodrigues, Inês Melo 
               e Joaquim Miranda sob a proposta e orientação de Maria João Antunes.</p>
               <p></p>
-              <p><b>O que é?</b></p>
+              <p><b>Objetivo</b></p>
               <p><strong>Memorandum</strong> é um projeto que visa fortalecer o elo entre gerações passadas e 
               as contemporâneas através da preservação de tradições, vivências e saberes. 
               Este projeto pretende colmatar a perda de conhecimento relativo às vivências 
@@ -306,13 +301,13 @@ const Layout = () => (
               de tempos passados.</p>
               <p><strong>Memorandum</strong> assenta, não só, numa temática pouco explorada atualmente, como 
               também, num formato audiovisual inovador e apelativo, procurando a aproximação ao 
-              seu público alvo <i>(Jovens entre os 18 e 24 anos)</i>.</p>
+              seu público-alvo <i>(Jovens entre os 18 e 24 anos)</i>.</p>
               </p>
             </SectionAbout>
             </BodyDiv>
           <Footer>
             <FooterPLeft>
-            © {new Date().getFullYear()}, Built with
+            © {new Date().getFullYear()}, Desenvolvido com
             {` `}
             <a href="https://www.gatsbyjs.org">Gatsby</a>
             </FooterPLeft>
@@ -332,8 +327,6 @@ const Layout = () => (
   />
   
 )
-
-
 
 
 export default Layout

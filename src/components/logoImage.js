@@ -8,7 +8,7 @@ const LogoImage = () => (
     query {
         placeholderImage: file(relativePath: { eq: "menu-alt-512.png" }) {
           childImageSharp {
-            fixed(width: 30, height: 32, quality: 100) {
+            fixed(width: 25, height: 27, quality: 100) {
               ...GatsbyImageSharpFixed
             }
           }

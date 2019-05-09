@@ -3,6 +3,8 @@ import React from "react"
 import LogoOverlay from "./logoOverlay"
 import BgImage from "./BgImage"
 import styled, { css } from 'styled-components'
+import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
+
 
 const sizes = {
   desktop: 992,
@@ -171,6 +173,10 @@ const LogoBlock = styled.div`
     `}
   `
 
+  const languageName = {
+    en: "English",
+    pt: "Português"
+  }
 
 const Header = () => (
     <HeadDiv>
@@ -188,7 +194,7 @@ const Header = () => (
       >|</TextStyle>
       <span>
         <LinkStyleTwo
-          to="/"
+          to="/en/"
         >{"EN"}
           </LinkStyleTwo>
       </span>

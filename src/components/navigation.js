@@ -1,8 +1,8 @@
 import { Link } from "gatsby"
 import React, { Component } from "react"
 import styled, { css } from 'styled-components'
-import LogoImage from './logoImage'
-//PUT IMAGE ON RIGHT OF LANGUAGE SETTINGS USING FLOAT OR POS ABSOLUTE
+
+
 const sizes = {
     desktop: 992,
     tablet: 768,
@@ -43,6 +43,11 @@ const NavDiv = styled.nav`
 
     ${media.phone`
         height: 8.5vh;
+        position: absolute;
+        top: 2%;
+        z-index: 2;
+        left: 12%;
+        display: none;
 
     `}
 `
@@ -58,8 +63,8 @@ const UnList = styled.ul`
     padding: 0;
 
     ${media.phone`
-      float: left;
-      
+      float: right;
+      display: none
     `}
 
 `
@@ -72,17 +77,7 @@ const ListItems = styled.li`
 
 `
 
-const LogoImageStyle = styled.button`
-    display: none;
-  
-    ${media.phone`
-      display: inline-block;  
-      padding-top: 0.25em;
-      background: none; 
-      border: none;
- 
-    `}
-`
+
 
 const Videos = styled(Link)`
     text-decoration: none;
@@ -173,49 +168,19 @@ const Galeria = styled(Link)`
   `}
 `
 
-const MobileMenu = styled.div`
-    background-color: #FFFFFF;
-    position: absolute;
-    z-index: 2;
-    padding: 1% 1% 0 1%;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
-    width: 10em;
-    -moz-box-shadow:    1px 1px 7px 1px #D4D0AB;
-    -webkit-box-shadow: 1px 1px 7px 1px #D4D0AB;
-    box-shadow:         1px 1px 7px 1px #D4D0AB;
-    border: thin solid #f1f1f1;
-    padding-bottom: 3%;
 
-   
-`
 
 
 class Navigation extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { showMenu: false };
-  }
- 
+
   render() {
-    const { showMenu } = this.state
     return (
     <NavDiv>
       <NavItems>
       <UnList>
-      <LogoImageStyle  onClick={() => this.setState({ showMenu: !showMenu})}>
-      <LogoImage/>
-      { showMenu ? true : false }
-      </LogoImageStyle>
-      { showMenu && (
-        <MobileMenu>
       <ListItems><Videos to="/videos/">{"Vídeos"}</Videos></ListItems>
       <ListItems><Historias to="/historias/">{"Histórias"}</Historias></ListItems>
       <ListItems><Galeria to="/galeria/">{"Galeria"}</Galeria></ListItems>
-        </MobileMenu>
-      )}
       </UnList>
       </NavItems>
     </NavDiv>

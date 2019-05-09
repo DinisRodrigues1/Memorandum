@@ -1,8 +1,16 @@
+const supportedLanguages = [
+  { id: 'en', label: 'English' },
+  { id: 'pt', label: 'Português' },
+]
+const defaultLanguage = 'pt'
+
 module.exports = {
   siteMetadata: {
     title: `Memorandum`,
     description: `Website criado para o projeto Memorandum UC Projeto 2019 UA`,
     author: `@DinisRodrigues`,
+    defaultLanguage,
+    supportedLanguages
   },
   plugins: [
     {
@@ -12,16 +20,6 @@ module.exports = {
       },
     },
   ],
-  plugins: [
-    'gatsby-transformer-json',
-  {
-    resolve: `gatsby-source-filesystem`,
-    options: {
-      path: `${__dirname}/src/data`,
-      name: "data",
-    },
-  },  
-],
   plugins: [
     `gatsby-plugin-react-helmet`,
     {

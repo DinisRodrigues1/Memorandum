@@ -4,6 +4,7 @@ import SEO from "../components/seo"
 import styled, { css } from "styled-components"
 import GalImages from '../components/galleryImages'
 import { graphql } from 'gatsby'
+import NavMobile from '../components/nav_extra_mobile'
 
 
 const sizes = {
@@ -112,6 +113,7 @@ const ImageGallery = ({ data }) => {
     return (
     <OuterContainer>
         <Navigation />
+        <NavMobile />
         <BodyDiv>
         <PageTitle><TextSepSpecial/>Galeria</PageTitle>
         <ImagesContainer>

@@ -1,5 +1,6 @@
 import React from "react"
 import Navigation from "../components/navigation_extra"
+import NavMobile from '../components/nav_extra_mobile'
 import SEO from "../components/seo"
 import styled, { css } from "styled-components"
 
@@ -110,6 +111,7 @@ const Videos = () => (
   <OuterContainer>
     <SEO title="Vídeos" />
     <Navigation />
+    <NavMobile />
     <OuterVideoContainer>
     <PageTitle><TextSepSpecial/>Vídeos</PageTitle>
     <VideoArticle id="one">
