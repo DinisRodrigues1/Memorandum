@@ -3,6 +3,9 @@ import { Link, graphql } from 'gatsby'
 import Navigation from "./navigation_extra"
 import SEO from './seo'
 import styled, { css } from "styled-components"
+import NavMobile from './nav_extra_mobile'
+import { FormattedMessage } from 'react-intl'
+import Provider from './provider'
 
 const sizes = {
     desktop: 992,
@@ -55,6 +58,9 @@ const OuterPostContainer = styled.div`
     -webkit-box-shadow: 0 0 7px 1px #D4D0AB;
     box-shadow:         0 0 7px 1px #D4D0AB;
     border: thin solid #f1f1f1;
+    
+    ${media.phone`
+    margin-top: 30%;`}
 `
 const TextSepSpecial = styled.hr`
    margin-top: -14%;
@@ -74,19 +80,23 @@ function Story(props) {
 
     const post = props.data.markdownRemark;
     const { title } = post.frontmatter;
+    const locale = props.pageContext.locale;
 
     return (
+      <Provider locale={locale}>
         <OuterContainer>
-            <SEO title="Galeria de Imagens" />
-            <Navigation />
+            <SEO title="Historia" />
+            <Navigation locale={locale}/>
+            <NavMobile />
             <OuterPostContainer>
-            <PageTitle><TextSepSpecial/>Histórias</PageTitle>
+            <PageTitle><TextSepSpecial/><FormattedMessage id="Stories"/></PageTitle>
                 <div>
                     <h2>{title}</h2>
                     <div dangerouslySetInnerHTML={{ __html: post.html }} />
                 </div>
             </OuterPostContainer>
         </OuterContainer>
+      </Provider>
     )
 }
 

@@ -22,9 +22,9 @@ const sizes = {
   }, {})
   
 const NavDiv = styled.div`
-    height: 5vh;
+    height: 8vh;
     width: 60vw;
-    z-index: 1;
+    z-index: 2;
     text-align: center;
     margin: 0 auto;
     overflow: hidden;
@@ -41,7 +41,11 @@ const NavDiv = styled.div`
 
     ${media.phone`
         height: 8.5vh;
-    
+        position: absolute;
+        top: 2%;
+        z-index: 3;
+        left: 12%;
+        margin-bottom: 20em;
     `}
 `
 
@@ -57,10 +61,6 @@ const UnList = styled.ul`
 
 `
 
-const NavItems = styled.div`
-
-
-`
 
 const ListItems = styled.li`
     display: inline;  
@@ -86,7 +86,7 @@ const Home = styled(Link)`
     text-decoration: none;
     color: black;
     font-family: Verdana, sans-serif;
-    z-index: 1;
+    z-index: 2;
     border-bottom: 2px solid #DADFE1;
     padding: 0 1.1rem 2px 1.1rem;
     display: inline-block;
@@ -114,7 +114,7 @@ const Videos = styled(Link)`
     text-decoration: none;
     color: black;
     font-family: Verdana, sans-serif;
-    z-index: 1;
+    z-index: 2;
     margin-left: 15%;
     border-bottom: 2px solid #DADFE1;
     padding: 0 1.1rem 2px 1.1rem;
@@ -148,7 +148,7 @@ const Historias = styled(Link)`
     text-decoration: none;
     color: black;
     font-family: Verdana, sans-serif;
-    z-index: 1;
+    z-index: 2;
     margin-left: 15%;
     border-bottom: 2px solid #DADFE1;
     padding: 0 1.1rem 2px 1.1rem;
@@ -181,7 +181,7 @@ const Galeria = styled(Link)`
     text-decoration: none;
     color: black;
     font-family: Verdana, sans-serif;
-    z-index: 1;
+    z-index: 2;
     margin-left: 15%;
     border-bottom: 2px solid #DADFE1;
     padding: 0 1.2rem 2px 1.2rem;
@@ -210,8 +210,9 @@ const Galeria = styled(Link)`
     `}
 `
 const MobileMenu = styled.div`
+    ${media.phone`
     background-color: #FFFFFF;
-    position: absolute;
+    position: fixed;
     z-index: 2;
     padding: 1% 1% 0 1%;
     right: 5%; 
@@ -221,7 +222,7 @@ const MobileMenu = styled.div`
     box-shadow:         1px 1px 7px 1px #D4D0AB;
     border: thin solid #f1f1f1;
     padding-bottom: 5%;
-
+    `}
 `
 
 
@@ -235,7 +236,6 @@ class NavMobile extends Component {
      const { showMenu } = this.state
      return (
     <NavDiv>
-        <NavItems>
         <UnList>
         <LogoImageStyle  onClick={() => this.setState({ showMenu: !showMenu})}>
         <LogoImage/>
@@ -250,7 +250,6 @@ class NavMobile extends Component {
         </MobileMenu>
         )}
         </UnList>
-        </NavItems>
     </NavDiv> 
     )
     }

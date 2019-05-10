@@ -5,6 +5,8 @@ import styled, { css } from "styled-components"
 import GalImages from '../components/galleryImages'
 import { graphql } from 'gatsby'
 import NavMobile from '../components/nav_extra_mobile'
+import { FormattedMessage } from 'react-intl'
+import Provider from '../components/provider'
 
 
 const sizes = {
@@ -46,6 +48,7 @@ const OuterContainer = styled.div`
 
   ${media.phone`
     width: 95%;
+    padding: 9% 0;
   `}
 `
 
@@ -62,6 +65,10 @@ const BodyDiv = styled.div`
   -webkit-box-shadow: 0 0 7px 1px #D4D0AB;
   box-shadow:         0 0 7px 1px #D4D0AB;
   border: thin solid #f1f1f1;
+
+  ${media.phone`
+  margin-top: 30%;
+  `}
 `
 
 
@@ -108,14 +115,15 @@ const MarginDiv = styled.div`
     `
 
 
-const ImageGallery = ({ data }) => {    
+const ImageGallery = ({ pageContext: { locale } }) => {    
    
     return (
+    <Provider locale={locale}>
     <OuterContainer>
-        <Navigation />
+        <Navigation locale={locale} />
         <NavMobile />
         <BodyDiv>
-        <PageTitle><TextSepSpecial/>Galeria</PageTitle>
+        <PageTitle><TextSepSpecial/><FormattedMessage id="Gallery"/></PageTitle>
         <ImagesContainer>
         <GalImages />
        </ImagesContainer>
@@ -123,7 +131,7 @@ const ImageGallery = ({ data }) => {
         </BodyDiv>
         <SEO title="Galeria de Imagens" />
     </OuterContainer>
-  
+    </Provider>
         );
        }
 

@@ -42,11 +42,7 @@ const NavDiv = styled.nav`
     `}
 
     ${media.phone`
-        height: 8.5vh;
-        position: absolute;
-        top: 2%;
-        z-index: 2;
-        left: 12%;
+        height: 0
         display: none;
 
     `}

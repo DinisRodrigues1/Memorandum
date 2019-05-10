@@ -4,6 +4,8 @@ import Navigation from "../components/navigation_extra"
 import SEO from "../components/seo"
 import styled, { css } from "styled-components"
 import NavMobile from '../components/nav_extra_mobile'
+import { FormattedMessage } from 'react-intl'
+import Provider from '../components/provider'
 
 const sizes = {
   desktop: 992,
@@ -58,6 +60,9 @@ const BodyDiv = styled.div`
   -webkit-box-shadow: 0 0 7px 1px #D4D0AB;
   box-shadow:         0 0 7px 1px #D4D0AB;
   border: thin solid #f1f1f1;
+
+  ${media.phone`
+  margin-top: 30%; `}
 `
 
 const TextSep = styled.hr`
@@ -119,15 +124,19 @@ const PostDate = styled.span`
 
 const Historias = (props) => {
   const postList = props.data.allMarkdownRemark;
+  const locale = props.pageContext.locale;
+  
   return (
+  <Provider locale={locale}>
   <OuterContainer>
     <SEO title="Histórias" />
-    <Navigation />
+    <Navigation locale={locale}/>
     <NavMobile />
     <BodyDiv>
-    <PageTitle><TextSepSpecial/>Histórias</PageTitle>
+    <PageTitle><TextSepSpecial/><FormattedMessage id="Stories"/></PageTitle>
     <PostContainer>
       {postList.edges.map(({ node }, i) => (
+
         
         <PostLink to={node.fields.slug} className="link" >
         <PostList>
@@ -135,16 +144,19 @@ const Historias = (props) => {
         <PostDate>{node.frontmatter.date}</PostDate>
         <p>{node.excerpt}</p>
         </PostList>
+        <TextSep/>
         </PostLink>
         
     ))}
-    <TextSep/>
+    
     </PostContainer>
     </BodyDiv>
   </OuterContainer>
+  </Provider>
   )
 }
 
+console.log(Historias)
 
 export default Historias
 
@@ -158,14 +170,17 @@ export const listQuery = graphql`
           }
           excerpt(pruneLength: 250)
           frontmatter {
-            date(formatString: "dddd, DD/MM/YYYY", locale: "pt") 
+            date(formatString: "DD/MM/YYYY") 
             title
+            lang
           }
         }
       }
     }
   }
+ 
 `
+
 //add locale "en" to line 121 for english translation
 
 //Use example above for mass import of images

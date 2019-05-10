@@ -86,7 +86,7 @@ const Videos = styled(Link)`
   text-decoration: none;
   color: black;
   font-family: Verdana, sans-serif;
-  z-index: 1;
+  z-index: 2;
   border-bottom: 2px solid #DADFE1;
   padding: 0 1rem 2px 1rem;
   display: inline-block;
@@ -116,7 +116,7 @@ const Historias = styled(Link)`
   text-decoration: none;
   color: black;
   font-family: Verdana, sans-serif;
-  z-index: 1;
+  z-index: 2;
   margin-left: 15%;
   border-bottom: 2px solid #DADFE1;
   padding: 0 1rem 2px 1rem;
@@ -145,7 +145,7 @@ const Galeria = styled(Link)`
   text-decoration: none;
   color: black;
   font-family: Verdana, sans-serif;
-  z-index: 1;
+  z-index: 2;
   margin-left: 15%;
   border-bottom: 2px solid #DADFE1;
   padding: 0 1rem 2px 1rem;

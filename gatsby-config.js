@@ -62,7 +62,6 @@ module.exports = {
         name: "pages",
       },
     },
-    
  
 
     // this (optional) plugin enables Progressive Web App + Offline functionality

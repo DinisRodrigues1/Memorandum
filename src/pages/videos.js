@@ -3,6 +3,8 @@ import Navigation from "../components/navigation_extra"
 import NavMobile from '../components/nav_extra_mobile'
 import SEO from "../components/seo"
 import styled, { css } from "styled-components"
+import { FormattedMessage } from 'react-intl'
+import Provider from '../components/provider'
 
 const sizes = {
   desktop: 992,
@@ -51,10 +53,14 @@ const OuterContainer = styled.div`
 const OuterVideoContainer = styled.div`
   margin-top: 10%;
   padding: 1% 1% 0 1%;
+  margin-bottom: 6%;
   -moz-box-shadow:    0 0 7px 1px #D4D0AB;
   -webkit-box-shadow: 0 0 7px 1px #D4D0AB;
   box-shadow:         0 0 7px 1px #D4D0AB;
   border: thin solid #f1f1f1;
+  
+  ${media.phone`
+  margin-top: 30%;`}
 `
 
 const TextSep = styled.hr`
@@ -107,13 +113,14 @@ const IFrame = styled.iframe`
     display: block
 `
 
-const Videos = () => (
+const Videos = ({ pageContext: { locale }}) => (
+  <Provider locale={locale}>
   <OuterContainer>
     <SEO title="Vídeos" />
-    <Navigation />
+    <Navigation locale={locale} />
     <NavMobile />
     <OuterVideoContainer>
-    <PageTitle><TextSepSpecial/>Vídeos</PageTitle>
+    <PageTitle><TextSepSpecial/><FormattedMessage id="Videos"/></PageTitle>
     <VideoArticle id="one">
     <VideoContainer>
     <IFrame width="100%" height="75%"
@@ -147,6 +154,7 @@ const Videos = () => (
     </VideoArticle>
     </OuterVideoContainer>
   </OuterContainer>
+  </Provider>
 )
 
 export default Videos
