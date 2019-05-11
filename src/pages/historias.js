@@ -125,7 +125,7 @@ const PostDate = styled.span`
 const Historias = (props) => {
   const postList = props.data.allMarkdownRemark;
   const locale = props.pageContext.locale;
-  
+  console.log(postList.edges)
   return (
   <Provider locale={locale}>
   <OuterContainer>
@@ -136,8 +136,7 @@ const Historias = (props) => {
     <PageTitle><TextSepSpecial/><FormattedMessage id="Stories"/></PageTitle>
     <PostContainer>
       {postList.edges.map(({ node }, i) => (
-
-        
+          node.frontmatter.lang == locale ?
         <PostLink to={node.fields.slug} className="link" >
         <PostList>
         <PostTitle>{node.frontmatter.title}</PostTitle>
@@ -146,6 +145,8 @@ const Historias = (props) => {
         </PostList>
         <TextSep/>
         </PostLink>
+        :
+        <div></div>
         
     ))}
     
