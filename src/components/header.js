@@ -3,7 +3,7 @@ import React from "react"
 import LogoOverlay from "./logoOverlay"
 import BgImage from "./BgImage"
 import styled, { css } from 'styled-components'
-import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
+import Helmet from 'react-helmet'
 
 
 const sizes = {
@@ -67,7 +67,7 @@ const LinkStyleOne = styled(Link)`
     top: 1%;
     left: 2000px;
     font-family: Verdana, sans-serif;
-    text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;
+    
 
     ${media.desktop`
       top: 1%;
@@ -94,7 +94,7 @@ const TextStyle = styled.span`
     left: 2.5%;
     z-index: 1;
     fontFamily: Verdana, sans-serif;
-    text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;
+    
 
     ${media.desktop`
       top: 0.6%;
@@ -119,7 +119,7 @@ const LinkStyleTwo = styled(Link)`
     z-index: 1;
     top: 1%;
     font-family: Verdana, sans-serif;
-    text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;
+  
 
     ${media.desktop`
       top: 0.6%;
@@ -173,13 +173,12 @@ const LogoBlock = styled.div`
     `}
   `
 
-  const languageName = {
-    en: "English",
-    pt: "Português"
-  }
 
 const Header = () => (
     <HeadDiv>
+       <Helmet>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    </Helmet>
       <BgImg/>
       <LogoBlock>
       <Logo/>

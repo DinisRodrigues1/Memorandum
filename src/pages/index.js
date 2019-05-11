@@ -9,6 +9,7 @@ import SocialImageFacebook from '../components/socialImageFacebook'
 import SocialImageInstagram from '../components/socialImageInstagram'
 import SocialImageYoutube from '../components/socialImageYoutube'
 import MailImage from '../components/mailImage'
+import Helmet from 'react-helmet'
 
 import Layout from "../components/layout"
 
@@ -73,9 +74,9 @@ const BodyDiv = styled.div`
 const TextSep = styled.hr`
    margin-left: -1.5%;
    margin-right: -1.5%;
-   border: medium solid #DADFE1;
+   border: medium solid #C8F7C5;
    color: #DADFE1;
-   background-color: #DADFE1;
+   background-color: #C8F7C5;
 `
 
 const SectionTitle = styled.h2`
@@ -114,11 +115,12 @@ const FooterPRight = styled.p`
 
 const Footer = styled.footer`
     width: 100%;
-    height: 41vh;
-    background-color: black;
-    color: white;
+    height: 35vh;
+    background-color: #D4D0AB;
+    color: black;
     bottom: 0;
     position: relative;
+    
     -moz-box-shadow:    0 -2px 4px 1px #D4D0AB;
     -webkit-box-shadow: 0 -2px 4px 1px #D4D0AB;
     box-shadow:         0 -2px 4px 1px #D4D0AB;
@@ -157,8 +159,8 @@ const Footer = styled.footer`
     
 
     & > ${FooterPLeft} {
-        float: left
-        width: 65%;
+        float: left;
+        width: 40%;
         display: inline-block;
         margin-bottom: 3%;
         padding: 2%;
@@ -177,22 +179,29 @@ const Footer = styled.footer`
     }
     & > ${FooterPRight} {
         float: right;
-        width: 56%;
+        width: 40%;
         display: inline-block;
         padding: 2%;
-        margin-right: -16%;
+        margin-right: -2%;
         height: 30%;
+        
+        ${media.desktop`
+        margin-right: 2.5%;`}
+
+        
 
         ${media.phone`
           width: 80%;
           height: 25%;
           float: none;
-          margin: 0 auto;
+          margin: 40% auto 0 auto;
           display: block;
           text-align: center;
+          
         `}
 
   }
+
 ` 
 const BodyBottom = styled.div`
       font-family: Verdana, sans-serif;
@@ -204,8 +213,9 @@ const ClearFix = styled.div`
 `
 
 const SocialLogos = styled.div`
-      margin: 3% auto;
+      margin: 1% auto 1% auto;
       text-align: center;
+      vertical-align: middle;
 
       ${media.desktop`
       margin: 7% auto;
@@ -222,12 +232,14 @@ const SocialLogos = styled.div`
      
 `
 
+
+
 const FBook = styled.a`
-      margin-right: 2%;
+      margin-right: 5%;
 `
 
 const IGram = styled.a`
-      margin-right: 2%;
+      margin-right: 5%;
   `
 
 const YTube = styled.a`
@@ -235,11 +247,23 @@ const YTube = styled.a`
 
 `
 
+const MailImageStyled = styled.span`
+   
+
+`
+const TextMail = styled.span`
+    vertical-align: text-bottom; 
+
+`
+
 /* Encontrar lógica para video player */ 
 const IndexPage = ( { pageContext: { locale } }) => (
 <>
     <Layout locale={ locale }>
-    </Layout>
+    <Helmet>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    </Helmet>
+    
     <SEO title="Home" keywords={[`Projeto`, `Universitário`, `Memorandum`, `Universidade de Aveiro`, `Departamento de Comunicação e Arte`, 
     `DECA`, `Novas Tecnologias da Comunicação`, `NTC`, `UC Projeto`, `University of Aveiro`, `Department of Communication and Art`, 
     `University Project`, `University`, `Project`, `Intergeracional`, `Comunicação`, `Communication`, `Intergenerational`]} />
@@ -248,7 +272,7 @@ const IndexPage = ( { pageContext: { locale } }) => (
         <BodyDiv>
           <SectionLatestBody>
             <TextSep/>
-              <SectionTitle>Última publicação</SectionTitle>
+              <SectionTitle><FormattedMessage id="LastPost"/></SectionTitle>
                 <SectionLatestText>
                     <SectionImagePos>
                     <SectionImage />
@@ -271,49 +295,36 @@ const IndexPage = ( { pageContext: { locale } }) => (
           </SectionLatestBody>
             <SectionAbout id="about">
             <TextSep/>
-              <SectionTitle>O projeto</SectionTitle>
+              <SectionTitle><FormattedMessage id="Project"/></SectionTitle>
               <p></p>
               <p>
-              <p><b>Nascimento</b></p>
-              <p><strong>Memorandum</strong> nasceu no âmbito do projeto final da licenciatura em Novas 
-              Tecnologias da Comunicação, da Universidade de Aveiro.
-              Este projeto nasce pelas mãos de Diana Nicolau, Dinis Rodrigues, Inês Melo 
-              e Joaquim Miranda sob a proposta e orientação de Maria João Antunes.</p>
+              <p><b><FormattedMessage id="Tit1"/></b></p>
+              <p><strong><FormattedMessage id="Mem"/></strong><FormattedMessage id="Txt1"/></p>
               <p></p>
-              <p><b>Objetivo</b></p>
-              <p><strong>Memorandum</strong> é um projeto que visa fortalecer o elo entre gerações passadas e 
-              as contemporâneas através da preservação de tradições, vivências e saberes. 
-              Este projeto pretende colmatar a perda de conhecimento relativo às vivências 
-              dos que nos antecederam, retratando assuntos de diferentes naturezas – sejam 
-              eles Histórias, Tradições, Costumes e Profissões. 
-              Procuramos ser uma plataforma de partilha intergeracional, com o propósito de, 
-              através do registo via fotografia e vídeo, manter vivas tradições e vivências 
-              de tempos passados.</p>
-              <p><strong>Memorandum</strong> assenta, não só, numa temática pouco explorada atualmente, como 
-              também, num formato audiovisual inovador e apelativo, procurando a aproximação ao 
-              seu público-alvo <i>(Jovens entre os 18 e 24 anos)</i>.</p>
+              <p><b><FormattedMessage id="Tit2"/></b></p>
+              <p><strong><FormattedMessage id="Mem2"/></strong> <FormattedMessage id="Txt2"/></p>
+              <p><strong><FormattedMessage id="Mem3"/></strong> <FormattedMessage id="Txt3"/><i><FormattedMessage id="Ital"/></i></p>
               </p>
             </SectionAbout>
             </BodyDiv>
           <Footer>
             <FooterPLeft>
-            © {new Date().getFullYear()}, Desenvolvido com
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
+           <p>Projeto desenvolvido por: Diana Nicolau, Dinis Rodrigues, Inês Melo e Joaquim Miranda</p> <p>Coordenado por: Maria João Antunes</p>
+           <p>Para contactar o projeto: <TextMail>projetomemorandum@gmail<wbr/>.com </TextMail></p>
             </FooterPLeft>
             <FooterPRight>
-              <MailImage/>&nbsp; projetomemorandum@gmail.com
+            <SocialLogos>
+              <FBook target="_blank" href="https://www.facebook.com/projetomemorandum/"><SocialImageFacebook/></FBook>
+              <IGram target="_blank" href="https://www.instagram.com/projetomemorandum/"><SocialImageInstagram/></IGram>
+              <YTube target="_blank" href="https://www.youtube.com/channel/UCvAXx7q7CPpz0n5_I-OQX9w"><SocialImageYoutube/></YTube>
+            </SocialLogos>
             </FooterPRight>
             <ClearFix></ClearFix>
-            <SocialLogos>
-              <FBook href="https://www.facebook.com/projetomemorandum/"><SocialImageFacebook/></FBook>
-              <IGram href="https://www.instagram.com/projetomemorandum/"><SocialImageInstagram/></IGram>
-              <YTube href="https://www.youtube.com/channel/UCvAXx7q7CPpz0n5_I-OQX9w"><SocialImageYoutube/></YTube>
-            </SocialLogos>
+           
           </Footer>
 
       </BodyBottom>
-  
+      </Layout>
       
       </>
      

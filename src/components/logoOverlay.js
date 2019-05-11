@@ -10,7 +10,7 @@ const LogoOverlay = () => (
     query {
         placeholderImage: file(relativePath: { eq: "Logo_for_website.png" }) {
           childImageSharp {
-            fluid(maxWidth: 812, maxHeight: 292, quality: 100) {
+            fluid(maxWidth: 1006, maxHeight: 410, quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }

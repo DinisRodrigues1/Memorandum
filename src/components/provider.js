@@ -19,5 +19,5 @@ const Provider = ({ locale, children }) => (
     {children}
   </IntlProvider>
 )
-console.log(Provider)
+
 export default Provider

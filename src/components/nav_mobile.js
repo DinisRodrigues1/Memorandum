@@ -1,7 +1,10 @@
-import { Link } from "gatsby"
 import React, { Component } from "react"
 import styled, { css } from 'styled-components'
 import LogoImage from './logoImage'
+import { FormattedMessage } from 'react-intl'
+import Provider from './provider'
+import LinkWrapper from './linkWrapper'
+import Helmet from 'react-helmet'
 
 const sizes = {
     desktop: 992,
@@ -82,18 +85,18 @@ const LogoImageStyle = styled.button`
   `}
 `
 
-const Videos = styled(Link)`
+const Videos = styled(LinkWrapper)`
   text-decoration: none;
   color: black;
   font-family: Verdana, sans-serif;
   z-index: 2;
-  border-bottom: 2px solid #DADFE1;
+  border-bottom: 2px solid #D4D0AB;
   padding: 0 1rem 2px 1rem;
   display: inline-block;
   background:
   linear-gradient(
-      to bottom, #DADFE1 0%,
-      #DADFE1 100%
+      to bottom, #D4D0AB 0%,
+      #D4D0AB 100%
     );
    background-position: 0 100%;
    background-repeat: repeat-x;
@@ -112,19 +115,19 @@ const Videos = styled(Link)`
   
 `
 
-const Historias = styled(Link)`
+const Historias = styled(LinkWrapper)`
   text-decoration: none;
   color: black;
   font-family: Verdana, sans-serif;
   z-index: 2;
   margin-left: 15%;
-  border-bottom: 2px solid #DADFE1;
+  border-bottom: 2px solid #D4D0AB;
   padding: 0 1rem 2px 1rem;
   display: inline-block;
   background:
   linear-gradient(
-      to bottom, #DADFE1 0%,
-      #DADFE1 100%
+      to bottom, #D4D0AB 0%,
+      #D4D0AB 100%
     );
    background-position: 0 100%;
    background-repeat: repeat-x;
@@ -141,19 +144,19 @@ const Historias = styled(Link)`
 `}
 `
 
-const Galeria = styled(Link)`
+const Galeria = styled(LinkWrapper)`
   text-decoration: none;
   color: black;
   font-family: Verdana, sans-serif;
   z-index: 2;
   margin-left: 15%;
-  border-bottom: 2px solid #DADFE1;
+  border-bottom: 2px solid #D4D0AB;
   padding: 0 1rem 2px 1rem;
   display: inline-block;
   background:
   linear-gradient(
-      to bottom, #DADFE1 0%,
-      #DADFE1 100%
+      to bottom, #D4D0AB 0%,
+      #D4D0AB 100%
     );
    background-position: 0 100%;
    background-repeat: repeat-x;
@@ -175,13 +178,14 @@ const MobileMenu = styled.div`
   ${media.phone`
   background-color: #FFFFFF;
   position: fixed;
+  backface-visibility: hidden; 
   z-index: 2;
   padding: 1% 1% 0 1%; 
   right: 5%; 
   width: 10em;
-  -moz-box-shadow:    1px 1px 7px 1px #D4D0AB;
-  -webkit-box-shadow: 1px 1px 7px 1px #D4D0AB;
-  box-shadow:         1px 1px 7px 1px #D4D0AB;
+  -moz-box-shadow:    1px 1px 7px 1px #777777;
+  -webkit-box-shadow: 1px 1px 7px 1px #777777;
+  box-shadow:         1px 1px 7px 1px #777777;
   border: thin solid #f1f1f1;
   padding-bottom: 3%;
   `}
@@ -197,22 +201,30 @@ constructor(props) {
 
 render() {
   const { showMenu } = this.state
+
+  const locale = this.props.locale
+
   return (
-  <NavDiv>
-    <UnList>
-    <LogoImageStyle onClick={() => this.setState({ showMenu: !showMenu})}>
-    <LogoImage/>
-    { showMenu ? true : false }
-    </LogoImageStyle>
-    { showMenu && (
-      <MobileMenu>
-    <ListItems><Videos to="/videos/">{"Vídeos"}</Videos></ListItems>
-    <ListItems><Historias to="/historias/">{"Histórias"}</Historias></ListItems>
-    <ListItems><Galeria to="/galeria/">{"Galeria"}</Galeria></ListItems>
-      </MobileMenu>
-    )}
-    </UnList>
-  </NavDiv>
+    <Provider locale={locale}>
+    <NavDiv>
+    <Helmet>
+      <meta name="viewport" content="minimum-scale=1"/>
+    </Helmet>
+        <UnList>
+        <LogoImageStyle  onClick={() => {this.setState({ showMenu : !showMenu})}}>
+        <LogoImage/>
+            { showMenu ? true : false }
+        </LogoImageStyle>
+        { showMenu && (
+        <MobileMenu>   
+        <ListItems><Videos to="/videos/"><FormattedMessage id="Videos"/></Videos></ListItems>
+        <ListItems><Historias to="/historias/"><FormattedMessage id="Stories"/></Historias></ListItems>
+        <ListItems><Galeria to="/galeria/"><FormattedMessage id="Gallery"/></Galeria></ListItems>
+        </MobileMenu>
+        )}
+        </UnList>
+    </NavDiv> 
+    </Provider>
   )
 }
 }

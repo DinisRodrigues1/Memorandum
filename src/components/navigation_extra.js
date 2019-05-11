@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React from "react"
 import styled, { css } from 'styled-components'
 import { FormattedMessage } from 'react-intl'
@@ -80,13 +79,13 @@ const Home = styled(LinkWrapper)`
     color: black;
     font-family: Verdana, sans-serif;
     z-index: 1;
-    border-bottom: 2px solid #DADFE1;
+    border-bottom: 2px solid #D4D0AB;
     padding: 0 1.1rem 2px 1.1rem;
     display: inline-block;
     background:
     linear-gradient(
-        to bottom, #DADFE1 0%,
-        #DADFE1 100%
+        to bottom, #D4D0AB 0%,
+        #D4D0AB 100%
       );
      background-position: 0 100%;
      background-repeat: repeat-x;
@@ -109,13 +108,13 @@ const Videos = styled(LinkWrapper)`
     font-family: Verdana, sans-serif;
     z-index: 1;
     margin-left: 15%;
-    border-bottom: 2px solid #DADFE1;
+    border-bottom: 2px solid #D4D0AB;
     padding: 0 1.1rem 2px 1.1rem;
     display: inline-block;
     background:
     linear-gradient(
-        to bottom, #DADFE1 0%,
-        #DADFE1 100%
+        to bottom, #D4D0AB 0%,
+        #D4D0AB 100%
       );
      background-position: 0 100%;
      background-repeat: repeat-x;
@@ -143,13 +142,13 @@ const Historias = styled(LinkWrapper)`
     font-family: Verdana, sans-serif;
     z-index: 1;
     margin-left: 15%;
-    border-bottom: 2px solid #DADFE1;
+    border-bottom: 2px solid #D4D0AB;
     padding: 0 1.1rem 2px 1.1rem;
     display: inline-block;
     background:
     linear-gradient(
-        to bottom, #DADFE1 0%,
-        #DADFE1 100%
+        to bottom, #D4D0AB 0%,
+        #D4D0AB 100%
       );
      background-position: 0 100%;
      background-repeat: repeat-x;
@@ -176,13 +175,13 @@ const Galeria = styled(LinkWrapper)`
     font-family: Verdana, sans-serif;
     z-index: 1;
     margin-left: 15%;
-    border-bottom: 2px solid #DADFE1;
+    border-bottom: 2px solid #D4D0AB;
     padding: 0 1.2rem 2px 1.2rem;
     display: inline-block;
     background:
     linear-gradient(
-        to bottom, #DADFE1 0%,
-        #DADFE1 100%
+        to bottom, #D4D0AB 0%,
+        #D4D0AB 100%
       );
      background-position: 0 100%;
      background-repeat: repeat-x;

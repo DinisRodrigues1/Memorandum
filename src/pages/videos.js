@@ -66,17 +66,17 @@ const OuterVideoContainer = styled.div`
 const TextSep = styled.hr`
    margin-left: -1.8%;
    margin-right: -1.8%;
-   border: medium solid #DADFE1;
-   color: #DADFE1;
-   background-color: #DADFE1;
+   border: medium solid #C8F7C5;
+   color: #C8F7C5;
+   background-color: #C8F7C5;
 `
 const TextSepSpecial = styled.hr`
    margin-top: -14%;
    margin-left: -1.8%;
    margin-right: -1.8%;
-   border: medium solid #DADFE1;
-   color: #DADFE1;
-   background-color: #DADFE1;
+   border: medium solid #C8F7C5;
+   color: #C8F7C5;
+   background-color: #C8F7C5;
 `
    
 const PageTitle = styled.h2`
@@ -118,7 +118,7 @@ const Videos = ({ pageContext: { locale }}) => (
   <OuterContainer>
     <SEO title="Vídeos" />
     <Navigation locale={locale} />
-    <NavMobile />
+    <NavMobile locale={locale} />
     <OuterVideoContainer>
     <PageTitle><TextSepSpecial/><FormattedMessage id="Videos"/></PageTitle>
     <VideoArticle id="one">

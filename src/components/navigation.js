@@ -1,6 +1,9 @@
 import { Link } from "gatsby"
-import React, { Component } from "react"
+import React from "react"
 import styled, { css } from 'styled-components'
+import { FormattedMessage } from 'react-intl'
+import Provider from './provider'
+import LinkWrapper from './linkWrapper'
 
 
 const sizes = {
@@ -75,18 +78,18 @@ const ListItems = styled.li`
 
 
 
-const Videos = styled(Link)`
+const Videos = styled(LinkWrapper)`
     text-decoration: none;
     color: black;
     font-family: Verdana, sans-serif;
     z-index: 1;
-    border-bottom: 2px solid #DADFE1;
+    border-bottom: 2px solid #D4D0AB;
     padding: 0 1rem 2px 1rem;
     display: inline-block;
     background:
     linear-gradient(
-        to bottom, #DADFE1 0%,
-        #DADFE1 100%
+        to bottom, #D4D0AB 0%,
+        #D4D0AB 100%
       );
      background-position: 0 100%;
      background-repeat: repeat-x;
@@ -105,19 +108,19 @@ const Videos = styled(Link)`
     
 `
 
-const Historias = styled(Link)`
+const Historias = styled(LinkWrapper)`
     text-decoration: none;
     color: black;
     font-family: Verdana, sans-serif;
     z-index: 1;
     margin-left: 15%;
-    border-bottom: 2px solid #DADFE1;
+    border-bottom: 2px solid #D4D0AB;
     padding: 0 1rem 2px 1rem;
     display: inline-block;
     background:
     linear-gradient(
-        to bottom, #DADFE1 0%,
-        #DADFE1 100%
+        to bottom, #D4D0AB 0%,
+        #D4D0AB 100%
       );
      background-position: 0 100%;
      background-repeat: repeat-x;
@@ -134,19 +137,19 @@ const Historias = styled(Link)`
   `}
 `
 
-const Galeria = styled(Link)`
+const Galeria = styled(LinkWrapper)`
     text-decoration: none;
     color: black;
     font-family: Verdana, sans-serif;
     z-index: 1;
     margin-left: 15%;
-    border-bottom: 2px solid #DADFE1;
+    border-bottom: 2px solid #D4D0AB;
     padding: 0 1rem 2px 1rem;
     display: inline-block;
     background:
     linear-gradient(
-        to bottom, #DADFE1 0%,
-        #DADFE1 100%
+        to bottom, #D4D0AB 0%,
+        #D4D0AB 100%
       );
      background-position: 0 100%;
      background-repeat: repeat-x;
@@ -167,21 +170,23 @@ const Galeria = styled(Link)`
 
 
 
-class Navigation extends Component {
+const Navigation = (props) => {
+    const locale = props.locale  
 
-  render() {
     return (
+    <Provider locale={locale}>
     <NavDiv>
       <NavItems>
       <UnList>
-      <ListItems><Videos to="/videos/">{"Vídeos"}</Videos></ListItems>
-      <ListItems><Historias to="/historias/">{"Histórias"}</Historias></ListItems>
-      <ListItems><Galeria to="/galeria/">{"Galeria"}</Galeria></ListItems>
+      <ListItems><Videos to="/videos/"><FormattedMessage id="Videos"/></Videos></ListItems>
+      <ListItems><Historias to="/historias"><FormattedMessage id="Stories"/></Historias></ListItems>
+      <ListItems><Galeria to="/galeria/"><FormattedMessage id="Gallery"/></Galeria></ListItems>
       </UnList>
       </NavItems>
     </NavDiv>
+    </Provider>
     )
-  }
+  
 }
 
 

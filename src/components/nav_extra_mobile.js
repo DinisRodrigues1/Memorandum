@@ -1,7 +1,9 @@
-import { Link } from "gatsby"
 import React, { Component } from "react"
 import styled, { css } from 'styled-components'
 import LogoImage from './logoImage'
+import { FormattedMessage } from 'react-intl'
+import Provider from './provider'
+import LinkWrapper from './linkWrapper'
 
 const sizes = {
     desktop: 992,
@@ -82,18 +84,18 @@ const LogoImageStyle = styled.button`
     `}
 `
 
-const Home = styled(Link)`
+const Home = styled(LinkWrapper)`
     text-decoration: none;
     color: black;
     font-family: Verdana, sans-serif;
     z-index: 2;
-    border-bottom: 2px solid #DADFE1;
+    border-bottom: 2px solid #D4D0AB;
     padding: 0 1.1rem 2px 1.1rem;
     display: inline-block;
     background:
     linear-gradient(
-        to bottom, #DADFE1 0%,
-        #DADFE1 100%
+        to bottom, #D4D0AB 0%,
+        #D4D0AB 100%
       );
      background-position: 0 100%;
      background-repeat: repeat-x;
@@ -110,53 +112,19 @@ const Home = styled(Link)`
     `}
 `
 
-const Videos = styled(Link)`
+const Videos = styled(LinkWrapper)`
     text-decoration: none;
     color: black;
     font-family: Verdana, sans-serif;
     z-index: 2;
     margin-left: 15%;
-    border-bottom: 2px solid #DADFE1;
+    border-bottom: 2px solid #D4D0AB;
     padding: 0 1.1rem 2px 1.1rem;
     display: inline-block;
     background:
     linear-gradient(
-        to bottom, #DADFE1 0%,
-        #DADFE1 100%
-      );
-     background-position: 0 100%;
-     background-repeat: repeat-x;
-     background-size: 2px 2px;
-    transition: background-size .2s;
-
-    &:hover {
-        background-size: 4px 50px;
-    }
-
-    ${media.desktop`
-        margin-left: 3.5%;
-    `}
-
-    ${media.phone`
-    margin: 0;
-    margin-top: 1.5em;
-    `}
-
-`
-
-const Historias = styled(Link)`
-    text-decoration: none;
-    color: black;
-    font-family: Verdana, sans-serif;
-    z-index: 2;
-    margin-left: 15%;
-    border-bottom: 2px solid #DADFE1;
-    padding: 0 1.1rem 2px 1.1rem;
-    display: inline-block;
-    background:
-    linear-gradient(
-        to bottom, #DADFE1 0%,
-        #DADFE1 100%
+        to bottom, #D4D0AB 0%,
+        #D4D0AB 100%
       );
      background-position: 0 100%;
      background-repeat: repeat-x;
@@ -175,21 +143,55 @@ const Historias = styled(Link)`
     margin: 0;
     margin-top: 1.5em;
     `}
+
 `
 
-const Galeria = styled(Link)`
+const Historias = styled(LinkWrapper)`
     text-decoration: none;
     color: black;
     font-family: Verdana, sans-serif;
     z-index: 2;
     margin-left: 15%;
-    border-bottom: 2px solid #DADFE1;
+    border-bottom: 2px solid #D4D0AB;
+    padding: 0 1.1rem 2px 1.1rem;
+    display: inline-block;
+    background:
+    linear-gradient(
+        to bottom, #D4D0AB 0%,
+        #D4D0AB 100%
+      );
+     background-position: 0 100%;
+     background-repeat: repeat-x;
+     background-size: 2px 2px;
+    transition: background-size .2s;
+
+    &:hover {
+        background-size: 4px 50px;
+    }
+
+    ${media.desktop`
+        margin-left: 3.5%;
+    `}
+
+    ${media.phone`
+    margin: 0;
+    margin-top: 1.5em;
+    `}
+`
+
+const Galeria = styled(LinkWrapper)`
+    text-decoration: none;
+    color: black;
+    font-family: Verdana, sans-serif;
+    z-index: 2;
+    margin-left: 15%;
+    border-bottom: 2px solid #D4D0AB;
     padding: 0 1.2rem 2px 1.2rem;
     display: inline-block;
     background:
     linear-gradient(
-        to bottom, #DADFE1 0%,
-        #DADFE1 100%
+        to bottom, #D4D0AB 0%,
+        #D4D0AB 100%
       );
      background-position: 0 100%;
      background-repeat: repeat-x;
@@ -229,28 +231,33 @@ const MobileMenu = styled.div`
 class NavMobile extends Component {
     constructor(props) {
         super(props);
-        this.state = { showMenu: false };
+        this.state = { showMenu: false};
       }
-
+    
     render() {
-     const { showMenu } = this.state
+     const { showMenu } = false
+   
+     const locale = this.props.locale
+
      return (
+    <Provider locale={locale}>
     <NavDiv>
         <UnList>
-        <LogoImageStyle  onClick={() => this.setState({ showMenu: !showMenu})}>
+        <LogoImageStyle  onClick={() => {this.setState({ showMenu: !showMenu})}}>
         <LogoImage/>
             { showMenu ? true : false }
         </LogoImageStyle>
         { showMenu && (
         <MobileMenu>   
-        <ListItems><Home to ="/">{"Home"}</Home></ListItems>
-        <ListItems><Videos to="/videos/">{"Vídeos"}</Videos></ListItems>
-        <ListItems><Historias to="/historias/">{"Histórias"}</Historias></ListItems>
-        <ListItems><Galeria to="/galeria/">{"Galeria"}</Galeria></ListItems>
+        <ListItems><Home to ="/"><FormattedMessage id="Home"/></Home></ListItems>
+        <ListItems><Videos to="/videos/"><FormattedMessage id="Videos"/></Videos></ListItems>
+        <ListItems><Historias to="/historias/"><FormattedMessage id="Stories"/></Historias></ListItems>
+        <ListItems><Galeria to="/galeria/"><FormattedMessage id="Gallery"/></Galeria></ListItems>
         </MobileMenu>
         )}
         </UnList>
     </NavDiv> 
+    </Provider>
     )
     }
 }

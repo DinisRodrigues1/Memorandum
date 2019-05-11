@@ -5,6 +5,7 @@ import NavMobile from './nav_mobile'
 import "./layout.css"
 import styled, { css } from "styled-components"
 import { IntlProvider, addLocaleData } from 'react-intl'
+import Helmet from 'react-helmet'
 
 // Locale data
 import enData from 'react-intl/locale-data/en'
@@ -49,17 +50,22 @@ const Padding = styled.div`
 `
 
 
-const Layout = ({ locale }) => {
+const Layout = ({ locale, children }) => {
 
     return (
       <>
-      <IntlProvider locale={locale} messages={messages[locale]}>
-      
-  </IntlProvider>
+       <Helmet>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    </Helmet>
       <Header siteTitle={"Memorandum | Home"} />
       <Padding></Padding>
-      <Navigation />
-      <NavMobile/>
+      <Navigation locale={locale}/>
+      
+      <NavMobile locale={locale}/>
+      <IntlProvider locale={locale} messages={messages[locale]}>
+      <>{ children }</>
+      </IntlProvider>
+      
       </>
     )}
   

@@ -1,5 +1,5 @@
 {
-    "LastPost": "Here",
+    "LastPost": "Última publicação",
     "Project": "O projeto",
     "Tit1": "Nascimento",
     "Mem": "Memorandum",
@@ -14,5 +14,6 @@
     "Gallery": "Galeria",
     "Videos": "Vídeos",
     "Stories": "Histórias",
-    "Home": "Home"
+    "Home": "Home",
+    "Dev": "Desenvolvido com "
 }

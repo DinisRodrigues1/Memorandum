@@ -8,7 +8,7 @@ const SocialImageYoutube = () => (
     query {
         youtube: file(relativePath: { eq: "youtube.png" }) {
           childImageSharp {
-            fixed(width: 45, height: 32, quality: 100) {
+            fixed(width: 42, height: 30, quality: 100) {
               ...GatsbyImageSharpFixed
             }
           }
