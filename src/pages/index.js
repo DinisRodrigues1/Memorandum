@@ -1,16 +1,13 @@
 import React from "react"
 import SEO from "../components/seo"
-import { StaticQuery, graphql } from "gatsby"
-import PropTypes from 'prop-types'
+import { graphql } from "gatsby"
 import styled, { css } from "styled-components"
 import { FormattedMessage } from 'react-intl'
 import SquareImg from '../components/squareImg'
 import SocialImageFacebook from '../components/socialImageFacebook'
 import SocialImageInstagram from '../components/socialImageInstagram'
 import SocialImageYoutube from '../components/socialImageYoutube'
-import MailImage from '../components/mailImage'
 import Helmet from 'react-helmet'
-
 import Layout from "../components/layout"
 
 
@@ -23,7 +20,6 @@ const sizes = {
 
 }
 
-// Iterate through the sizes and create a media template
 const media = Object.keys(sizes).reduce((acc, label) => {
   acc[label] = (...args) => css`
     @media (max-width: ${sizes[label] / 16}em) {
@@ -256,10 +252,16 @@ const TextMail = styled.span`
 
 `
 
-/* Encontrar lógica para video player */ 
-const IndexPage = ( { pageContext: { locale } }) => (
+
+const IndexPage = (props) => {
+  console.log(props)
+  const postList = props.data.allMarkdownRemark;
+  const locale = props.pageContext.locale;
+  
+  return (
+
 <>
-    <Layout locale={ locale }>
+    <Layout locale={locale}>
     <Helmet>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     </Helmet>
@@ -277,20 +279,16 @@ const IndexPage = ( { pageContext: { locale } }) => (
                     <SectionImagePos>
                     <SectionImage />
                     </SectionImagePos>
+                    {postList.edges[1].node.frontmatter.lang === locale && locale === "pt" ?
+                      
                     <Text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Nam tempor, lectus in imperdiet sollicitudin, ex est mattis 
-                    tellus, in fermentum odio neque nec odio. Vestibulum vehicula 
-                    rutrum feugiat. Sed hendrerit tempus lacus sed consequat. Aliquam 
-                    eu aliquam nunc. Morbi quis venenatis enim, sed ultricies ante. 
-                    Etiam quis mi et nisl sagittis lacinia nec nec neque. Morbi et 
-                    sollicitudin orci. Cras vitae eleifend ligula. Proin vel turpis 
-                    facilisis erat scelerisque condimentum. Ut ut varius nibh. 
-                    Proin sodales magna vitae accumsan mollis. Mauris placerat 
-                    mattis lectus et efficitur. Pellentesque at ligula eget odio 
-                    rhoncus commodo. Mauris vestibulum facilisis massa, a pulvinar 
-                    eros varius et. Donec et facilisis ligula.
+                      {postList.edges[1].node.excerpt}                   
                     </Text>
+                     : 
+                       <Text>
+                        {postList.edges[0].node.excerpt}
+                       </Text>
+                       }
                 </SectionLatestText>
           </SectionLatestBody>
             <SectionAbout id="about">
@@ -326,10 +324,31 @@ const IndexPage = ( { pageContext: { locale } }) => (
       </BodyBottom>
       </Layout>
       
-      </>
-     
+      </>  
 )
+} 
  
 
-
 export default IndexPage
+
+
+export const listQuery = graphql`
+  query ListQuery {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          fields{
+            slug
+          }
+          excerpt(pruneLength: 250)
+          frontmatter {
+            date(formatString: "DD/MM/YYYY") 
+            title
+            lang
+          }
+        }
+      }
+    }
+  }
+ 
+`

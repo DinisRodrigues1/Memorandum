@@ -116,7 +116,7 @@ const LinkStyleTwo = styled(Link)`
     left: 4%;
     text-decoration: none;
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     top: 1%;
     font-family: Verdana, sans-serif;
   

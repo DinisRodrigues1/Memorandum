@@ -235,7 +235,7 @@ class NavMobile extends Component {
       }
     
     render() {
-     const { showMenu } = false
+     const { showMenu } = this.state
    
      const locale = this.props.locale
 

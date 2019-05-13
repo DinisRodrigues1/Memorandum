@@ -138,15 +138,3 @@ const ImageGallery = ({ pageContext: { locale } }) => {
 
 
 export default ImageGallery
-
-
-/*export const query = graphql`
-      query Gallery($locale: String) {
-        file(name: { eq: $locale }, relativeDirectory: { eq: "galeria" }) {
-          edges {
-            hello
-          }
-        }
-      }
-    `
-*/ 

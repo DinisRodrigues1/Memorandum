@@ -49,6 +49,7 @@ const sizes = {
       top: 2%;
       z-index: 2;
       left: 12%;
+      width: 85%;
 
   `}
 `

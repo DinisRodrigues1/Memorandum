@@ -13,7 +13,6 @@ const sizes = {
   phone: 576,
 }
 
-// Iterate through the sizes and create a media template
 const media = Object.keys(sizes).reduce((acc, label) => {
   acc[label] = (...args) => css`
     @media (max-width: ${sizes[label] / 16}em) {
@@ -162,7 +161,7 @@ console.log(Historias)
 export default Historias
 
 export const listQuery = graphql`
-  query ListQuery {
+  query ListsQuery {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
@@ -181,7 +180,3 @@ export const listQuery = graphql`
   }
  
 `
-
-//add locale "en" to line 121 for english translation
-
-//Use example above for mass import of images
