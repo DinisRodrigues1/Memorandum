@@ -83,8 +83,9 @@ const TextSepSpecial = styled.hr`
 
 const PageTitle = styled.h2`
   margin-top: 15%;
-  margin-bottom: 10%;
+  margin-bottom: 6.4%;
 `
+//When posts are added change margin-bottom back to 10% (PageTitle)
 
 const PostLink = styled(Link)`
   text-decoration: none;
@@ -101,9 +102,9 @@ const PostList = styled.div`
   font-family: Verdana, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  color: black;
+  
 `
-
+//color: black; <-- add back to PostList
 const PostTitle = styled.h1`
   margin-bottom: 5%;
   color: #000;
