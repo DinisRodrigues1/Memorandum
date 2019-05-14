@@ -129,7 +129,7 @@ const Videos = ({ pageContext: { locale }}) => (
      </VideoArticle>
     :
       <VideoArticle>
-          <h2>Videos will be added soons</h2>
+          <h2>Videos will be added soon</h2>
       <TextSep/>
       </VideoArticle>
     }
