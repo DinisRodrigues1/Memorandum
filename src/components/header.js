@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import LogoOverlay from "./logoOverlay"
-import BgImage from "./BgImage"
+import BgImage from "./bgImage"
 import styled, { css } from 'styled-components'
 import Helmet from 'react-helmet'
 
