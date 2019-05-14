@@ -134,7 +134,20 @@ const Historias = (props) => {
     <BodyDiv>
     <PageTitle><TextSepSpecial/><FormattedMessage id="Stories"/></PageTitle>
     <PostContainer>
-      {postList.edges.map(({ node }, i) => (
+    {postList.edges[1].node.frontmatter.lang === locale && locale === "pt" ?
+    <PostList>
+    <PostTitle></PostTitle>
+    <PostDate></PostDate>
+    <p><h2>Novidades em breve</h2></p>
+    </PostList>
+    :
+    <PostList>
+        <PostTitle></PostTitle>
+        <PostDate></PostDate>
+        <p><h2>Stories will be added soon</h2></p>
+        </PostList>
+  }
+        {/*{postList.edges.map(({ node }, i) => (
           node.frontmatter.lang == locale ?
         <PostLink to={node.fields.slug} className="link" >
         <PostList>
@@ -148,7 +161,7 @@ const Historias = (props) => {
         <div></div>
         
     ))}
-    
+      */}
     </PostContainer>
     </BodyDiv>
   </OuterContainer>

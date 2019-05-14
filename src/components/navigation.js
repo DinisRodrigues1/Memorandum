@@ -32,7 +32,7 @@ const NavDiv = styled.nav`
     text-align: center;
     z-index: 1;
     overflow: hidden;
-
+    margin-top: 2%;
 
     ${media.desktop`
         width: 80%;

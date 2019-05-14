@@ -114,6 +114,7 @@ const IFrame = styled.iframe`
 `
 
 const Videos = ({ pageContext: { locale }}) => (
+ 
   <Provider locale={locale}>
   <OuterContainer>
     <SEO title="Vídeos" />
@@ -121,7 +122,19 @@ const Videos = ({ pageContext: { locale }}) => (
     <NavMobile locale={locale} />
     <OuterVideoContainer>
     <PageTitle><TextSepSpecial/><FormattedMessage id="Videos"/></PageTitle>
-    <VideoArticle id="one">
+
+    {locale === "pt" ?
+     <VideoArticle>
+          <h2>Novidades brevemente</h2>
+       <TextSep/>
+     </VideoArticle>
+    :
+      <VideoArticle>
+          <h2>Videos will be added soons</h2>
+      <TextSep/>
+      </VideoArticle>
+    }
+   {/*<VideoArticle id="one">
     <VideoContainer>
     <IFrame width="100%" height="75%"
     src="https://www.youtube.com/embed/tgbNymZ7vqY"
@@ -152,6 +165,7 @@ const Videos = ({ pageContext: { locale }}) => (
     <VideoText>Something something this person</VideoText>
     <TextSep />
     </VideoArticle>
+*/}
     </OuterVideoContainer>
   </OuterContainer>
   </Provider>
