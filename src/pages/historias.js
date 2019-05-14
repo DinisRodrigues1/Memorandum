@@ -20,7 +20,7 @@ const media = Object.keys(sizes).reduce((acc, label) => {
     }
 
   `
-console.log(acc);
+  
   return acc
 }, {})
 
@@ -67,24 +67,25 @@ const BodyDiv = styled.div`
 const TextSep = styled.hr`
    margin-left: -1.8%;
    margin-right: -1.8%;
-   border: medium solid #C8F7C5;
-   color: #C8F7C5;
-   background-color: #C8F7C5;
+   border: medium solid #DADFE1;
+   color: #DADFE1;
+   background-color: #DADFE1;
 `
 
 const TextSepSpecial = styled.hr`
    margin-top: -14%;
    margin-left: -1.8%;
    margin-right: -1.8%;
-   border: medium solid #C8F7C5;
-   color: #C8F7C5;
-   background-color: #C8F7C5;
+   border: medium solid #DADFE1;
+   color: #DADFE1;
+   background-color: #DADFE1;
 `
 
 const PageTitle = styled.h2`
   margin-top: 15%;
-  margin-bottom: 10%;
+  margin-bottom: 6.4%;
 `
+//When posts are added change margin-bottom back to 10% (PageTitle)
 
 const PostLink = styled(Link)`
   text-decoration: none;
@@ -101,9 +102,9 @@ const PostList = styled.div`
   font-family: Verdana, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  color: black;
+  
 `
-
+//color: black; <-- add back to PostList
 const PostTitle = styled.h1`
   margin-bottom: 5%;
   color: #000;
@@ -124,7 +125,6 @@ const PostDate = styled.span`
 const Historias = (props) => {
   const postList = props.data.allMarkdownRemark;
   const locale = props.pageContext.locale;
-  console.log(postList.edges)
   return (
   <Provider locale={locale}>
   <OuterContainer>
@@ -134,7 +134,22 @@ const Historias = (props) => {
     <BodyDiv>
     <PageTitle><TextSepSpecial/><FormattedMessage id="Stories"/></PageTitle>
     <PostContainer>
-      {postList.edges.map(({ node }, i) => (
+    {postList.edges[1].node.frontmatter.lang === locale && locale === "pt" ?
+    <PostList>
+    <PostTitle></PostTitle>
+    <PostDate></PostDate>
+    <h2>Novidades brevemente</h2>
+    <TextSep/>
+    </PostList>
+    :
+    <PostList>
+        <PostTitle></PostTitle>
+        <PostDate></PostDate>
+        <h2>Stories will be added soon</h2>
+        <TextSep/>
+        </PostList>
+  }
+        {/*{postList.edges.map(({ node }, i) => (
           node.frontmatter.lang == locale ?
         <PostLink to={node.fields.slug} className="link" >
         <PostList>
@@ -148,7 +163,7 @@ const Historias = (props) => {
         <div></div>
         
     ))}
-    
+      */}
     </PostContainer>
     </BodyDiv>
   </OuterContainer>

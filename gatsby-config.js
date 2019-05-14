@@ -8,10 +8,12 @@ module.exports = {
   siteMetadata: {
     title: `Memorandum`,
     description: `Website criado para o projeto Memorandum UC Projeto 2019 UA`,
-    author: `@DinisRodrigues`,
+    author: `@DinisTrabuco`,
+    siteUrl: `https://memorandum.netlify.com`,
     defaultLanguage,
     supportedLanguages
   },
+  plugins: [`gatsby-plugin-sitemap`],
   plugins: [
     {
       resolve: `gatsby-transformer-remark`,
@@ -50,7 +52,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `src/images/memo_small.png`, // This path is relative to the root of the site.
+        icon: `src/images/memo_small.png`, 
       },
     },
       `gatsby-transformer-remark`,

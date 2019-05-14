@@ -10,10 +10,7 @@ import SocialImageYoutube from '../components/socialImageYoutube'
 import Helmet from 'react-helmet'
 import Layout from "../components/layout"
 
-
-
 const sizes = {
-  
   desktop: 992,
   tablet: 768,
   phone: 576,
@@ -27,7 +24,7 @@ const media = Object.keys(sizes).reduce((acc, label) => {
     }
 
   `
-console.log(acc);
+
   return acc
 }, {})
 
@@ -70,9 +67,9 @@ const BodyDiv = styled.div`
 const TextSep = styled.hr`
    margin-left: -1.5%;
    margin-right: -1.5%;
-   border: medium solid #C8F7C5;
+   border: medium solid #DADFE1;
    color: #DADFE1;
-   background-color: #C8F7C5;
+   background-color: #DADFE1;
 `
 
 const SectionTitle = styled.h2`
@@ -81,6 +78,7 @@ const SectionTitle = styled.h2`
 const SectionLatestText = styled.article`
     display: inline;
     text-align: justify;
+    float: left;
     
     & > ${Text} {
       display: inline;
@@ -103,6 +101,7 @@ const SectionAbout = styled.section`
 
 const FooterPLeft = styled.p`
       width: 20%;
+      font-size: 90%;
 `
 
 const FooterPRight = styled.p`
@@ -111,7 +110,7 @@ const FooterPRight = styled.p`
 
 const Footer = styled.footer`
     width: 100%;
-    height: 35vh;
+    height: 28vh;
     background-color: #D4D0AB;
     color: black;
     bottom: 0;
@@ -120,13 +119,15 @@ const Footer = styled.footer`
     -moz-box-shadow:    0 -2px 4px 1px #D4D0AB;
     -webkit-box-shadow: 0 -2px 4px 1px #D4D0AB;
     box-shadow:         0 -2px 4px 1px #D4D0AB;
-    border-top: thin solid #f1f1f1;
+    border-top: thin solid #D4D0AB;
     padding-top: 1%;
+    font-size: 90%;
 
     ${media.desktop`
       width: 100%;
-      height: 27vh;
-      background-color: black;
+      height: 24vh;
+      font-size: 95%;
+      background-color: #D4D0AB;
       color: white;
       bottom: 0;
       position: relative;
@@ -135,8 +136,8 @@ const Footer = styled.footer`
     
     ${media.tablet`
       width: 100%;
-      height: 40vh;
-      background-color: black;
+      height: 29vh;
+      background-color: #D4D0AB;
       color: white;
       bottom: 0;
       position: relative;
@@ -145,12 +146,13 @@ const Footer = styled.footer`
 
     ${media.phone`
       width: 100%;
-      height: 60vh;
-      background-color: black;
+      height: 58vh;
+      background-color: #D4D0AB;
       color: white;
       bottom: 0;
       position: relative;
-      padding-top: 10%;`
+      padding-top: 10%;
+      font-size: 110%;`
       }
     
 
@@ -248,8 +250,15 @@ const MailImageStyled = styled.span`
 
 `
 const TextMail = styled.span`
-    vertical-align: text-bottom; 
+     
 
+`
+const Space = styled.span`
+  margin-bottom: 0.5em;
+  display: inline-block;
+  ${media.phone`
+  margin-bottom: 1em;
+  `}
 `
 
 
@@ -276,7 +285,13 @@ const IndexPage = (props) => {
             <TextSep/>
               <SectionTitle><FormattedMessage id="LastPost"/></SectionTitle>
                 <SectionLatestText>
-                    <SectionImagePos>
+                {postList.edges[1].node.frontmatter.lang === locale && locale === "pt" ?
+                  <Text><h2>Novidades brevemente</h2></Text>
+                  :
+                  <Text>
+                        <h2>More news soon</h2>
+                       </Text>
+  /*    <SectionImagePos>
                     <SectionImage />
                     </SectionImagePos>
                     {postList.edges[1].node.frontmatter.lang === locale && locale === "pt" ?
@@ -289,6 +304,7 @@ const IndexPage = (props) => {
                         {postList.edges[0].node.excerpt}
                        </Text>
                        }
+                       */} 
                 </SectionLatestText>
           </SectionLatestBody>
             <SectionAbout id="about">
@@ -307,8 +323,8 @@ const IndexPage = (props) => {
             </BodyDiv>
           <Footer>
             <FooterPLeft>
-           <p>Projeto desenvolvido por: Diana Nicolau, Dinis Rodrigues, Inês Melo e Joaquim Miranda</p> <p>Coordenado por: Maria João Antunes</p>
-           <p>Para contactar o projeto: <TextMail>projetomemorandum@gmail<wbr/>.com </TextMail></p>
+           <Space><FormattedMessage id="Dev"/></Space><br/> <Space><FormattedMessage id="Coor"/></Space><br/>
+           <Space><FormattedMessage id="Contact"/><TextMail>projetomemorandum@gmail<wbr/>.com </TextMail></Space>
             </FooterPLeft>
             <FooterPRight>
             <SocialLogos>

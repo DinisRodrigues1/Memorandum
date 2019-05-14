@@ -20,14 +20,13 @@ const messages = { en, pt }
 addLocaleData([...enData, ...ptData])
 
 const sizes = {
-  
   desktop: 992,
   tablet: 768,
   phone: 576,
 
 }
 
-// Iterate through the sizes and create a media template
+
 const media = Object.keys(sizes).reduce((acc, label) => {
   acc[label] = (...args) => css`
     @media (max-width: ${sizes[label] / 16}em) {
@@ -35,7 +34,7 @@ const media = Object.keys(sizes).reduce((acc, label) => {
     }
 
   `
-console.log(acc);
+
   return acc
 }, {})
 
