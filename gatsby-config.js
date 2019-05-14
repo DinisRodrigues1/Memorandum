@@ -9,9 +9,11 @@ module.exports = {
     title: `Memorandum`,
     description: `Website criado para o projeto Memorandum UC Projeto 2019 UA`,
     author: `@DinisRodrigues`,
+    siteUrl: 'https://memorandum.netlify.com',
     defaultLanguage,
     supportedLanguages
   },
+  plugins: ['gatsby-plugin-sitemap'],
   plugins: [
     {
       resolve: `gatsby-transformer-remark`,

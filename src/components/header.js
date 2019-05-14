@@ -146,7 +146,7 @@ const BgImg = styled(BgImage)`
 
 const LogoBlock = styled.div`
     position: relative;
-    top: -82%;
+    top: -85%;
     z-index: 1;
     height: 292px;
     width: 812px;

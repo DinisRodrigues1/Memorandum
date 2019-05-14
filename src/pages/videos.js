@@ -12,7 +12,6 @@ const sizes = {
   phone: 576,
 }
 
-// Iterate through the sizes and create a media template
 const media = Object.keys(sizes).reduce((acc, label) => {
   acc[label] = (...args) => css`
     @media (max-width: ${sizes[label] / 16}em) {
@@ -20,7 +19,7 @@ const media = Object.keys(sizes).reduce((acc, label) => {
     }
 
   `
-console.log(acc);
+
   return acc
 }, {})
 
@@ -66,17 +65,17 @@ const OuterVideoContainer = styled.div`
 const TextSep = styled.hr`
    margin-left: -1.8%;
    margin-right: -1.8%;
-   border: medium solid #C8F7C5;
-   color: #C8F7C5;
-   background-color: #C8F7C5;
+   border: medium solid #DADFE1;
+   color: #DADFE1;
+   background-color: #DADFE1;
 `
 const TextSepSpecial = styled.hr`
    margin-top: -14%;
    margin-left: -1.8%;
    margin-right: -1.8%;
-   border: medium solid #C8F7C5;
-   color: #C8F7C5;
-   background-color: #C8F7C5;
+   border: medium solid #DADFE1;
+   color: #DADFE1;
+   background-color: #DADFE1;
 `
    
 const PageTitle = styled.h2`

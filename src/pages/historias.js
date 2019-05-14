@@ -20,7 +20,7 @@ const media = Object.keys(sizes).reduce((acc, label) => {
     }
 
   `
-console.log(acc);
+  
   return acc
 }, {})
 
@@ -67,18 +67,18 @@ const BodyDiv = styled.div`
 const TextSep = styled.hr`
    margin-left: -1.8%;
    margin-right: -1.8%;
-   border: medium solid #C8F7C5;
-   color: #C8F7C5;
-   background-color: #C8F7C5;
+   border: medium solid #DADFE1;
+   color: #DADFE1;
+   background-color: #DADFE1;
 `
 
 const TextSepSpecial = styled.hr`
    margin-top: -14%;
    margin-left: -1.8%;
    margin-right: -1.8%;
-   border: medium solid #C8F7C5;
-   color: #C8F7C5;
-   background-color: #C8F7C5;
+   border: medium solid #DADFE1;
+   color: #DADFE1;
+   background-color: #DADFE1;
 `
 
 const PageTitle = styled.h2`
@@ -124,7 +124,6 @@ const PostDate = styled.span`
 const Historias = (props) => {
   const postList = props.data.allMarkdownRemark;
   const locale = props.pageContext.locale;
-  console.log(postList.edges)
   return (
   <Provider locale={locale}>
   <OuterContainer>
@@ -138,13 +137,15 @@ const Historias = (props) => {
     <PostList>
     <PostTitle></PostTitle>
     <PostDate></PostDate>
-    <p><h2>Novidades em breve</h2></p>
+    <h2>Novidades brevemente</h2>
+    <TextSep/>
     </PostList>
     :
     <PostList>
         <PostTitle></PostTitle>
         <PostDate></PostDate>
-        <p><h2>Stories will be added soon</h2></p>
+        <h2>Stories will be added soon</h2>
+        <TextSep/>
         </PostList>
   }
         {/*{postList.edges.map(({ node }, i) => (

@@ -10,10 +10,7 @@ import SocialImageYoutube from '../components/socialImageYoutube'
 import Helmet from 'react-helmet'
 import Layout from "../components/layout"
 
-
-
 const sizes = {
-  
   desktop: 992,
   tablet: 768,
   phone: 576,
@@ -27,7 +24,7 @@ const media = Object.keys(sizes).reduce((acc, label) => {
     }
 
   `
-console.log(acc);
+
   return acc
 }, {})
 
@@ -70,9 +67,9 @@ const BodyDiv = styled.div`
 const TextSep = styled.hr`
    margin-left: -1.5%;
    margin-right: -1.5%;
-   border: medium solid #C8F7C5;
+   border: medium solid #DADFE1;
    color: #DADFE1;
-   background-color: #C8F7C5;
+   background-color: #DADFE1;
 `
 
 const SectionTitle = styled.h2`
@@ -122,7 +119,7 @@ const Footer = styled.footer`
     -moz-box-shadow:    0 -2px 4px 1px #D4D0AB;
     -webkit-box-shadow: 0 -2px 4px 1px #D4D0AB;
     box-shadow:         0 -2px 4px 1px #D4D0AB;
-    border-top: thin solid #f1f1f1;
+    border-top: thin solid #D4D0AB;
     padding-top: 1%;
     font-size: 90%;
 
@@ -130,7 +127,7 @@ const Footer = styled.footer`
       width: 100%;
       height: 24vh;
       font-size: 95%;
-      background-color: black;
+      background-color: #D4D0AB;
       color: white;
       bottom: 0;
       position: relative;
@@ -140,7 +137,7 @@ const Footer = styled.footer`
     ${media.tablet`
       width: 100%;
       height: 29vh;
-      background-color: black;
+      background-color: #D4D0AB;
       color: white;
       bottom: 0;
       position: relative;
@@ -150,7 +147,7 @@ const Footer = styled.footer`
     ${media.phone`
       width: 100%;
       height: 58vh;
-      background-color: black;
+      background-color: #D4D0AB;
       color: white;
       bottom: 0;
       position: relative;
@@ -326,8 +323,8 @@ const IndexPage = (props) => {
             </BodyDiv>
           <Footer>
             <FooterPLeft>
-           <Space>Projeto desenvolvido por: Diana Nicolau, Dinis Rodrigues, Inês Melo e Joaquim Miranda.</Space><br/> <Space>Coordenado por: Maria João Antunes.</Space><br/>
-           <Space>Para contactar o projeto: <TextMail>projetomemorandum@gmail<wbr/>.com </TextMail></Space>
+           <Space><FormattedMessage id="Dev"/></Space><br/> <Space><FormattedMessage id="Coor"/></Space><br/>
+           <Space><FormattedMessage id="Contact"/><TextMail>projetomemorandum@gmail<wbr/>.com </TextMail></Space>
             </FooterPLeft>
             <FooterPRight>
             <SocialLogos>

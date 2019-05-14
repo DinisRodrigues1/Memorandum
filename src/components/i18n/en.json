@@ -15,6 +15,9 @@
     "Videos": "Videos",
     "Stories": "Stories",
     "Home": "Home",
-    "Dev": "Developed with "
-
+    "Dev": "Project developed by: Diana Nicolau, Dinis Rodrigues, Inês Melo and Joaquim Miranda.",
+    "Coor": "Coordinated by: Maria João Antunes.",
+    "Contact": "To contact the project: ",
+    "PageNotFound": "Ups! The page you've navigated to does not exist.",
+    "404Help": "Click here to go back"
 }
