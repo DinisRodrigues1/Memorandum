@@ -123,20 +123,10 @@ const Videos = ({ pageContext: { locale }}) => (
     <PageTitle><TextSepSpecial/><FormattedMessage id="Videos"/></PageTitle>
 
     {locale === "pt" ?
-     <VideoArticle>
-          <h2>Novidades brevemente</h2>
-       <TextSep/>
-     </VideoArticle>
-    :
-      <VideoArticle>
-          <h2>Videos will be added soon</h2>
-      <TextSep/>
-      </VideoArticle>
-    }
-   {/*<VideoArticle id="one">
+    <VideoArticle id="one">
     <VideoContainer>
     <IFrame width="100%" height="75%"
-    src="https://www.youtube.com/embed/tgbNymZ7vqY"
+    src="https://www.youtube.com/embed/h1zK07osRGM"
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
     frameBorder="0"
     webkitallowfullscreen="true"
@@ -145,14 +135,14 @@ const Videos = ({ pageContext: { locale }}) => (
     >
     </IFrame> 
     </VideoContainer>
-    <VideoText>Something something this person</VideoText>
+    <VideoText>Dona Maria Adelaide e Sr. Arménio Varela</VideoText>
     <TextSep/>
     </VideoArticle>
-
+    :
     <VideoArticle>
     <VideoContainer id="two">
     <IFrame width="100%" height="75%"
-    src="https://www.youtube.com/embed/tgbNymZ7vqY"
+    src="https://www.youtube.com/embed/Q6aOwm91SM8"
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
     frameBorder="0"
     webkitallowfullscreen="true"
@@ -161,10 +151,10 @@ const Videos = ({ pageContext: { locale }}) => (
     >
     </IFrame> 
     </VideoContainer>
-    <VideoText>Something something this person</VideoText>
+    <VideoText>Ms. Maria Adelaide and Mr. Arménio Varela</VideoText>
     <TextSep />
     </VideoArticle>
-*/}
+    }
     </OuterVideoContainer>
   </OuterContainer>
   </Provider>
