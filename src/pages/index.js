@@ -1,6 +1,7 @@
 import React from "react"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
+import { Link } from 'gatsby'
 import styled, { css } from "styled-components"
 import { FormattedMessage } from 'react-intl'
 import SquareImg from '../components/squareImg'
@@ -31,16 +32,29 @@ const media = Object.keys(sizes).reduce((acc, label) => {
 
 const SectionImage = styled(SquareImg)`  
 `
-const Text = styled.p`
+const Text = styled.span`
 `
 
 const SectionLatestBody = styled.section`
     padding-bottom: 7.5%;
 
+    ${media.desktop`
+    padding-bottom: 18%;
+    `}
+
+    ${media.tablet`
+    padding-bottom: 20%;
+    `}
+
+    ${media.phone`
+    padding-bottom: 40%;`}
+
 `
 
 const BodyDiv = styled.div`
     width: 80%;
+    min-width: 70%;
+    min-height: 90%;
     margin: 0 auto;
     margin-top: 10%;
     padding: 1% 1% 0 1%;
@@ -49,6 +63,7 @@ const BodyDiv = styled.div`
     -webkit-box-shadow: 0 0 7px 1px #D4D0AB;
     box-shadow:         0 0 7px 1px #D4D0AB;
     border: thin solid #f1f1f1;
+    
 
     ${media.desktop`
       width: 82%;  
@@ -62,6 +77,7 @@ const BodyDiv = styled.div`
 
     ${media.phone`
       width: 95%;
+      margin-top: 20%;
     `}
 `
 const TextSep = styled.hr`
@@ -70,6 +86,8 @@ const TextSep = styled.hr`
    border: medium solid #DADFE1;
    color: #DADFE1;
    background-color: #DADFE1;
+   margin-top: 2%;
+   margin-bottom: 2%;
 `
 
 const SectionTitle = styled.h2`
@@ -80,16 +98,19 @@ const SectionLatestText = styled.article`
     text-align: justify;
     float: left;
     
+    
     & > ${Text} {
       display: inline;
       
     }
+    
 
 `    
 const SectionImagePos = styled.div`
+      height: 105px;
       float: left;
-      margin 1% 1%;
-      padding-top: 0.5%;
+      margin 0 1%;
+      padding: 0;
       border: thick solid #C8F7C5; //border for image --> can be later changed to match theme;
 
 `
@@ -97,7 +118,13 @@ const SectionAbout = styled.section`
     padding-top: 7.5%;
     padding-bottom: 11%;
 
+    ${media.phone`
+    padding-top: 15.5%;`}
+
 `
+const LinkTo = styled(Link)`
+text-decoration: none;
+    color: black;`
 
 const FooterPLeft = styled.p`
       width: 20%;
@@ -115,7 +142,8 @@ const Footer = styled.footer`
     color: black;
     bottom: 0;
     position: relative;
-    
+    min-width: 100%;
+    min-height: 28vh;
     -moz-box-shadow:    0 -2px 4px 1px #D4D0AB;
     -webkit-box-shadow: 0 -2px 4px 1px #D4D0AB;
     box-shadow:         0 -2px 4px 1px #D4D0AB;
@@ -126,9 +154,11 @@ const Footer = styled.footer`
     ${media.desktop`
       width: 100%;
       height: 24vh;
+      min-width: 100%;
+      min-height: 24vh;
       font-size: 95%;
       background-color: #D4D0AB;
-      color: white;
+      color: black;
       bottom: 0;
       position: relative;
       padding-top: 5%
@@ -137,8 +167,10 @@ const Footer = styled.footer`
     ${media.tablet`
       width: 100%;
       height: 29vh;
+      min-width: 100%;
+      min-height: 29vh;
       background-color: #D4D0AB;
-      color: white;
+      color: black;
       bottom: 0;
       position: relative;
       padding: top: 7%;
@@ -147,8 +179,10 @@ const Footer = styled.footer`
     ${media.phone`
       width: 100%;
       height: 58vh;
+      min-width: 100%;
+      min-height: 58vh%;
       background-color: #D4D0AB;
-      color: white;
+      color: black;
       bottom: 0;
       position: relative;
       padding-top: 10%;
@@ -203,6 +237,8 @@ const Footer = styled.footer`
 ` 
 const BodyBottom = styled.div`
       font-family: Verdana, sans-serif;
+      min-width: 70%;
+      min-height: 90%;
 `
 
 const ClearFix = styled.div`
@@ -266,7 +302,7 @@ const IndexPage = (props) => {
   console.log(props)
   const postList = props.data.allMarkdownRemark;
   const locale = props.pageContext.locale;
-  
+  console.log(postList)
   return (
 
 <>
@@ -285,26 +321,23 @@ const IndexPage = (props) => {
             <TextSep/>
               <SectionTitle><FormattedMessage id="LastPost"/></SectionTitle>
                 <SectionLatestText>
-                {postList.edges[1].node.frontmatter.lang === locale && locale === "pt" ?
-                  <Text><h2>Novidades brevemente</h2></Text>
-                  :
-                  <Text>
-                        <h2>More news soon</h2>
-                       </Text>
-  /*    <SectionImagePos>
+                    <SectionImagePos>
                     <SectionImage />
                     </SectionImagePos>
                     {postList.edges[1].node.frontmatter.lang === locale && locale === "pt" ?
-                      
-                    <Text>
+                   <LinkTo to="second_story/index.pt"> 
+                   <Text>
                       {postList.edges[1].node.excerpt}                   
                     </Text>
+                    </LinkTo>
                      : 
+                      <LinkTo to="second_story/index.en">
                        <Text>
-                        {postList.edges[0].node.excerpt}
+                        {postList.edges[3].node.excerpt}
                        </Text>
+                       </LinkTo>
                        }
-                       */} 
+              
                 </SectionLatestText>
           </SectionLatestBody>
             <SectionAbout id="about">
@@ -356,6 +389,7 @@ export const listQuery = graphql`
           fields{
             slug
           }
+          html
           excerpt(pruneLength: 250)
           frontmatter {
             date(formatString: "DD/MM/YYYY") 

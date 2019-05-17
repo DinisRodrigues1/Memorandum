@@ -71,6 +71,15 @@ const TextSep = styled.hr`
    color: #DADFE1;
    background-color: #DADFE1;
 `
+const TextSepSecond = styled.hr`
+   margin-left: -1.8%;
+   margin-right: -1.8%;
+   margin-top: 3%;
+   margin-bottom: 3%;
+   border: medium solid #DADFE1;
+   color: #DADFE1;
+   background-color: #DADFE1;
+`
 
 const TextSepSpecial = styled.hr`
    margin-top: -14%;
@@ -83,12 +92,13 @@ const TextSepSpecial = styled.hr`
 
 const PageTitle = styled.h2`
   margin-top: 15%;
-  margin-bottom: 6.4%;
+  margin-bottom: 10%;
 `
-//When posts are added change margin-bottom back to 10% (PageTitle)
+
 
 const PostLink = styled(Link)`
   text-decoration: none;
+
 `
 
 const PostContainer = styled.div`
@@ -102,9 +112,10 @@ const PostList = styled.div`
   font-family: Verdana, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  color: black;
   
 `
-//color: black; <-- add back to PostList
+
 const PostTitle = styled.h1`
   margin-bottom: 5%;
   color: #000;
@@ -125,6 +136,7 @@ const PostDate = styled.span`
 const Historias = (props) => {
   const postList = props.data.allMarkdownRemark;
   const locale = props.pageContext.locale;
+  console.log(postList.edges)
   return (
   <Provider locale={locale}>
   <OuterContainer>
@@ -134,22 +146,7 @@ const Historias = (props) => {
     <BodyDiv>
     <PageTitle><TextSepSpecial/><FormattedMessage id="Stories"/></PageTitle>
     <PostContainer>
-    {postList.edges[1].node.frontmatter.lang === locale && locale === "pt" ?
-    <PostList>
-    <PostTitle></PostTitle>
-    <PostDate></PostDate>
-    <h2>Novidades brevemente</h2>
-    <TextSep/>
-    </PostList>
-    :
-    <PostList>
-        <PostTitle></PostTitle>
-        <PostDate></PostDate>
-        <h2>Stories will be added soon</h2>
-        <TextSep/>
-        </PostList>
-  }
-        {/*{postList.edges.map(({ node }, i) => (
+        {postList.edges.map(({ node }, i) => (
           node.frontmatter.lang == locale ?
         <PostLink to={node.fields.slug} className="link" >
         <PostList>
@@ -157,13 +154,11 @@ const Historias = (props) => {
         <PostDate>{node.frontmatter.date}</PostDate>
         <p>{node.excerpt}</p>
         </PostList>
-        <TextSep/>
+        <TextSepSecond/>
         </PostLink>
         :
         <div></div>
-        
     ))}
-      */}
     </PostContainer>
     </BodyDiv>
   </OuterContainer>
