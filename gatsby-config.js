@@ -11,9 +11,8 @@ module.exports = {
     author: `@DinisTrabuco`,
     siteUrl: `https://memorandum.netlify.com`,
     defaultLanguage,
-    supportedLanguages
+    supportedLanguages,
   },
-  plugins: [`gatsby-plugin-sitemap`],
   plugins: [
     {
       resolve: `gatsby-transformer-remark`,
@@ -21,8 +20,6 @@ module.exports = {
         plugins: [`gatsby-remark-responsive-iframe`],
       },
     },
-  ],
-  plugins: [
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -64,7 +61,7 @@ module.exports = {
         name: "pages",
       },
     },
- 
+      `gatsby-plugin-sitemap`,
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

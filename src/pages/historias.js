@@ -136,7 +136,7 @@ const PostDate = styled.span`
 const Historias = (props) => {
   const postList = props.data.allMarkdownRemark;
   const locale = props.pageContext.locale;
-  console.log(postList.edges)
+  
   return (
   <Provider locale={locale}>
   <OuterContainer>

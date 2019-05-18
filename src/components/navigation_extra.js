@@ -203,7 +203,7 @@ const Galeria = styled(LinkWrapper)`
 
 const Navigation = (props) => {
     const locale = props.locale
-    console.log(props)
+   
 
      return (
     <Provider locale={locale}>
