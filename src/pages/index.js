@@ -333,7 +333,7 @@ const IndexPage = (props) => {
                      : 
                       <LinkTo to="second_story/index.en">
                        <Text>
-                        {postList.edges[2].node.excerpt}
+                        {postList.edges[1].node.excerpt}
                        </Text>
                        </LinkTo>
                        }
