@@ -4,16 +4,54 @@ const supportedLanguages = [
 ]
 const defaultLanguage = 'pt'
 
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = 'https://www.memorandum.netlify.com',
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV
+} = process.env;
+const isNetlifyProduction = NETLIFY_ENV === 'production';
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+
 module.exports = {
   siteMetadata: {
     title: `Memorandum`,
     description: `Website criado para o projeto Memorandum UC Projeto 2019 UA`,
     author: `@DinisTrabuco`,
-    siteUrl: `https://memorandum.netlify.com`,
+    siteUrl: `https://memorandum.website`,
     defaultLanguage,
     supportedLanguages,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://memorandum.website',
+        sitemap: 'https://memorandum.website/sitemap.xml',
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: '*' }]
+          },
+          'branch-deploy': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null
+          },
+          'deploy-preview': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null
+          },
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }],
+          },
+        },
+      },
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
