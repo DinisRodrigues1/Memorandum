@@ -140,7 +140,7 @@ const Videos = ({ pageContext: { locale }}) => (
     >
     </IFrame> 
     </VideoContainer>
-    <VideoText>Dona Maria de Jesus e Sr. Edgar</VideoText>
+    <VideoText>Dona Maria Adelaide e Sr. Arménio Varela</VideoText>
     <TextSep/>
     </VideoArticle>
     <VideoArticle id="three">
@@ -155,7 +155,7 @@ const Videos = ({ pageContext: { locale }}) => (
     >
     </IFrame> 
     </VideoContainer>
-    <VideoText>Dona Maria Adelaide e Sr. Arménio Varela</VideoText>
+    <VideoText>Dona Maria de Jesus e Sr. Edgar</VideoText>
     <TextSep/>
     </VideoArticle>
     </>

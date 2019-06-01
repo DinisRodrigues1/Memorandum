@@ -93,7 +93,7 @@ const ImageGallery = ({ pageContext: { locale } }) => {
     
       return(
         <Provider locale={locale}>
-         {layout === 'pt' ?
+         {locale === 'pt' ?
             <SEO title="Galeria de Imagens" />
             :
             <SEO title="Gallery" />
