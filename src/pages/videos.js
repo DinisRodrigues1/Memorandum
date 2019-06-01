@@ -116,7 +116,11 @@ const Videos = ({ pageContext: { locale }}) => (
  
   <Provider locale={locale}>
   <OuterContainer>
+  {locale === 'pt' ?
     <SEO title="Vídeos" />
+    :
+    <SEO title="Videos" />
+    }
     <Navigation locale={locale} />
     <NavMobile locale={locale} />
     <OuterVideoContainer>

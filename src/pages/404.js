@@ -71,7 +71,11 @@ let goBack = () => {
 const NotFoundPage = ({ pageContext: { locale }}) => (
   <Provider locale={locale}>
   <Outer404Container>
-    <SEO title="404: Not found" />
+    {locale === 'pt' ?
+    <SEO title="404: Página não encontrada" />
+    :
+    <SEO title="404: Page not found"/>
+    }
     <TextContainer>
     <h2><FormattedMessage id="PageNotFound"/></h2>
     <GoBack onClick={goBack}><FormattedMessage id="404Help"/></GoBack>

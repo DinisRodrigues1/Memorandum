@@ -100,7 +100,7 @@ export default class Lightbox extends Component {
     }
     
     render() {
-      console.log(this.props)
+      
       const locale = this.props.locale;
       const { galImages } = this.props;
       const { selectedImage, showLightbox } = this.state;

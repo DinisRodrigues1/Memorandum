@@ -56,7 +56,11 @@ const Layout = ({ locale, children }) => {
        <Helmet>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     </Helmet>
+      {locale === 'pt' ?
+      <Header siteTitle={"Memorandum | Página Inicial"} />
+      :
       <Header siteTitle={"Memorandum | Home"} />
+    }
       <Padding></Padding>
       <Navigation locale={locale}/>
       

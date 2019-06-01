@@ -93,6 +93,11 @@ const ImageGallery = ({ pageContext: { locale } }) => {
     
       return(
         <Provider locale={locale}>
+         {layout === 'pt' ?
+            <SEO title="Galeria de Imagens" />
+            :
+            <SEO title="Gallery" />
+            }
         <OuterContainer>
             <Navigation locale={locale} />
             <NavMobile locale={locale}/>
@@ -103,7 +108,6 @@ const ImageGallery = ({ pageContext: { locale } }) => {
            </>
            <MarginDiv></MarginDiv>
             </BodyDiv>
-            <SEO title="Galeria de Imagens" />
         </OuterContainer>
         </Provider>
             );

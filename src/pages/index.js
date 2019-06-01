@@ -306,11 +306,13 @@ const IndexPage = (props) => {
     <Helmet>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     </Helmet>
-    
-    <SEO title="Home" keywords={[`Projeto`, `Universitário`, `Memorandum`, `Universidade de Aveiro`, `Departamento de Comunicação e Arte`, 
-    `DECA`, `Novas Tecnologias da Comunicação`, `NTC`, `UC Projeto`, `University of Aveiro`, `Department of Communication and Art`, 
-    `University Project`, `University`, `Project`, `Intergeracional`, `Comunicação`, `Communication`, `Intergenerational`]} />
-     
+    {locale === 'pt' ?
+    <SEO title="Página principal" keywords={[`Projeto`, `Universitário`, `Memorandum`, `Universidade de Aveiro`, `Departamento de Comunicação e Arte`, 
+    `DECA`, `Novas Tecnologias da Comunicação`, `NTC`, `UC Projeto`, `Intergeracional`, `Comunicação`,  `Intergenerational`]} />
+    :
+    <SEO title="Home" keywords={[`Memorandum`, `DECA`, `Novas Tecnologias da Comunicação`, `NTC`, `University of Aveiro`, `Department of Communication and Art`, 
+    `University Project`, `University`, `Project`, `Communication`, `Intergenerational`]} />
+    }
     <BodyBottom>
         <BodyDiv>
           <SectionLatestBody>

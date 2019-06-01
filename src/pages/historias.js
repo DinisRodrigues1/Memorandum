@@ -132,8 +132,12 @@ const Historias = (props) => {
   
   return (
   <Provider locale={locale}>
-  <OuterContainer>
+     {locale === 'pt' ?
     <SEO title="Histórias" />
+    :
+    <SEO title="Stories" />
+    }
+  <OuterContainer>
     <Navigation locale={locale}/>
     <NavMobile locale={locale}/>
     <BodyDiv>
