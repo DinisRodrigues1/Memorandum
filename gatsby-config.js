@@ -16,7 +16,7 @@ const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 module.exports = {
   siteMetadata: {
     title: `Memorandum`,
-    description: `Website criado para o projeto Memorandum UC Projeto 2019 UA`,
+    description: `Website criado para o projeto Memorandum UC Projeto 2019 UA. Visa fortalecer o elo entre gerações passadas e as contemporâneas através da preservação de tradições, vivências e saberes.`,
     author: `@DinisTrabuco`,
     siteUrl: `https://memorandum.website`,
     defaultLanguage,
@@ -99,7 +99,16 @@ module.exports = {
         name: "pages",
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-141202589-1",
+        anonymize: true,
+        respectDNT: true,
+      },
+      },
       `gatsby-plugin-sitemap`,
+      `gatsby-plugin-netlify-headers`,
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

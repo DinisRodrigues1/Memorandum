@@ -123,6 +123,7 @@ const Videos = ({ pageContext: { locale }}) => (
     <PageTitle><TextSepSpecial/><FormattedMessage id="Videos"/></PageTitle>
 
     {locale === "pt" ?
+    <>
     <VideoArticle id="one">
     <VideoContainer>
     <IFrame width="100%" height="75%"
@@ -135,10 +136,27 @@ const Videos = ({ pageContext: { locale }}) => (
     >
     </IFrame> 
     </VideoContainer>
+    <VideoText>Dona Maria de Jesus e Sr. Edgar</VideoText>
+    <TextSep/>
+    </VideoArticle>
+    <VideoArticle id="three">
+    <VideoContainer>
+    <IFrame width="100%" height="75%"
+    src="https://www.youtube.com/embed/NSfKbnxvPOg"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    frameBorder="0"
+    webkitallowfullscreen="true"
+    mozallowfullscreen="true"
+    allowFullScreen
+    >
+    </IFrame> 
+    </VideoContainer>
     <VideoText>Dona Maria Adelaide e Sr. Arménio Varela</VideoText>
     <TextSep/>
     </VideoArticle>
+    </>
     :
+    <>
     <VideoArticle>
     <VideoContainer id="two">
     <IFrame width="100%" height="75%"
@@ -151,9 +169,25 @@ const Videos = ({ pageContext: { locale }}) => (
     >
     </IFrame> 
     </VideoContainer>
-    <VideoText>Ms. Maria Adelaide and Mr. Arménio Varela</VideoText>
+    <VideoText>Mrs. Maria Adelaide and Mr. Arménio Varela</VideoText>
     <TextSep />
     </VideoArticle>
+    <VideoArticle id="four">
+    <VideoContainer>
+    <IFrame width="100%" height="75%"
+    src="https://www.youtube.com/embed/NXs0F1BnvMA"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    frameBorder="0"
+    webkitallowfullscreen="true"
+    mozallowfullscreen="true"
+    allowFullScreen
+    >
+    </IFrame> 
+    </VideoContainer>
+    <VideoText>Mrs. Maria de Jesus e Mr. Edgar</VideoText>
+    <TextSep/>
+    </VideoArticle>
+    </>
     }
     </OuterVideoContainer>
   </OuterContainer>

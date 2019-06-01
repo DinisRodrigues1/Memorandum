@@ -201,9 +201,9 @@ constructor(props) {
 
 render() {
   const { showMenu } = this.state
-
   const locale = this.props.locale
 
+  
   return (
     <Provider locale={locale}>
     <NavDiv>

@@ -7,3 +7,4 @@ Memorandum is the final graduate project of _Novas Tecnologias da Comunicação_
 
 The goal of the project is the creation of a platform that allows the sharing of stories and videos to potentiate intergenerational comunications between the elderly and young adults.
 
+**https://memorandum.website**

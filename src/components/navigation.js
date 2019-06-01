@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React from "react"
 import styled, { css } from 'styled-components'
 import { FormattedMessage } from 'react-intl'

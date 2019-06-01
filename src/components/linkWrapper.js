@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link } from 'gatsby' // eslint-disable-next-line
 import { injectIntl, intlShape } from 'react-intl'
 
 import locales from '../constants/locales'

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Navigation from "./navigation_extra"
 import SEO from './seo'
 import styled, { css } from "styled-components"
@@ -84,7 +84,8 @@ function Story(props) {
     return (
       <Provider locale={locale}>
         <OuterContainer>
-            <SEO title="Historia" />
+          { locale === 'pt' ? <SEO title="História" /> : <SEO title="Story" />}
+            
             <Navigation locale={locale}/>
             <NavMobile />
             <OuterPostContainer>

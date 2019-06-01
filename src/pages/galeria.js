@@ -2,11 +2,11 @@ import React from "react"
 import Navigation from "../components/navigation_extra"
 import SEO from "../components/seo"
 import styled, { css } from "styled-components"
-import GalImages from '../components/galleryImages'
-import { graphql } from 'gatsby'
+import Images from '../components/galleryImages'
 import NavMobile from '../components/nav_extra_mobile'
 import { FormattedMessage } from 'react-intl'
 import Provider from '../components/provider'
+
 
 
 const sizes = {
@@ -26,6 +26,7 @@ const media = Object.keys(sizes).reduce((acc, label) => {
 
   return acc
 }, {})
+
 
 
 const OuterContainer = styled.div`
@@ -82,58 +83,32 @@ const TextSepSpecial = styled.hr`
 `
 
 
-const ImagesContainer = styled.section`
-    line-height: 0;
-    -webkit-column-count: 6;
-    -webkit-column-gap: 0;
-    -moz-column-count: 6;
-    -moz-column-gap: 0;
-    column-count: 6;
-    column-gap: 0;  
 
-    ${media.desktop`
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-    `}
-
-    ${media.tablet`
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-    `}
-
-    ${media.phone`
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-    `}
-`
 
 const MarginDiv = styled.div`
     padding: 2% 0;
     `
 
+const ImageGallery = ({ pageContext: { locale } }) => { 
+    
+      return(
+        <Provider locale={locale}>
+        <OuterContainer>
+            <Navigation locale={locale} />
+            <NavMobile locale={locale}/>
+            <BodyDiv>
+            <PageTitle><TextSepSpecial/><FormattedMessage id="Gallery"/></PageTitle>
+            <>
+            <Images locale={locale}/>
+           </>
+           <MarginDiv></MarginDiv>
+            </BodyDiv>
+            <SEO title="Galeria de Imagens" />
+        </OuterContainer>
+        </Provider>
+            );
+    }
 
-const ImageGallery = ({ pageContext: { locale } }) => {    
-   
-    return (
-    <Provider locale={locale}>
-    <OuterContainer>
-        <Navigation locale={locale} />
-        <NavMobile locale={locale}/>
-        <BodyDiv>
-        <PageTitle><TextSepSpecial/><FormattedMessage id="Gallery"/></PageTitle>
-        <ImagesContainer>
-        <GalImages />
-       </ImagesContainer>
-       <MarginDiv></MarginDiv>
-        </BodyDiv>
-        <SEO title="Galeria de Imagens" />
-    </OuterContainer>
-    </Provider>
-        );
-       }
 
 
 

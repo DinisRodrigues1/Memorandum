@@ -281,10 +281,6 @@ const YTube = styled.a`
 
 `
 
-const MailImageStyled = styled.span`
-   
-
-`
 const TextMail = styled.span`
      
 
@@ -384,7 +380,7 @@ export default IndexPage
 export const listQuery = graphql`
   query ListQuery {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date]},
-      filter: {fileAbsolutePath: {regex: "\/second_story/"}}) {
+      filter: {fileAbsolutePath: {regex: "\/fourth_story/"}}) {
       edges {
         node {
           fields{

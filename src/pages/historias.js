@@ -64,13 +64,6 @@ const BodyDiv = styled.div`
   margin-top: 30%; `}
 `
 
-const TextSep = styled.hr`
-   margin-left: -1.8%;
-   margin-right: -1.8%;
-   border: medium solid #DADFE1;
-   color: #DADFE1;
-   background-color: #DADFE1;
-`
 const TextSepSecond = styled.hr`
    margin-left: -1.8%;
    margin-right: -1.8%;
@@ -147,7 +140,7 @@ const Historias = (props) => {
     <PageTitle><TextSepSpecial/><FormattedMessage id="Stories"/></PageTitle>
     <PostContainer>
         {postList.edges.map(({ node }, i) => (
-          node.frontmatter.lang == locale ?
+          node.frontmatter.lang === locale ?
         <PostLink to={node.fields.slug} className="link" >
         <PostList>
         <PostTitle>{node.frontmatter.title}</PostTitle>
@@ -166,7 +159,6 @@ const Historias = (props) => {
   )
 }
 
-console.log(Historias)
 
 export default Historias
 
