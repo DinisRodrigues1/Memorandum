@@ -4,6 +4,7 @@ import NavMobile from '../components/nav_extra_mobile'
 import SEO from "../components/seo"
 import styled, { css } from "styled-components"
 import { FormattedMessage } from 'react-intl'
+import { Helmet } from 'react-helmet'
 import Provider from '../components/provider'
 
 const sizes = {
@@ -113,14 +114,31 @@ const IFrame = styled.iframe`
 `
 
 const Videos = ({ pageContext: { locale }}) => (
- 
+  
   <Provider locale={locale}>
+   
   <OuterContainer>
   {locale === 'pt' ?
-    <SEO title="Vídeos" />
+    <>
+    <Helmet>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="keywords" content="Projeto, Universitário, Memorandum, Universidade de Aveiro, Departamento de Comunicação e Arte, 
+    DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios, Página, Vídeos" />
+    <title>Memorandum | Vídeos</title>
+    <link rel="canonical" href="https://memorandum.website/videos/"/>
+    </Helmet>
+    </>
     :
-    <SEO title="Videos" />
-    }
+    <>
+    <Helmet>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="keywords" content="Memorandum, DECA, Novas Tecnologias das Comunicação, NTC, University of Aveiro, Department of Comunication and Art, 
+    University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades, Page, Videos" />
+    <title>Memorandum | Videos</title>
+    <link rel="canonical" href="https://memorandum.website/en/videos/"/>
+    </Helmet>
+    </>
+    }   
     <Navigation locale={locale} />
     <NavMobile locale={locale} />
     <OuterVideoContainer>

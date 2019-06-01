@@ -298,21 +298,30 @@ const IndexPage = (props) => {
   
   const postList = props.data.allMarkdownRemark;
   const locale = props.pageContext.locale;
-  console.log(postList)
   return (
-
-<>
+  <>
     <Layout locale={locale}>
+    {locale === 'pt' ?
+    <>
     <Helmet>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="keywords" content="Projeto, Universitário, Memorandum, Universidade de Aveiro, Departamento de Comunicação e Arte, 
+    DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios" />
+    <title>Memorandum | Página principal</title>
+    <link rel="canonical" href="https://memorandum.website"/>
     </Helmet>
-    {locale === 'pt' ?
-    <SEO title="Página principal" keywords={[`Projeto`, `Universitário`, `Memorandum`, `Universidade de Aveiro`, `Departamento de Comunicação e Arte`, 
-    `DECA`, `Novas Tecnologias da Comunicação`, `NTC`, `UC Projeto`, `Intergeracional`, `Comunicação`,  `Intergenerational`]} />
+    </>
     :
-    <SEO title="Home" keywords={[`Memorandum`, `DECA`, `Novas Tecnologias da Comunicação`, `NTC`, `University of Aveiro`, `Department of Communication and Art`, 
-    `University Project`, `University`, `Project`, `Communication`, `Intergenerational`]} />
-    }
+    <>
+    <Helmet>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="keywords" content="Memorandum, DECA, Novas Tecnologias das Comunicação, NTC, University of Aveiro, Department of Comunication and Art, 
+    University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades" />
+    <title>Memorandum | Homepage</title>
+    <link rel="canonical" href="https://memorandum.website/en/"/>
+    </Helmet>
+    </>
+    }    
     <BodyBottom>
         <BodyDiv>
           <SectionLatestBody>
@@ -370,7 +379,6 @@ const IndexPage = (props) => {
 
       </BodyBottom>
       </Layout>
-      
       </>  
 )
 } 

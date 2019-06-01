@@ -1,5 +1,5 @@
 ---
-title: Maria Adelaide - Tecedeira de linho
+title: Maria de Jesus - Tecedeira de linho
 description: Esta publicação é sobre a Dona Maria de Jesus, uma tecedeira tradicional de linho
 date: '2019-06-01'
 image: ''

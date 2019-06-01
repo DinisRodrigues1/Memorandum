@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import styled, { css } from "styled-components"
 import NavMobile from '../components/nav_extra_mobile'
 import { FormattedMessage } from 'react-intl'
+import { Helmet } from 'react-helmet'
 import Provider from '../components/provider'
 
 const sizes = {
@@ -132,11 +133,7 @@ const Historias = (props) => {
   
   return (
   <Provider locale={locale}>
-     {locale === 'pt' ?
-    <SEO title="Histórias" />
-    :
-    <SEO title="Stories" />
-    }
+ 
   <OuterContainer>
     <Navigation locale={locale}/>
     <NavMobile locale={locale}/>
