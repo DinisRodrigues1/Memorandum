@@ -327,11 +327,11 @@ const IndexPage = props => {
                 </SectionImagePos>
                 {postList.edges[0].node.frontmatter.lang === locale &&
                 locale === "pt" ? (
-                  <LinkTo to="fourth_story/index.pt">
+                  <LinkTo to="fourth-story/index.pt">
                     <Text>{postList.edges[0].node.excerpt}</Text>
                   </LinkTo>
                 ) : (
-                  <LinkTo to="fourth_story/index.en">
+                  <LinkTo to="fourth-story/index.en">
                     <Text>{postList.edges[1].node.excerpt}</Text>
                   </LinkTo>
                 )}
