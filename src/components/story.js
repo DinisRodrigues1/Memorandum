@@ -95,14 +95,14 @@ function Story(props) {
               />
               <meta
                 name="keywords"
-                content="Projeto, Universitário, Memorandum, Universidade de Aveiro, Departamento de Comunicação e Arte, 
-    DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios, Página, História, Entrevista"
+                content={
+                  "Projeto, Universitário, Memorandum, Universidade de Aveiro, Departamento de Comunicação e Arte, DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios, Página, História, Entrevista, " +
+                  description +
+                  ""
+                }
               />
+              <meta name="description" content={"" + description + ""} />
               <title>Memorandum | {title}</title>
-              <link
-                rel="canonical"
-                href="https://memorandum.website/galeria/"
-              />
             </Helmet>
           </>
         ) : (
@@ -120,11 +120,8 @@ function Story(props) {
                   ""
                 }
               />
+              <meta name="description" content={"" + description + ""} />
               <title>Memorandum | {title}</title>
-              <link
-                rel="canonical"
-                href="https://memorandum.website/en/galeria/"
-              />
             </Helmet>
           </>
         )}

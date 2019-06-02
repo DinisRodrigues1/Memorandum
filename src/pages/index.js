@@ -293,6 +293,10 @@ const IndexPage = props => {
                 content="Projeto, Universitário, Memorandum, Universidade de Aveiro, Departamento de Comunicação e Arte, 
     DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios"
               />
+              <meta
+              name="description"
+              content="Página principal do website criado no âmbito do projeto Memorandum."
+            />
               <title>Memorandum | Página principal</title>
               <link rel="canonical" href="https://memorandum.website" />
             </Helmet>
@@ -309,6 +313,10 @@ const IndexPage = props => {
                 content="Memorandum, DECA, Novas Tecnologias das Comunicação, NTC, University of Aveiro, Department of Comunication and Art, 
     University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades"
               />
+              <meta
+              name="description"
+              content="Landing page of the website created for the Memorandum project."
+            />
               <title>Memorandum | Homepage</title>
               <link rel="canonical" href="https://memorandum.website/en/" />
             </Helmet>

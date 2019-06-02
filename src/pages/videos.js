@@ -125,6 +125,10 @@ const Videos = ({ pageContext: { locale } }) => (
               content="Projeto, Universitário, Memorandum, Universidade de Aveiro, Departamento de Comunicação e Arte, 
     DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios, Página, Vídeos"
             />
+            <meta
+              name="description"
+              content="Página com vídeos de entrevistas realizadas para o projeto Memorandum."
+            />
             <title>Memorandum | Vídeos</title>
             <link rel="canonical" href="https://memorandum.website/videos/" />
           </Helmet>
@@ -140,6 +144,10 @@ const Videos = ({ pageContext: { locale } }) => (
               name="keywords"
               content="Memorandum, DECA, Novas Tecnologias das Comunicação, NTC, University of Aveiro, Department of Comunication and Art, 
     University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades, Page, Videos"
+            />
+            <meta
+              name="description"
+              content="Page containing videos of interviews conducted for the Memorandum project."
             />
             <title>Memorandum | Videos</title>
             <link

@@ -95,6 +95,10 @@ const ImageGallery = ({ pageContext: { locale } }) => {
     DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios, Página, Galeria,
     Imagens, Galeria de Imagens, Fotos de viagem, Fotos, Viagem"
               />
+              <meta
+              name="description"
+              content="Galeria de fotografias tiradas pelo grupo ao longo da fase de gravações do projeto."
+            />
               <title>Memorandum | Galeria</title>
               <link
                 rel="canonical"
@@ -115,6 +119,10 @@ const ImageGallery = ({ pageContext: { locale } }) => {
     University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades, Page, Gallery, Images, Image Gallery,
     Travel Photos, Photos, Travel"
               />
+              <meta
+              name="description"
+              content="Gallery containing photographs taken by the group during the filming stage of the project."
+            />
               <title>Memorandum | Gallery</title>
               <link
                 rel="canonical"

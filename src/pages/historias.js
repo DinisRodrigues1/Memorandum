@@ -133,6 +133,10 @@ const Historias = props => {
                 content="Projeto, Universitário, Memorandum, Universidade de Aveiro, Departamento de Comunicação e Arte, 
     DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios, Página, Histórias, Entrevistas"
               />
+              <meta
+              name="description"
+              content="Página com as diferentes histórias de cada entrevistado pelo projeto."
+            />
               <title>Memorandum | Histórias</title>
               <link
                 rel="canonical"
@@ -152,6 +156,10 @@ const Historias = props => {
                 content="Memorandum, DECA, Novas Tecnologias das Comunicação, NTC, University of Aveiro, Department of Comunication and Art, 
     University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades, Page, Stories, Interviews"
               />
+              <meta
+              name="description"
+              content="Page containing the stories of each interviewee of the project."
+            />
               <title>Memorandum | Stories</title>
               <link
                 rel="canonical"

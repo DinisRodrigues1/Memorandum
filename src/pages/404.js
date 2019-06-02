@@ -83,6 +83,10 @@ const NotFoundPage = ({ pageContext: { locale } }) => (
     DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios, Página, 404, não, encontrada,
     Página não encontrada"
             />
+            <meta
+              name="description"
+              content="Página criada para enviar utilizadores para a última página visitada antes da atual em caso de links corrumpidos ou 404s."
+            />
             <title>Memorandum | 404 Página não encontrada</title>
             <link rel="canonical" href="https://memorandum.website/404/" />
           </Helmet>
@@ -98,6 +102,10 @@ const NotFoundPage = ({ pageContext: { locale } }) => (
               name="keywords"
               content="Memorandum, DECA, Novas Tecnologias das Comunicação, NTC, University of Aveiro, Department of Comunication and Art, 
     University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades, Page, 404, not, found, Page not found"
+            />
+            <meta
+              name="description"
+              content="Page created to send users back to their last visited page in case of corrupted links or 404s.."
             />
             <title>Memorandum | 404 Page not found</title>
             <link rel="canonical" href="https://memorandum.website/en/404/" />
