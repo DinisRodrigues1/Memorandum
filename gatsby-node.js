@@ -1,6 +1,6 @@
 const path = require("path")
 const { createFilePath, createFileNode } = require(`gatsby-source-filesystem`)
-const locales = require('./src/constants/locales')
+const locales = require("./src/constants/locales")
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
@@ -17,8 +17,8 @@ exports.onCreatePage = ({ page, actions }) => {
         ...page,
         path: localizedPath,
         context: {
-          locale: lang
-        }
+          locale: lang,
+        },
       })
     })
 
@@ -26,15 +26,14 @@ exports.onCreatePage = ({ page, actions }) => {
   })
 }
 
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
 
-exports.createPages = ({ actions, graphql}) => {
-    const { createPage } = actions
+  const postTemplate = path.resolve(`src/components/story.js`)
 
-    const postTemplate = path.resolve(`src/components/story.js`)
-
-    return new Promise((resolve, reject) => {
-
-        resolve(graphql(`
+  return new Promise((resolve, reject) => {
+    resolve(
+      graphql(`
         {
           allMarkdownRemark(
             sort: { order: DESC, fields: [frontmatter___date] }
@@ -42,9 +41,9 @@ exports.createPages = ({ actions, graphql}) => {
           ) {
             edges {
               node {
-                  fields{
-                      slug
-                  }
+                fields {
+                  slug
+                }
                 frontmatter {
                   title
                   lang
@@ -54,38 +53,37 @@ exports.createPages = ({ actions, graphql}) => {
           }
         }
       `).then(result => {
-                    if (result.errors) {
-                        console.log(result.errors)
-                        return reject(result.errors)
-                    }
+        if (result.errors) {
+          console.log(result.errors)
+          return reject(result.errors)
+        }
 
-                    const pageTemplate = path.resolve('./src/components/story.js');
+        const pageTemplate = path.resolve("./src/components/story.js")
 
-                    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-                        createPage({
-                            path: node.fields.slug,
-                            component: pageTemplate,
-                            context: {
-                                slug: node.fields.slug,
-                                locale: node.frontmatter.lang,
-                            }, // additional data can be passed via context
-                        })
-                    })
-                    return
-                })
-            )
+        result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+          createPage({
+            path: node.fields.slug,
+            component: pageTemplate,
+            context: {
+              slug: node.fields.slug,
+              locale: node.frontmatter.lang,
+            }, // additional data can be passed via context
+          })
         })
-    }
-
+        return
+      })
+    )
+  })
+}
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
-    const { createNodeField } = actions
-    if (node.internal.type === `MarkdownRemark`) {
-        const slug = createFilePath({ node, getNode, basePath: `pages` })
-        createNodeField({
-            node,
-            name: `slug`,
-            value: slug,
-        })
-    } 
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+  }
 }

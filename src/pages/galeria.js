@@ -81,63 +81,63 @@ const MarginDiv = styled.div`
 const ImageGallery = ({ pageContext: { locale } }) => {
   return (
     <Provider locale={locale}>
-    <>
-      {locale === "pt" ? (
-        <>
-          <Helmet>
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1.0, user-scalable=no"
-            />
-            <meta
-              name="keywords"
-              content="Projeto, Universitário, Memorandum, Universidade de Aveiro, Departamento de Comunicação e Arte, 
+      <>
+        {locale === "pt" ? (
+          <>
+            <Helmet>
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0, user-scalable=no"
+              />
+              <meta
+                name="keywords"
+                content="Projeto, Universitário, Memorandum, Universidade de Aveiro, Departamento de Comunicação e Arte, 
     DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios, Página, Galeria,
     Imagens, Galeria de Imagens, Fotos de viagem, Fotos, Viagem"
-            />
-            <title>Memorandum | Galeria</title>
-            <link
-              rel="canonical"
-              href="https://memorandum.website/galeria/"
-            />
-          </Helmet>
-        </>
-      ) : (
-        <>
-          <Helmet>
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1.0, user-scalable=no"
-            />
-            <meta
-              name="keywords"
-              content="Memorandum, DECA, Novas Tecnologias das Comunicação, NTC, University of Aveiro, Department of Comunication and Art, 
+              />
+              <title>Memorandum | Galeria</title>
+              <link
+                rel="canonical"
+                href="https://memorandum.website/galeria/"
+              />
+            </Helmet>
+          </>
+        ) : (
+          <>
+            <Helmet>
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0, user-scalable=no"
+              />
+              <meta
+                name="keywords"
+                content="Memorandum, DECA, Novas Tecnologias das Comunicação, NTC, University of Aveiro, Department of Comunication and Art, 
     University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades, Page, Gallery, Images, Image Gallery,
     Travel Photos, Photos, Travel"
-            />
-            <title>Memorandum | Gallery</title>
-            <link
-              rel="canonical"
-              href="https://memorandum.website/en/galeria/"
-            />
-          </Helmet>
-        </>
-      )}
-      <OuterContainer>
-        <Navigation locale={locale} />
-        <NavMobile locale={locale} />
-        <BodyDiv>
-          <PageTitle>
-            <TextSepSpecial />
-            <FormattedMessage id="Gallery" />
-          </PageTitle>
-          <>
-            <Images locale={locale} />
+              />
+              <title>Memorandum | Gallery</title>
+              <link
+                rel="canonical"
+                href="https://memorandum.website/en/galeria/"
+              />
+            </Helmet>
           </>
-          <MarginDiv />
-        </BodyDiv>
-      </OuterContainer>
-    </>
+        )}
+        <OuterContainer>
+          <Navigation locale={locale} />
+          <NavMobile locale={locale} />
+          <BodyDiv>
+            <PageTitle>
+              <TextSepSpecial />
+              <FormattedMessage id="Gallery" />
+            </PageTitle>
+            <>
+              <Images locale={locale} />
+            </>
+            <MarginDiv />
+          </BodyDiv>
+        </OuterContainer>
+      </>
     </Provider>
   )
 }

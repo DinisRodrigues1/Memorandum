@@ -1,17 +1,17 @@
 const supportedLanguages = [
-  { id: 'en', label: 'English' },
-  { id: 'pt', label: 'Português' },
+  { id: "en", label: "English" },
+  { id: "pt", label: "Português" },
 ]
-const defaultLanguage = 'pt'
+const defaultLanguage = "pt"
 
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = 'https://www.memorandum.netlify.com',
+  URL: NETLIFY_SITE_URL = "https://www.memorandum.netlify.com",
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
-  CONTEXT: NETLIFY_ENV = NODE_ENV
-} = process.env;
-const isNetlifyProduction = NETLIFY_ENV === 'production';
-const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+  CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env
+const isNetlifyProduction = NETLIFY_ENV === "production"
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
 
 module.exports = {
   siteMetadata: {
@@ -24,30 +24,30 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: 'https://memorandum.website',
-        sitemap: 'https://memorandum.website/sitemap.xml',
+        host: "https://memorandum.website",
+        sitemap: "https://memorandum.website/sitemap.xml",
         resolveEnv: () => NETLIFY_ENV,
         env: {
           production: {
-            policy: [{ userAgent: '*' }]
+            policy: [{ userAgent: "*" }],
           },
-          'branch-deploy': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
+          "branch-deploy": {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
             sitemap: null,
-            host: null
+            host: null,
           },
-          'deploy-preview': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
+          "deploy-preview": {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
             sitemap: null,
-            host: null
+            host: null,
           },
           development: {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
+            policy: [{ userAgent: "*", disallow: ["/"] }],
           },
           production: {
-            policy: [{ userAgent: '*', allow: '/' }],
+            policy: [{ userAgent: "*", allow: "/" }],
           },
         },
       },
@@ -70,14 +70,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `galImages`,
-        path: `${__dirname}/src/galImages`
+        path: `${__dirname}/src/galImages`,
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-catch-links`,
-    
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -87,11 +87,11 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `src/images/memo_small.png`, 
+        icon: `src/images/memo_small.png`,
       },
     },
-      `gatsby-transformer-remark`,
-      'gatsby-plugin-offline',
+    `gatsby-transformer-remark`,
+    "gatsby-plugin-offline",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -106,23 +106,21 @@ module.exports = {
         anonymize: true,
         respectDNT: true,
       },
-      },
-      `gatsby-plugin-sitemap`,
-      {
-      resolve: 
-      `gatsby-plugin-netlify-headers`,
-        options: {
-        headers: {},                                  // option to add more headers. `Link` headers are transformed by the below criteria
-        allPageHeaders: [],                           // option to add headers for all pages. `Link` headers are transformed by the below criteria
-        mergeSecurityHeaders: true,                   // boolean to turn off the default security headers
-        mergeLinkHeaders: false,                      // boolean to turn off the default gatsby js headers (disabled by default, until gzip is fixed for server push)
-        mergeCachingHeaders: true,                    // boolean to turn off the default caching headers
+    },
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-netlify-headers`,
+      options: {
+        headers: {}, // option to add more headers. `Link` headers are transformed by the below criteria
+        allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
+        mergeSecurityHeaders: true, // boolean to turn off the default security headers
+        mergeLinkHeaders: false, // boolean to turn off the default gatsby js headers (disabled by default, until gzip is fixed for server push)
+        mergeCachingHeaders: true, // boolean to turn off the default caching headers
         transformHeaders: (headers, path) => headers, // optional transform for manipulating headers under each path (e.g.sorting), etc.
-      }
-    }
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
 }
-

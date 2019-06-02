@@ -1,12 +1,11 @@
-import React from 'react'
+import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import Image from 'gatsby-image'
-
+import Image from "gatsby-image"
 
 const SocialImageFacebook = () => (
-    <StaticQuery 
+  <StaticQuery
     query={graphql`
-    query {
+      query {
         facebook: file(relativePath: { eq: "facebook.png" }) {
           childImageSharp {
             fixed(width: 30, height: 30, quality: 100) {
@@ -15,12 +14,9 @@ const SocialImageFacebook = () => (
           }
         }
       }
-    `
-    }
-    render={data => <Image fixed={data.facebook.childImageSharp.fixed}/>}
-    />
+    `}
+    render={data => <Image fixed={data.facebook.childImageSharp.fixed} />}
+  />
 )
 
 export default SocialImageFacebook
-
-

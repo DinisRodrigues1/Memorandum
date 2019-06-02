@@ -75,9 +75,8 @@ const PageTitle = styled.h1`
 `
 const FakeH1 = styled.h1`
   font-size: 2em;
-  `
+`
 
-  
 function Story(props) {
   const post = props.data.markdownRemark
   const { title } = post.frontmatter
@@ -115,7 +114,11 @@ function Story(props) {
               />
               <meta
                 name="keywords"
-                content={"Memorandum, DECA, Novas Tecnologias das Comunicação, NTC, University of Aveiro, Department of Comunication and Art, University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades, Story, Interview, " + description +""}
+                content={
+                  "Memorandum, DECA, Novas Tecnologias das Comunicação, NTC, University of Aveiro, Department of Comunication and Art, University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades, Story, Interview, " +
+                  description +
+                  ""
+                }
               />
               <title>Memorandum | {title}</title>
               <link

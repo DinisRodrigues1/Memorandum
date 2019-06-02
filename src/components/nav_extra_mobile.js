@@ -1,27 +1,26 @@
 import React, { Component } from "react"
-import styled, { css } from 'styled-components'
-import LogoImage from './logoImage'
-import { FormattedMessage } from 'react-intl'
-import Provider from './provider'
-import LinkWrapper from './linkWrapper'
+import styled, { css } from "styled-components"
+import LogoImage from "./logoImage"
+import { FormattedMessage } from "react-intl"
+import Provider from "./provider"
+import LinkWrapper from "./linkWrapper"
 
 const sizes = {
-    desktop: 992,
-    tablet: 768,
-    phone: 576,
-  }
-  
-  const media = Object.keys(sizes).reduce((acc, label) => {
-    acc[label] = (...args) => css`
-      @media (max-width: ${sizes[label] / 16}em) {
-        ${css(...args)}
-      }
-  
-    `
+  desktop: 992,
+  tablet: 768,
+  phone: 576,
+}
 
-    return acc
-  }, {})
-  
+const media = Object.keys(sizes).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+    @media (max-width: ${sizes[label] / 16}em) {
+      ${css(...args)}
+    }
+  `
+
+  return acc
+}, {})
+
 const NavDiv = styled.div`
     height: 8vh;
     width: 60vw;
@@ -51,30 +50,27 @@ const NavDiv = styled.div`
 `
 
 const UnList = styled.ul`
-    list-style-type: none;
-    overflow: hidden; 
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 
-    ${media.phone`
+  ${media.phone`
         float: right;
     `}
-
 `
 
-
 const ListItems = styled.li`
-    display: inline;  
-    
-    ${media.phone`
-    display: block;`}
+  display: inline;
 
+  ${media.phone`
+    display: block;`}
 `
 
 const LogoImageStyle = styled.button`
-    display: none;
-  
-    ${media.phone`
+  display: none;
+
+  ${media.phone`
       display: inline-block;  
       padding-top: 0.25em;
       background: none; 
@@ -84,134 +80,117 @@ const LogoImageStyle = styled.button`
 `
 
 const Home = styled(LinkWrapper)`
-    text-decoration: none;
-    color: black;
-    font-family: Verdana, sans-serif;
-    z-index: 2;
-    border-bottom: 2px solid #D4D0AB;
-    padding: 0 1.1rem 2px 1.1rem;
-    display: inline-block;
-    background:
-    linear-gradient(
-        to bottom, #D4D0AB 0%,
-        #D4D0AB 100%
-      );
-     background-position: 0 100%;
-     background-repeat: repeat-x;
-     background-size: 2px 2px;
-    transition: background-size .2s;
+  text-decoration: none;
+  color: black;
+  font-family: Verdana, sans-serif;
+  z-index: 2;
+  border-bottom: 2px solid #d4d0ab;
+  padding: 0 1.1rem 2px 1.1rem;
+  display: inline-block;
+  background: linear-gradient(to bottom, #d4d0ab 0%, #d4d0ab 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  transition: background-size 0.2s;
 
-    &:hover {
-        background-size: 4px 50px;
-    }
+  &:hover {
+    background-size: 4px 50px;
+  }
 
-    ${media.phone`
+  ${media.phone`
     margin: 0;
     margin-top: 1.5em;
     `}
 `
 
 const Videos = styled(LinkWrapper)`
-    text-decoration: none;
-    color: black;
-    font-family: Verdana, sans-serif;
-    z-index: 2;
-    margin-left: 15%;
-    border-bottom: 2px solid #D4D0AB;
-    padding: 0 1.1rem 2px 1.1rem;
-    display: inline-block;
-    background:
-    linear-gradient(
-        to bottom, #D4D0AB 0%,
-        #D4D0AB 100%
-      );
-     background-position: 0 100%;
-     background-repeat: repeat-x;
-     background-size: 2px 2px;
-    transition: background-size .2s;
+  text-decoration: none;
+  color: black;
+  font-family: Verdana, sans-serif;
+  z-index: 2;
+  margin-left: 15%;
+  border-bottom: 2px solid #d4d0ab;
+  padding: 0 1.1rem 2px 1.1rem;
+  display: inline-block;
+  background: linear-gradient(to bottom, #d4d0ab 0%, #d4d0ab 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  transition: background-size 0.2s;
 
-    &:hover {
-        background-size: 4px 50px;
-    }
+  &:hover {
+    background-size: 4px 50px;
+  }
 
-    ${media.desktop`
+  ${media.desktop`
         margin-left: 3.5%;
     `}
 
-    ${media.phone`
+  ${media.phone`
     margin: 0;
     margin-top: 1.5em;
     `}
-
 `
 
 const Historias = styled(LinkWrapper)`
-    text-decoration: none;
-    color: black;
-    font-family: Verdana, sans-serif;
-    z-index: 2;
-    margin-left: 15%;
-    border-bottom: 2px solid #D4D0AB;
-    padding: 0 1.1rem 2px 1.1rem;
-    display: inline-block;
-    background:
-    linear-gradient(
-        to bottom, #D4D0AB 0%,
-        #D4D0AB 100%
-      );
-     background-position: 0 100%;
-     background-repeat: repeat-x;
-     background-size: 2px 2px;
-    transition: background-size .2s;
+  text-decoration: none;
+  color: black;
+  font-family: Verdana, sans-serif;
+  z-index: 2;
+  margin-left: 15%;
+  border-bottom: 2px solid #d4d0ab;
+  padding: 0 1.1rem 2px 1.1rem;
+  display: inline-block;
+  background: linear-gradient(to bottom, #d4d0ab 0%, #d4d0ab 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  transition: background-size 0.2s;
 
-    &:hover {
-        background-size: 4px 50px;
-    }
+  &:hover {
+    background-size: 4px 50px;
+  }
 
-    ${media.desktop`
+  ${media.desktop`
         margin-left: 3.5%;
     `}
 
-    ${media.phone`
+  ${media.phone`
     margin: 0;
     margin-top: 1.5em;
     `}
 `
 
 const Galeria = styled(LinkWrapper)`
-    text-decoration: none;
-    color: black;
-    font-family: Verdana, sans-serif;
-    z-index: 2;
-    margin-left: 15%;
-    border-bottom: 2px solid #D4D0AB;
-    padding: 0 1.2rem 2px 1.2rem;
-    display: inline-block;
-    background:
-    linear-gradient(
-        to bottom, #D4D0AB 0%,
-        #D4D0AB 100%
-      );
-     background-position: 0 100%;
-     background-repeat: repeat-x;
-     background-size: 2px 2px;
-    transition: background-size .2s;
+  text-decoration: none;
+  color: black;
+  font-family: Verdana, sans-serif;
+  z-index: 2;
+  margin-left: 15%;
+  border-bottom: 2px solid #d4d0ab;
+  padding: 0 1.2rem 2px 1.2rem;
+  display: inline-block;
+  background: linear-gradient(to bottom, #d4d0ab 0%, #d4d0ab 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  transition: background-size 0.2s;
 
-    &:hover {
-        background-size: 4px 50px;
-    }
+  &:hover {
+    background-size: 4px 50px;
+  }
 
-    ${media.desktop`
+  ${media.desktop`
         margin-left: 3.5%;
     `}
 
-    ${media.phone`
+  ${media.phone`
         margin: 0;
         margin-top: 1.5em;
     `}
 `
 const MobileMenu = styled.div`
-    ${media.phone`
+  ${media.phone`
     background-color: #FFFFFF;
     position: fixed;
     z-index: 2;
@@ -226,39 +205,58 @@ const MobileMenu = styled.div`
     `}
 `
 
-
 class NavMobile extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { showMenu: false};
-      }
-    
-    render() {
-     const { showMenu } = this.state
-   
-     const locale = this.props.locale
+  constructor(props) {
+    super(props)
+    this.state = { showMenu: false }
+  }
 
-     return (
-    <Provider locale={locale}>
-    <NavDiv>
-        <UnList>
-        <LogoImageStyle  onClick={() => {this.setState({ showMenu: !showMenu})}}>
-        <LogoImage/>
-            { showMenu ? true : false }
-        </LogoImageStyle>
-        { showMenu && (
-        <MobileMenu>   
-        <ListItems><Home to ="/"><FormattedMessage id="Home"/></Home></ListItems>
-        <ListItems><Videos to="/videos/"><FormattedMessage id="Videos"/></Videos></ListItems>
-        <ListItems><Historias to="/historias/"><FormattedMessage id="Stories"/></Historias></ListItems>
-        <ListItems><Galeria to="/galeria/"><FormattedMessage id="Gallery"/></Galeria></ListItems>
-        </MobileMenu>
-        )}
-        </UnList>
-    </NavDiv> 
-    </Provider>
+  render() {
+    const { showMenu } = this.state
+
+    const locale = this.props.locale
+
+    return (
+      <Provider locale={locale}>
+        <NavDiv>
+          <UnList>
+            <LogoImageStyle
+              onClick={() => {
+                this.setState({ showMenu: !showMenu })
+              }}
+            >
+              <LogoImage />
+              {showMenu ? true : false}
+            </LogoImageStyle>
+            {showMenu && (
+              <MobileMenu>
+                <ListItems>
+                  <Home to="/">
+                    <FormattedMessage id="Home" />
+                  </Home>
+                </ListItems>
+                <ListItems>
+                  <Videos to="/videos/">
+                    <FormattedMessage id="Videos" />
+                  </Videos>
+                </ListItems>
+                <ListItems>
+                  <Historias to="/historias/">
+                    <FormattedMessage id="Stories" />
+                  </Historias>
+                </ListItems>
+                <ListItems>
+                  <Galeria to="/galeria/">
+                    <FormattedMessage id="Gallery" />
+                  </Galeria>
+                </ListItems>
+              </MobileMenu>
+            )}
+          </UnList>
+        </NavDiv>
+      </Provider>
     )
-    }
+  }
 }
 
 export default NavMobile

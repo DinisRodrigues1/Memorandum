@@ -1,20 +1,19 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Link } from 'gatsby'
+import { Link } from "gatsby"
 import styled, { css } from "styled-components"
-import { FormattedMessage } from 'react-intl'
-import SquareImg from '../components/squareImg'
-import SocialImageFacebook from '../components/socialImageFacebook'
-import SocialImageInstagram from '../components/socialImageInstagram'
-import SocialImageYoutube from '../components/socialImageYoutube'
-import Helmet from 'react-helmet'
+import { FormattedMessage } from "react-intl"
+import SquareImg from "../components/squareImg"
+import SocialImageFacebook from "../components/socialImageFacebook"
+import SocialImageInstagram from "../components/socialImageInstagram"
+import SocialImageYoutube from "../components/socialImageYoutube"
+import Helmet from "react-helmet"
 import Layout from "../components/layout"
 
 const sizes = {
   desktop: 992,
   tablet: 768,
   phone: 576,
-
 }
 
 const media = Object.keys(sizes).reduce((acc, label) => {
@@ -22,17 +21,13 @@ const media = Object.keys(sizes).reduce((acc, label) => {
     @media (max-width: ${sizes[label] / 16}em) {
       ${css(...args)}
     }
-
   `
 
   return acc
 }, {})
 
-
-const SectionImage = styled(SquareImg)`  
-`
-const Text = styled.span`
-`
+const SectionImage = styled(SquareImg)``
+const Text = styled.span``
 
 const SectionLatestBody = styled.section`
     padding-bottom: 7.5%;
@@ -80,31 +75,28 @@ const BodyDiv = styled.div`
     `}
 `
 const TextSep = styled.hr`
-   margin-left: -1.5%;
-   margin-right: -1.5%;
-   border: medium solid #DADFE1;
-   color: #DADFE1;
-   background-color: #DADFE1;
-   margin-top: 2%;
-   margin-bottom: 2%;
+  margin-left: -1.5%;
+  margin-right: -1.5%;
+  border: medium solid #dadfe1;
+  color: #dadfe1;
+  background-color: #dadfe1;
+  margin-top: 2%;
+  margin-bottom: 2%;
 `
 
 const SectionTitle = styled.h2`
-    margin-bottom: 5%;`
+  margin-bottom: 5%;
+`
 
 const SectionLatestText = styled.article`
-    display: inline;
-    text-align: justify;
-    float: left;
-    
-    
-    & > ${Text} {
-      display: inline;
-      
-    }
-    
+  display: inline;
+  text-align: justify;
+  float: left;
 
-`    
+  & > ${Text} {
+    display: inline;
+  }
+`
 const SectionImagePos = styled.div`
       height: 105px;
       float: left;
@@ -114,24 +106,24 @@ const SectionImagePos = styled.div`
 
 `
 const SectionAbout = styled.section`
-    padding-top: 7.5%;
-    padding-bottom: 11%;
+  padding-top: 7.5%;
+  padding-bottom: 11%;
 
-    ${media.phone`
+  ${media.phone`
     padding-top: 15.5%;`}
-
 `
 const LinkTo = styled(Link)`
-text-decoration: none;
-    color: black;`
+  text-decoration: none;
+  color: black;
+`
 
 const FooterPLeft = styled.p`
-      width: 20%;
-      font-size: 90%;
+  width: 20%;
+  font-size: 90%;
 `
 
 const FooterPRight = styled.p`
-      width: 20%;
+  width: 20%;
 `
 
 const Footer = styled.footer`
@@ -185,8 +177,7 @@ const Footer = styled.footer`
       bottom: 0;
       position: relative;
       padding-top: 10%;
-      font-size: 110%;`
-      }
+      font-size: 110%;`}
     
 
     & > ${FooterPLeft} {
@@ -233,16 +224,15 @@ const Footer = styled.footer`
 
   }
 
-` 
+`
 const BodyBottom = styled.div`
-      font-family: Verdana, sans-serif;
-      min-width: 70%;
-      min-height: 90%;
+  font-family: Verdana, sans-serif;
+  min-width: 70%;
+  min-height: 90%;
 `
 
 const ClearFix = styled.div`
-      clear: both; 
-
+  clear: both;
 `
 
 const SocialLogos = styled.div`
@@ -265,25 +255,17 @@ const SocialLogos = styled.div`
      
 `
 
-
-
 const FBook = styled.a`
-      margin-right: 5%;
+  margin-right: 5%;
 `
 
 const IGram = styled.a`
-      margin-right: 5%;
-  `
-
-const YTube = styled.a`
-      
-
+  margin-right: 5%;
 `
 
-const TextMail = styled.span`
-     
+const YTube = styled.a``
 
-`
+const TextMail = styled.span``
 const Space = styled.span`
   margin-bottom: 0.5em;
   display: inline-block;
@@ -292,114 +274,177 @@ const Space = styled.span`
   `}
 `
 
-
-const IndexPage = (props) => {
-  
-  const postList = props.data.allMarkdownRemark;
-  const locale = props.pageContext.locale;
+const IndexPage = props => {
+  const postList = props.data.allMarkdownRemark
+  const locale = props.pageContext.locale
   console.log(postList)
   return (
-  <>
-    <Layout locale={locale}>
-    {locale === 'pt' ?
     <>
-    <Helmet>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <meta name="keywords" content="Projeto, Universitário, Memorandum, Universidade de Aveiro, Departamento de Comunicação e Arte, 
-    DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios" />
-    <title>Memorandum | Página principal</title>
-    <link rel="canonical" href="https://memorandum.website"/>
-    </Helmet>
-    </>
-    :
-    <>
-    <Helmet>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <meta name="keywords" content="Memorandum, DECA, Novas Tecnologias das Comunicação, NTC, University of Aveiro, Department of Comunication and Art, 
-    University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades" />
-    <title>Memorandum | Homepage</title>
-    <link rel="canonical" href="https://memorandum.website/en/"/>
-    </Helmet>
-    </>
-    }    
-    <BodyBottom>
-        <BodyDiv>
-          <SectionLatestBody>
-            <TextSep/>
-              <SectionTitle><FormattedMessage id="LastPost"/></SectionTitle>
-                <SectionLatestText>
-                    <SectionImagePos>
-                    <SectionImage />
-                    </SectionImagePos>
-                    {postList.edges[0].node.frontmatter.lang === locale && locale === "pt" ?
-                   <LinkTo to="fourth_story/index.pt"> 
-                   <Text>
-                      {postList.edges[0].node.excerpt}                   
-                    </Text>
-                    </LinkTo>
-                     : 
-                      <LinkTo to="fourth_story/index.en">
-                       <Text>
-                        {postList.edges[1].node.excerpt}
-                       </Text>
-                       </LinkTo>
-                       }
-              
-                </SectionLatestText>
-          </SectionLatestBody>
+      <Layout locale={locale}>
+        {locale === "pt" ? (
+          <>
+            <Helmet>
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0, user-scalable=no"
+              />
+              <meta
+                name="keywords"
+                content="Projeto, Universitário, Memorandum, Universidade de Aveiro, Departamento de Comunicação e Arte, 
+    DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios"
+              />
+              <title>Memorandum | Página principal</title>
+              <link rel="canonical" href="https://memorandum.website" />
+            </Helmet>
+          </>
+        ) : (
+          <>
+            <Helmet>
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0, user-scalable=no"
+              />
+              <meta
+                name="keywords"
+                content="Memorandum, DECA, Novas Tecnologias das Comunicação, NTC, University of Aveiro, Department of Comunication and Art, 
+    University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades"
+              />
+              <title>Memorandum | Homepage</title>
+              <link rel="canonical" href="https://memorandum.website/en/" />
+            </Helmet>
+          </>
+        )}
+        <BodyBottom>
+          <BodyDiv>
+            <SectionLatestBody>
+              <TextSep />
+              <SectionTitle>
+                <FormattedMessage id="LastPost" />
+              </SectionTitle>
+              <SectionLatestText>
+                <SectionImagePos>
+                  <SectionImage />
+                </SectionImagePos>
+                {postList.edges[0].node.frontmatter.lang === locale &&
+                locale === "pt" ? (
+                  <LinkTo to="fourth_story/index.pt">
+                    <Text>{postList.edges[0].node.excerpt}</Text>
+                  </LinkTo>
+                ) : (
+                  <LinkTo to="fourth_story/index.en">
+                    <Text>{postList.edges[1].node.excerpt}</Text>
+                  </LinkTo>
+                )}
+              </SectionLatestText>
+            </SectionLatestBody>
             <SectionAbout id="about">
-            <TextSep/>
-              <SectionTitle><FormattedMessage id="Project"/></SectionTitle>
-              <p></p>
+              <TextSep />
+              <SectionTitle>
+                <FormattedMessage id="Project" />
+              </SectionTitle>
+              <p />
               <p>
-              <p><b><FormattedMessage id="Tit1"/></b></p>
-              <p><strong><FormattedMessage id="Mem"/></strong><FormattedMessage id="Txt1"/></p>
-              <p></p>
-              <p><b><FormattedMessage id="Tit2"/></b></p>
-              <p><strong><FormattedMessage id="Mem2"/></strong> <FormattedMessage id="Txt2"/></p>
-              <p><strong><FormattedMessage id="Mem3"/></strong> <FormattedMessage id="Txt3"/><i><FormattedMessage id="Ital"/></i></p>
+                <p>
+                  <b>
+                    <FormattedMessage id="Tit1" />
+                  </b>
+                </p>
+                <p>
+                  <strong>
+                    <FormattedMessage id="Mem" />
+                  </strong>
+                  <FormattedMessage id="Txt1" />
+                </p>
+                <p />
+                <p>
+                  <b>
+                    <FormattedMessage id="Tit2" />
+                  </b>
+                </p>
+                <p>
+                  <strong>
+                    <FormattedMessage id="Mem2" />
+                  </strong>{" "}
+                  <FormattedMessage id="Txt2" />
+                </p>
+                <p>
+                  <strong>
+                    <FormattedMessage id="Mem3" />
+                  </strong>{" "}
+                  <FormattedMessage id="Txt3" />
+                  <i>
+                    <FormattedMessage id="Ital" />
+                  </i>
+                </p>
               </p>
             </SectionAbout>
-            </BodyDiv>
+          </BodyDiv>
           <Footer>
             <FooterPLeft>
-           <Space><FormattedMessage id="Dev"/></Space><br/> <Space><FormattedMessage id="Coor"/></Space><br/>
-           <Space><FormattedMessage id="Contact"/><TextMail>projetomemorandum@gmail<wbr/>.com </TextMail></Space>
+              <Space>
+                <FormattedMessage id="Dev" />
+              </Space>
+              <br />{" "}
+              <Space>
+                <FormattedMessage id="Coor" />
+              </Space>
+              <br />
+              <Space>
+                <FormattedMessage id="Contact" />
+                <TextMail>
+                  projetomemorandum@gmail
+                  <wbr />
+                  .com{" "}
+                </TextMail>
+              </Space>
             </FooterPLeft>
             <FooterPRight>
-            <SocialLogos>
-              <FBook target="_blank" href="https://www.facebook.com/projetomemorandum/"><SocialImageFacebook/></FBook>
-              <IGram target="_blank" href="https://www.instagram.com/projetomemorandum/"><SocialImageInstagram/></IGram>
-              <YTube target="_blank" href="https://www.youtube.com/channel/UCvAXx7q7CPpz0n5_I-OQX9w"><SocialImageYoutube/></YTube>
-            </SocialLogos>
+              <SocialLogos>
+                <FBook
+                  target="_blank"
+                  href="https://www.facebook.com/projetomemorandum/"
+                >
+                  <SocialImageFacebook />
+                </FBook>
+                <IGram
+                  target="_blank"
+                  href="https://www.instagram.com/projetomemorandum/"
+                >
+                  <SocialImageInstagram />
+                </IGram>
+                <YTube
+                  target="_blank"
+                  href="https://www.youtube.com/channel/UCvAXx7q7CPpz0n5_I-OQX9w"
+                >
+                  <SocialImageYoutube />
+                </YTube>
+              </SocialLogos>
             </FooterPRight>
-            <ClearFix></ClearFix>
-           
+            <ClearFix />
           </Footer>
-
-      </BodyBottom>
+        </BodyBottom>
       </Layout>
-      </>  
-)
-} 
- 
+    </>
+  )
+}
 
 export default IndexPage
 
-
 export const listQuery = graphql`
   query ListQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date]},
-      filter: {fileAbsolutePath: {regex: "\/fourth-story/"}}) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { fileAbsolutePath: { regex: "/fourth-story/" } }
+    ) {
       edges {
         node {
-          fields{
+          fields {
             slug
           }
           html
           excerpt(pruneLength: 250)
           frontmatter {
-            date(formatString: "DD/MM/YYYY") 
+            date(formatString: "DD/MM/YYYY")
             title
             lang
           }
@@ -407,5 +452,4 @@ export const listQuery = graphql`
       }
     }
   }
- 
 `

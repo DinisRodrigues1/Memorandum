@@ -1,14 +1,13 @@
-
-import React from 'react'
-import { IntlProvider, addLocaleData } from 'react-intl'
+import React from "react"
+import { IntlProvider, addLocaleData } from "react-intl"
 
 // Locale data
-import enData from 'react-intl/locale-data/en'
-import ptData from 'react-intl/locale-data/pt'
+import enData from "react-intl/locale-data/en"
+import ptData from "react-intl/locale-data/pt"
 
 // Messages
-import en from '../components/i18n/en.json'
-import pt from '../components/i18n/pt.json'
+import en from "../components/i18n/en.json"
+import pt from "../components/i18n/pt.json"
 
 const messages = { en, pt }
 

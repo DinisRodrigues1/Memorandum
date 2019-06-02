@@ -2,10 +2,10 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Navigation from "../components/navigation_extra"
 import styled, { css } from "styled-components"
-import NavMobile from '../components/nav_extra_mobile'
-import { FormattedMessage } from 'react-intl'
-import { Helmet } from 'react-helmet'
-import Provider from '../components/provider'
+import NavMobile from "../components/nav_extra_mobile"
+import { FormattedMessage } from "react-intl"
+import { Helmet } from "react-helmet"
+import Provider from "../components/provider"
 
 const sizes = {
   desktop: 992,
@@ -18,12 +18,10 @@ const media = Object.keys(sizes).reduce((acc, label) => {
     @media (max-width: ${sizes[label] / 16}em) {
       ${css(...args)}
     }
-
   `
-  
+
   return acc
 }, {})
-
 
 const OuterContainer = styled.div`
   font-family: Verdana, sans-serif;
@@ -55,9 +53,9 @@ const BodyDiv = styled.div`
   margin-top: 10%;
   padding: 1% 1% 0 1%;
   margin-bottom: 6%;
-  -moz-box-shadow:    0 0 7px 1px #D4D0AB;
-  -webkit-box-shadow: 0 0 7px 1px #D4D0AB;
-  box-shadow:         0 0 7px 1px #D4D0AB;
+  -moz-box-shadow: 0 0 7px 1px #d4d0ab;
+  -webkit-box-shadow: 0 0 7px 1px #d4d0ab;
+  box-shadow: 0 0 7px 1px #d4d0ab;
   border: thin solid #f1f1f1;
 
   ${media.phone`
@@ -65,22 +63,22 @@ const BodyDiv = styled.div`
 `
 
 const TextSepSecond = styled.hr`
-   margin-left: -1.8%;
-   margin-right: -1.8%;
-   margin-top: 3%;
-   margin-bottom: 3%;
-   border: medium solid #DADFE1;
-   color: #DADFE1;
-   background-color: #DADFE1;
+  margin-left: -1.8%;
+  margin-right: -1.8%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  border: medium solid #dadfe1;
+  color: #dadfe1;
+  background-color: #dadfe1;
 `
 
 const TextSepSpecial = styled.hr`
-   margin-top: -14%;
-   margin-left: -1.8%;
-   margin-right: -1.8%;
-   border: medium solid #DADFE1;
-   color: #DADFE1;
-   background-color: #DADFE1;
+  margin-top: -14%;
+  margin-left: -1.8%;
+  margin-right: -1.8%;
+  border: medium solid #dadfe1;
+  color: #dadfe1;
+  background-color: #dadfe1;
 `
 
 const PageTitle = styled.h2`
@@ -88,99 +86,110 @@ const PageTitle = styled.h2`
   margin-bottom: 10%;
 `
 
-
 const PostLink = styled(Link)`
   text-decoration: none;
-
 `
 
 const PostContainer = styled.div`
-  
   font-family: Verdana, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  
 `
 const PostList = styled.div`
   font-family: Verdana, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   color: black;
-  
 `
 
 const PostTitle = styled.h1`
   margin-bottom: 5%;
   color: #000;
-  text-shadow:
-    -1px -1px 0 #fff,  
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
     1px 1px 0 #fff;
 `
 
 const PostDate = styled.span`
-  display: inline-block; 
+  display: inline-block;
   margin-bottom: 3%;
 `
 
+const Historias = props => {
+  const postList = props.data.allMarkdownRemark
+  const locale = props.pageContext.locale
 
-
-const Historias = (props) => {
-  const postList = props.data.allMarkdownRemark;
-  const locale = props.pageContext.locale;
-  
   return (
-  <Provider locale={locale}>
-  <>
-    {locale === 'pt' ?
-    <>
-    <Helmet>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <meta name="keywords" content="Projeto, Universitário, Memorandum, Universidade de Aveiro, Departamento de Comunicação e Arte, 
-    DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios, Página, Histórias, Entrevistas" />
-    <title>Memorandum | Histórias</title>
-    <link rel="canonical" href="https://memorandum.website/historias/"/>
-    </Helmet>
-    </>
-    :
-    <>
-    <Helmet>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <meta name="keywords" content="Memorandum, DECA, Novas Tecnologias das Comunicação, NTC, University of Aveiro, Department of Comunication and Art, 
-    University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades, Page, Stories, Interviews" />
-    <title>Memorandum | Stories</title>
-    <link rel="canonical" href="https://memorandum.website/en/historias/"/>
-    </Helmet>
-    </>
-    }  
-  <OuterContainer>
-    <Navigation locale={locale}/>
-    <NavMobile locale={locale}/>
-    <BodyDiv>
-    <PageTitle><TextSepSpecial/><FormattedMessage id="Stories"/></PageTitle>
-    <PostContainer>
-        {postList.edges.map(({ node }, i) => (
-          node.frontmatter.lang === locale ?
-        <PostLink to={node.fields.slug} className="link" >
-        <PostList>
-        <PostTitle>{node.frontmatter.title}</PostTitle>
-        <PostDate>{node.frontmatter.date}</PostDate>
-        <p>{node.excerpt}</p>
-        </PostList>
-        <TextSepSecond/>
-        </PostLink>
-        :
-        <div></div>
-    ))}
-    </PostContainer>
-    </BodyDiv>
-  </OuterContainer>
-  </>
-  </Provider>
+    <Provider locale={locale}>
+      <>
+        {locale === "pt" ? (
+          <>
+            <Helmet>
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0, user-scalable=no"
+              />
+              <meta
+                name="keywords"
+                content="Projeto, Universitário, Memorandum, Universidade de Aveiro, Departamento de Comunicação e Arte, 
+    DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios, Página, Histórias, Entrevistas"
+              />
+              <title>Memorandum | Histórias</title>
+              <link
+                rel="canonical"
+                href="https://memorandum.website/historias/"
+              />
+            </Helmet>
+          </>
+        ) : (
+          <>
+            <Helmet>
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0, user-scalable=no"
+              />
+              <meta
+                name="keywords"
+                content="Memorandum, DECA, Novas Tecnologias das Comunicação, NTC, University of Aveiro, Department of Comunication and Art, 
+    University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades, Page, Stories, Interviews"
+              />
+              <title>Memorandum | Stories</title>
+              <link
+                rel="canonical"
+                href="https://memorandum.website/en/historias/"
+              />
+            </Helmet>
+          </>
+        )}
+        <OuterContainer>
+          <Navigation locale={locale} />
+          <NavMobile locale={locale} />
+          <BodyDiv>
+            <PageTitle>
+              <TextSepSpecial />
+              <FormattedMessage id="Stories" />
+            </PageTitle>
+            <PostContainer>
+              {postList.edges.map(({ node }, i) =>
+                node.frontmatter.lang === locale ? (
+                  <PostLink to={node.fields.slug} className="link">
+                    <PostList>
+                      <PostTitle>{node.frontmatter.title}</PostTitle>
+                      <PostDate>{node.frontmatter.date}</PostDate>
+                      <p>{node.excerpt}</p>
+                    </PostList>
+                    <TextSepSecond />
+                  </PostLink>
+                ) : (
+                  <div />
+                )
+              )}
+            </PostContainer>
+          </BodyDiv>
+        </OuterContainer>
+      </>
+    </Provider>
   )
 }
-
 
 export default Historias
 
@@ -189,12 +198,12 @@ export const listQuery = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          fields{
+          fields {
             slug
           }
           excerpt(pruneLength: 250)
           frontmatter {
-            date(formatString: "DD/MM/YYYY") 
+            date(formatString: "DD/MM/YYYY")
             title
             lang
           }
@@ -202,5 +211,4 @@ export const listQuery = graphql`
       }
     }
   }
- 
 `

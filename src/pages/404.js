@@ -1,10 +1,9 @@
 import React from "react"
-import SEO from "../components/seo"
-import { FormattedMessage } from 'react-intl'
-import styled, { css } from 'styled-components'
-import Provider from '../components/provider'
-import LinkWrapper from '../components/linkWrapper'
-import { Helmet } from 'react-helmet'
+import { FormattedMessage } from "react-intl"
+import styled, { css } from "styled-components"
+import Provider from "../components/provider"
+import LinkWrapper from "../components/linkWrapper"
+import { Helmet } from "react-helmet"
 
 const sizes = {
   desktop: 992,
@@ -17,7 +16,6 @@ const media = Object.keys(sizes).reduce((acc, label) => {
     @media (max-width: ${sizes[label] / 16}em) {
       ${css(...args)}
     }
-
   `
 
   return acc
@@ -57,7 +55,7 @@ const Outer404Container = styled.div`
 `
 
 const TextContainer = styled.div`
-  margin: 25vh 0;  
+  margin: 25vh 0;
 `
 
 const GoBack = styled(LinkWrapper)`
@@ -69,10 +67,10 @@ let goBack = () => {
   window.history.back()
 }
 
-const NotFoundPage = ({ pageContext: { locale }}) => (
+const NotFoundPage = ({ pageContext: { locale } }) => (
   <Provider locale={locale}>
-  <Outer404Container>
-  {locale === "pt" ? (
+    <Outer404Container>
+      {locale === "pt" ? (
         <>
           <Helmet>
             <meta
@@ -86,10 +84,7 @@ const NotFoundPage = ({ pageContext: { locale }}) => (
     Página não encontrada"
             />
             <title>Memorandum | 404 Página não encontrada</title>
-            <link
-              rel="canonical"
-              href="https://memorandum.website/404/"
-            />
+            <link rel="canonical" href="https://memorandum.website/404/" />
           </Helmet>
         </>
       ) : (
@@ -105,21 +100,20 @@ const NotFoundPage = ({ pageContext: { locale }}) => (
     University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades, Page, 404, not, found, Page not found"
             />
             <title>Memorandum | 404 Page not found</title>
-            <link
-              rel="canonical"
-              href="https://memorandum.website/en/404/"
-            />
+            <link rel="canonical" href="https://memorandum.website/en/404/" />
           </Helmet>
         </>
       )}
-    <TextContainer>
-    <h2><FormattedMessage id="PageNotFound"/></h2>
-    <GoBack onClick={goBack}><FormattedMessage id="404Help"/></GoBack>
-    </TextContainer>
-  </Outer404Container>
+      <TextContainer>
+        <h2>
+          <FormattedMessage id="PageNotFound" />
+        </h2>
+        <GoBack onClick={goBack}>
+          <FormattedMessage id="404Help" />
+        </GoBack>
+      </TextContainer>
+    </Outer404Container>
   </Provider>
 )
-
-
 
 export default NotFoundPage

@@ -1,29 +1,28 @@
 import React, { Component } from "react"
-import styled, { css } from 'styled-components'
-import LogoImage from './logoImage'
-import { FormattedMessage } from 'react-intl'
-import Provider from './provider'
-import LinkWrapper from './linkWrapper'
-import Helmet from 'react-helmet'
+import styled, { css } from "styled-components"
+import LogoImage from "./logoImage"
+import { FormattedMessage } from "react-intl"
+import Provider from "./provider"
+import LinkWrapper from "./linkWrapper"
+import Helmet from "react-helmet"
 
 const sizes = {
-    desktop: 992,
-    tablet: 768,
-    phone: 576,
-  }
-  
-  const media = Object.keys(sizes).reduce((acc, label) => {
-    acc[label] = (...args) => css`
-      @media (max-width: ${sizes[label] / 16}em) {
-        ${css(...args)}
-      }
-  
-    `
+  desktop: 992,
+  tablet: 768,
+  phone: 576,
+}
 
-    return acc
-  }, {})
-  
-  const NavDiv = styled.nav`
+const media = Object.keys(sizes).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+    @media (max-width: ${sizes[label] / 16}em) {
+      ${css(...args)}
+    }
+  `
+
+  return acc
+}, {})
+
+const NavDiv = styled.nav`
   height: 5vh;
   width: 60vw;
   margin: 0 auto;
@@ -55,7 +54,7 @@ const sizes = {
 
 const UnList = styled.ul`
   list-style-type: none;
-  overflow: hidden; 
+  overflow: hidden;
   margin: 0;
   padding: 0;
 
@@ -63,15 +62,13 @@ const UnList = styled.ul`
     float: right;
     
   `}
-
 `
 
 const ListItems = styled.li`
-  display: inline;  
-  
+  display: inline;
+
   ${media.phone`
   display: block;`}
-
 `
 
 const LogoImageStyle = styled.button`
@@ -90,29 +87,23 @@ const Videos = styled(LinkWrapper)`
   color: black;
   font-family: Verdana, sans-serif;
   z-index: 2;
-  border-bottom: 2px solid #D4D0AB;
+  border-bottom: 2px solid #d4d0ab;
   padding: 0 1rem 2px 1rem;
   display: inline-block;
-  background:
-  linear-gradient(
-      to bottom, #D4D0AB 0%,
-      #D4D0AB 100%
-    );
-   background-position: 0 100%;
-   background-repeat: repeat-x;
-   background-size: 2px 2px;
-  transition: background-size .2s;
+  background: linear-gradient(to bottom, #d4d0ab 0%, #d4d0ab 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  transition: background-size 0.2s;
 
   &:hover {
-      background-size: 4px 50px;
+    background-size: 4px 50px;
   }
 
   ${media.phone`
     margin: 0;
     margin-top: 1.5em;
 `}
-
-  
 `
 
 const Historias = styled(LinkWrapper)`
@@ -121,21 +112,17 @@ const Historias = styled(LinkWrapper)`
   font-family: Verdana, sans-serif;
   z-index: 2;
   margin-left: 15%;
-  border-bottom: 2px solid #D4D0AB;
+  border-bottom: 2px solid #d4d0ab;
   padding: 0 1rem 2px 1rem;
   display: inline-block;
-  background:
-  linear-gradient(
-      to bottom, #D4D0AB 0%,
-      #D4D0AB 100%
-    );
-   background-position: 0 100%;
-   background-repeat: repeat-x;
-   background-size: 2px 2px;
-  transition: background-size .2s;
+  background: linear-gradient(to bottom, #d4d0ab 0%, #d4d0ab 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  transition: background-size 0.2s;
 
   &:hover {
-      background-size: 4px 50px;
+    background-size: 4px 50px;
   }
 
   ${media.phone`
@@ -150,21 +137,17 @@ const Galeria = styled(LinkWrapper)`
   font-family: Verdana, sans-serif;
   z-index: 2;
   margin-left: 15%;
-  border-bottom: 2px solid #D4D0AB;
+  border-bottom: 2px solid #d4d0ab;
   padding: 0 1rem 2px 1rem;
   display: inline-block;
-  background:
-  linear-gradient(
-      to bottom, #D4D0AB 0%,
-      #D4D0AB 100%
-    );
-   background-position: 0 100%;
-   background-repeat: repeat-x;
-   background-size: 2px 2px;
-  transition: background-size .2s;
+  background: linear-gradient(to bottom, #d4d0ab 0%, #d4d0ab 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  transition: background-size 0.2s;
 
   &:hover {
-      background-size: 4px 50px;
+    background-size: 4px 50px;
   }
 
   ${media.phone`
@@ -189,45 +172,57 @@ const MobileMenu = styled.div`
   border: thin solid #f1f1f1;
   padding-bottom: 3%;
   `}
- 
 `
 
-
 class NavMobile extends Component {
-constructor(props) {
-  super(props);
-  this.state = { showMenu: false };
-}
+  constructor(props) {
+    super(props)
+    this.state = { showMenu: false }
+  }
 
-render() {
-  const { showMenu } = this.state
-  const locale = this.props.locale
+  render() {
+    const { showMenu } = this.state
+    const locale = this.props.locale
 
-  
-  return (
-    <Provider locale={locale}>
-    <NavDiv>
-    <Helmet>
-      <meta name="viewport" content="minimum-scale=1"/>
-    </Helmet>
-        <UnList>
-        <LogoImageStyle  onClick={() => {this.setState({ showMenu : !showMenu})}}>
-        <LogoImage/>
-            { showMenu ? true : false }
-        </LogoImageStyle>
-        { showMenu && (
-        <MobileMenu>   
-        <ListItems><Videos to="/videos/"><FormattedMessage id="Videos"/></Videos></ListItems>
-        <ListItems><Historias to="/historias/"><FormattedMessage id="Stories"/></Historias></ListItems>
-        <ListItems><Galeria to="/galeria/"><FormattedMessage id="Gallery"/></Galeria></ListItems>
-        </MobileMenu>
-        )}
-        </UnList>
-    </NavDiv> 
-    </Provider>
-  )
+    return (
+      <Provider locale={locale}>
+        <NavDiv>
+          <Helmet>
+            <meta name="viewport" content="minimum-scale=1" />
+          </Helmet>
+          <UnList>
+            <LogoImageStyle
+              onClick={() => {
+                this.setState({ showMenu: !showMenu })
+              }}
+            >
+              <LogoImage />
+              {showMenu ? true : false}
+            </LogoImageStyle>
+            {showMenu && (
+              <MobileMenu>
+                <ListItems>
+                  <Videos to="/videos/">
+                    <FormattedMessage id="Videos" />
+                  </Videos>
+                </ListItems>
+                <ListItems>
+                  <Historias to="/historias/">
+                    <FormattedMessage id="Stories" />
+                  </Historias>
+                </ListItems>
+                <ListItems>
+                  <Galeria to="/galeria/">
+                    <FormattedMessage id="Gallery" />
+                  </Galeria>
+                </ListItems>
+              </MobileMenu>
+            )}
+          </UnList>
+        </NavDiv>
+      </Provider>
+    )
+  }
 }
-}
-
 
 export default NavMobile

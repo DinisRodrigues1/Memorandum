@@ -2,9 +2,8 @@ import { Link } from "gatsby"
 import React from "react"
 import LogoOverlay from "./logoOverlay"
 import BgImage from "./bgImage"
-import styled, { css } from 'styled-components'
-import Helmet from 'react-helmet'
-
+import styled, { css } from "styled-components"
+import Helmet from "react-helmet"
 
 const sizes = {
   desktop: 992,
@@ -23,7 +22,6 @@ const media = Object.keys(sizes).reduce((acc, label) => {
   return acc
 }, {})
 
-
 const HeadDiv = styled.div`
     height: 100vh;
     width: 100vw;
@@ -40,7 +38,7 @@ const HeadDiv = styled.div`
     ${media.phone`
       height: 28vh;
       `}
-`  
+`
 const SpanBlock = styled.span`
     position: absolute;
     top: 1%;
@@ -84,7 +82,6 @@ const LinkStyleOne = styled(Link)`
       margin-left; 2vw;
     `}
 `
-
 
 const TextStyle = styled.span`
     margin-left: 0.5%;
@@ -138,11 +135,9 @@ const LinkStyleTwo = styled(Link)`
 
 `
 
-const Logo = styled(LogoOverlay)`    
-`
+const Logo = styled(LogoOverlay)``
 
-const BgImg = styled(BgImage)`    
-`
+const BgImg = styled(BgImage)``
 
 const LogoBlock = styled.div`
     position: relative;
@@ -173,31 +168,26 @@ const LogoBlock = styled.div`
     `}
   `
 
-
 const Header = () => (
-    <HeadDiv>
-       <Helmet>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <HeadDiv>
+    <Helmet>
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no"
+      />
     </Helmet>
-      <BgImg/>
-      <LogoBlock>
-      <Logo/>
-      </LogoBlock>
-      <SpanBlock>
-        <LinkStyleOne
-          to="/" 
-        >{"PT"}
-          </LinkStyleOne>
-      </SpanBlock>
-      <TextStyle
-      >|</TextStyle>
-      <span>
-        <LinkStyleTwo
-          to="/en/"
-        >{"EN"}
-          </LinkStyleTwo>
-      </span>
-    </HeadDiv>
+    <BgImg />
+    <LogoBlock>
+      <Logo />
+    </LogoBlock>
+    <SpanBlock>
+      <LinkStyleOne to="/">{"PT"}</LinkStyleOne>
+    </SpanBlock>
+    <TextStyle>|</TextStyle>
+    <span>
+      <LinkStyleTwo to="/en/">{"EN"}</LinkStyleTwo>
+    </span>
+  </HeadDiv>
 )
 
 export default Header

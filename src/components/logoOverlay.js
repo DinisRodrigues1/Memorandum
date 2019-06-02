@@ -1,13 +1,11 @@
-import React from 'react'
+import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import Img from 'gatsby-image'
-
-
+import Img from "gatsby-image"
 
 const LogoOverlay = () => (
-    <StaticQuery 
+  <StaticQuery
     query={graphql`
-    query {
+      query {
         placeholderImage: file(relativePath: { eq: "Logo_for_website.png" }) {
           childImageSharp {
             fluid(maxWidth: 1006, maxHeight: 410, quality: 100) {
@@ -16,11 +14,14 @@ const LogoOverlay = () => (
           }
         }
       }
-    `
-    }
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} className="logo" />}
-    />
+    `}
+    render={data => (
+      <Img
+        fluid={data.placeholderImage.childImageSharp.fluid}
+        className="logo"
+      />
+    )}
+  />
 )
-
 
 export default LogoOverlay
