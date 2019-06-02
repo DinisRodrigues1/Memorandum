@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Navigation from "../components/navigation_extra"
-import SEO from "../components/seo"
 import styled, { css } from "styled-components"
 import NavMobile from '../components/nav_extra_mobile'
 import { FormattedMessage } from 'react-intl'
@@ -133,7 +132,28 @@ const Historias = (props) => {
   
   return (
   <Provider locale={locale}>
- 
+  <>
+    {locale === 'pt' ?
+    <>
+    <Helmet>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="keywords" content="Projeto, Universitário, Memorandum, Universidade de Aveiro, Departamento de Comunicação e Arte, 
+    DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios, Página, Histórias, Entrevistas" />
+    <title>Memorandum | Histórias</title>
+    <link rel="canonical" href="https://memorandum.website/historias/"/>
+    </Helmet>
+    </>
+    :
+    <>
+    <Helmet>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="keywords" content="Memorandum, DECA, Novas Tecnologias das Comunicação, NTC, University of Aveiro, Department of Comunication and Art, 
+    University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades, Page, Stories, Interviews" />
+    <title>Memorandum | Stories</title>
+    <link rel="canonical" href="https://memorandum.website/en/historias/"/>
+    </Helmet>
+    </>
+    }  
   <OuterContainer>
     <Navigation locale={locale}/>
     <NavMobile locale={locale}/>
@@ -156,6 +176,7 @@ const Historias = (props) => {
     </PostContainer>
     </BodyDiv>
   </OuterContainer>
+  </>
   </Provider>
   )
 }

@@ -1,7 +1,6 @@
 import React from "react"
 import Navigation from "../components/navigation_extra"
 import NavMobile from '../components/nav_extra_mobile'
-import SEO from "../components/seo"
 import styled, { css } from "styled-components"
 import { FormattedMessage } from 'react-intl'
 import { Helmet } from 'react-helmet'

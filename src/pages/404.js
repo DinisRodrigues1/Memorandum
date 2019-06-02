@@ -4,6 +4,7 @@ import { FormattedMessage } from 'react-intl'
 import styled, { css } from 'styled-components'
 import Provider from '../components/provider'
 import LinkWrapper from '../components/linkWrapper'
+import { Helmet } from 'react-helmet'
 
 const sizes = {
   desktop: 992,
@@ -71,11 +72,46 @@ let goBack = () => {
 const NotFoundPage = ({ pageContext: { locale }}) => (
   <Provider locale={locale}>
   <Outer404Container>
-    {locale === 'pt' ?
-    <SEO title="404: Página não encontrada" />
-    :
-    <SEO title="404: Page not found"/>
-    }
+  {locale === "pt" ? (
+        <>
+          <Helmet>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0, user-scalable=no"
+            />
+            <meta
+              name="keywords"
+              content="Projeto, Universitário, Memorandum, Universidade de Aveiro, Departamento de Comunicação e Arte, 
+    DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios, Página, 404, não, encontrada,
+    Página não encontrada"
+            />
+            <title>Memorandum | 404 Página não encontrada</title>
+            <link
+              rel="canonical"
+              href="https://memorandum.website/404/"
+            />
+          </Helmet>
+        </>
+      ) : (
+        <>
+          <Helmet>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0, user-scalable=no"
+            />
+            <meta
+              name="keywords"
+              content="Memorandum, DECA, Novas Tecnologias das Comunicação, NTC, University of Aveiro, Department of Comunication and Art, 
+    University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades, Page, 404, not, found, Page not found"
+            />
+            <title>Memorandum | 404 Page not found</title>
+            <link
+              rel="canonical"
+              href="https://memorandum.website/en/404/"
+            />
+          </Helmet>
+        </>
+      )}
     <TextContainer>
     <h2><FormattedMessage id="PageNotFound"/></h2>
     <GoBack onClick={goBack}><FormattedMessage id="404Help"/></GoBack>

@@ -1,5 +1,4 @@
 import React from "react"
-import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import { Link } from 'gatsby'
 import styled, { css } from "styled-components"
@@ -298,6 +297,7 @@ const IndexPage = (props) => {
   
   const postList = props.data.allMarkdownRemark;
   const locale = props.pageContext.locale;
+  console.log(postList)
   return (
   <>
     <Layout locale={locale}>
@@ -390,7 +390,7 @@ export default IndexPage
 export const listQuery = graphql`
   query ListQuery {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date]},
-      filter: {fileAbsolutePath: {regex: "\/fourth_story/"}}) {
+      filter: {fileAbsolutePath: {regex: "\/fourth-story/"}}) {
       edges {
         node {
           fields{
