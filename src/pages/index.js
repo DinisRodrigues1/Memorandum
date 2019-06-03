@@ -296,7 +296,7 @@ const IndexPage = props => {
               />
               <meta
                 name="description"
-                content="Página principal do website criado no âmbito do projeto Memorandum."
+                content="Página principal do website criado no âmbito do projeto Memorandum, cujo objetivo é fomentar a comunicação intergeracional."
               />
               <title>Memorandum | Página principal</title>
               <link rel="canonical" href="https://memorandum.website" />
@@ -316,7 +316,7 @@ const IndexPage = props => {
               />
               <meta
                 name="description"
-                content="Landing page of the website created for the Memorandum project."
+                content="Landing page of the website created for the Memorandum project, with the objective of promoting intergenerational communication."
               />
               <title>Memorandum | Homepage</title>
               <link rel="canonical" href="https://memorandum.website/en/" />

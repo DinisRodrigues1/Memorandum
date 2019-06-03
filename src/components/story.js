@@ -74,8 +74,8 @@ const PageTitle = styled.h1`
   margin-bottom: 10%;
 `
 
-const FakeH1 = styled.h1`
-  font-size: 1.7em;
+const FakeH1 = styled.h2`
+  font-size: 1.5em;
 `
 
 function Story(props) {

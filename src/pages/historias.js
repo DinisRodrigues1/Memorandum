@@ -103,8 +103,8 @@ const PostList = styled.div`
   color: black;
 `
 
-const PostTitle = styled.h1`
-  font-size: 1.7em;
+const PostTitle = styled.h2`
+  font-size: 1.5em;
   margin-bottom: 5%;
   color: #000;
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
