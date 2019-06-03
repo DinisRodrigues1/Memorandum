@@ -69,12 +69,13 @@ const TextSepSpecial = styled.hr`
 `
 
 const PageTitle = styled.h1`
+  font-size: 1.8em;
   margin-top: 15%;
   margin-bottom: 10%;
-  font-size: 2em;
 `
+
 const FakeH1 = styled.h1`
-  font-size: 2em;
+  font-size: 1.7em;
 `
 
 function Story(props) {

@@ -81,7 +81,8 @@ const TextSepSpecial = styled.hr`
   background-color: #dadfe1;
 `
 
-const PageTitle = styled.h2`
+const PageTitle = styled.h1`
+  font-size: 1.8em;
   margin-top: 15%;
   margin-bottom: 10%;
 `
@@ -103,6 +104,7 @@ const PostList = styled.div`
 `
 
 const PostTitle = styled.h1`
+  font-size: 1.7em;
   margin-bottom: 5%;
   color: #000;
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,

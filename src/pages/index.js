@@ -84,7 +84,8 @@ const TextSep = styled.hr`
   margin-bottom: 2%;
 `
 
-const SectionTitle = styled.h2`
+const SectionTitle = styled.h1`
+  font-size: 1.8em;
   margin-bottom: 5%;
 `
 
@@ -294,9 +295,9 @@ const IndexPage = props => {
     DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios"
               />
               <meta
-              name="description"
-              content="Página principal do website criado no âmbito do projeto Memorandum."
-            />
+                name="description"
+                content="Página principal do website criado no âmbito do projeto Memorandum."
+              />
               <title>Memorandum | Página principal</title>
               <link rel="canonical" href="https://memorandum.website" />
             </Helmet>
@@ -314,9 +315,9 @@ const IndexPage = props => {
     University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades"
               />
               <meta
-              name="description"
-              content="Landing page of the website created for the Memorandum project."
-            />
+                name="description"
+                content="Landing page of the website created for the Memorandum project."
+              />
               <title>Memorandum | Homepage</title>
               <link rel="canonical" href="https://memorandum.website/en/" />
             </Helmet>

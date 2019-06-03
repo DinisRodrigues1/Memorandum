@@ -47,7 +47,8 @@ const OuterContainer = styled.div`
   `}
 `
 
-const PageTitle = styled.h2`
+const PageTitle = styled.h1`
+  font-size: 1.8em;
   margin-top: 15%;
   margin-bottom: 10%;
 `

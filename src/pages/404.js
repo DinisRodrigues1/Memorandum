@@ -58,6 +58,10 @@ const TextContainer = styled.div`
   margin: 25vh 0;
 `
 
+const FakeH2 = styled.h1`
+  font-size: 1.8em;
+`
+
 const GoBack = styled(LinkWrapper)`
   text-decoration: none;
   color: black;
@@ -113,9 +117,9 @@ const NotFoundPage = ({ pageContext: { locale } }) => (
         </>
       )}
       <TextContainer>
-        <h2>
+        <FakeH2>
           <FormattedMessage id="PageNotFound" />
-        </h2>
+        </FakeH2>
         <GoBack onClick={goBack}>
           <FormattedMessage id="404Help" />
         </GoBack>
