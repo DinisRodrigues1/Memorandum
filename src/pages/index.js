@@ -292,11 +292,12 @@ const IndexPage = props => {
               <meta
                 name="keywords"
                 content="Projeto, Universitário, Memorandum, Universidade de Aveiro, Departamento de Comunicação e Arte, 
-    DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios"
+    DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios, Website, Site, Aveiro, Portugal"
               />
               <meta
                 name="description"
-                content="Página principal do website criado no âmbito do projeto Memorandum, cujo objetivo é fomentar a comunicação intergeracional."
+                content="Website criado no âmbito do projeto Memorandum, cujo objetivo é fomentar a comunicação intergeracional através de entrevistas 
+                gravadas e mais tarde disponiblizadas online para, principalmente, as gerações mais novas, como também todos os interessados."
               />
               <title>Memorandum | Página principal</title>
               <link rel="canonical" href="https://memorandum.website" />
@@ -312,11 +313,12 @@ const IndexPage = props => {
               <meta
                 name="keywords"
                 content="Memorandum, DECA, Novas Tecnologias das Comunicação, NTC, University of Aveiro, Department of Comunication and Art, 
-    University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades"
+    University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades, Website, Site, Aveiro, Portugal"
               />
               <meta
                 name="description"
-                content="Landing page of the website created for the Memorandum project, with the objective of promoting intergenerational communication."
+                content="Website created for the Memorandum project, with the objective of promoting intergenerational communication through recorded interviews,
+                which are later posted online for the younger generations, or any interested in the initiative"
               />
               <title>Memorandum | Homepage</title>
               <link rel="canonical" href="https://memorandum.website/en/" />
