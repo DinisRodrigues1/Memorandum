@@ -15,4 +15,4 @@ And so, we got to know his workshop, his tools, not as modern as they once were,
 
 He was without a doubt one of most comical and lively people, we had interviewed, his joy in explaining his mishaps as a child and his misadventures as an adult immediately captivated us.
 
-You can learn more about Mr. Edgar in our second <a href="/en/videos#four">episode</a>.
+You can learn more about Mr. Edgar in our second <a style="text-decoration: none; background-color: #C8F7C5; color: black; font-family: Verdana, sans-serif;" href="/en/videos#four">episode</a>.

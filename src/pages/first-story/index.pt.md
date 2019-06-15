@@ -13,4 +13,4 @@ Perante esta situação fomos obrigados a parar, ainda tentamos meter conversa c
 
 Mas não se sente triste por já não ter tanta clientela, gosta do que faz, e vai para a sua banca faça chuva ou faça sol. Contou-nos como é o processo da seca do peixe e como foi a sua vida, desde a infância baseada no trabalho até à vida pacata que vive atualmente.  
 
-Poderás conhecer mais sobre a Dona Maria no nosso primeiro <a href="/videos#one">vídeo</a>. 
+Poderás conhecer mais sobre a Dona Maria no nosso primeiro <a style="text-decoration: none; background-color: #C8F7C5; color: black; font-family: Verdana, sans-serif;" href="/videos#one">vídeo</a>. 

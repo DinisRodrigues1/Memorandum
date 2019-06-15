@@ -57,6 +57,7 @@ const BodyDiv = styled.div`
   -webkit-box-shadow: 0 0 7px 1px #d4d0ab;
   box-shadow: 0 0 7px 1px #d4d0ab;
   border: thin solid #f1f1f1;
+ 
 
   ${media.phone`
   margin-top: 30%; `}
@@ -119,6 +120,7 @@ const PostDate = styled.span`
 const Historias = props => {
   const postList = props.data.allMarkdownRemark
   const locale = props.pageContext.locale
+  console.log(postList)
 
   return (
     <Provider locale={locale}>

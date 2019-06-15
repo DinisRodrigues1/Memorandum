@@ -200,6 +200,22 @@ const Videos = ({ pageContext: { locale } }) => (
               <VideoText>Dona Maria de Jesus e Sr. Edgar</VideoText>
               <TextSep />
             </VideoArticle>
+            <VideoArticle id="five">
+              <VideoContainer>
+                <IFrame
+                  width="100%"
+                  height="75%"
+                  src="https://www.youtube.com/embed/izEy4PahAa8"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  frameBorder="0"
+                  webkitallowfullscreen="true"
+                  mozallowfullscreen="true"
+                  allowFullScreen
+                />
+              </VideoContainer>
+              <VideoText>Dona Fátima e Sr. Zé e Júlia Costa</VideoText>
+              <TextSep />
+            </VideoArticle>
           </>
         ) : (
           <>
@@ -233,6 +249,22 @@ const Videos = ({ pageContext: { locale } }) => (
                 />
               </VideoContainer>
               <VideoText>Mrs. Maria de Jesus e Mr. Edgar</VideoText>
+              <TextSep />
+            </VideoArticle>
+            <VideoArticle id="four">
+              <VideoContainer>
+                <IFrame
+                  width="100%"
+                  height="75%"
+                  src="https://www.youtube.com/embed/IQ2wRsmLJ5o"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  frameBorder="0"
+                  webkitallowfullscreen="true"
+                  mozallowfullscreen="true"
+                  allowFullScreen
+                />
+              </VideoContainer>
+              <VideoText>Mrs. Fátima and Mr. Zé and Mrs. Júlia Costa</VideoText>
               <TextSep />
             </VideoArticle>
           </>

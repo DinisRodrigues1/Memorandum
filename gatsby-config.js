@@ -87,7 +87,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `src/images/memo_small.png`,
+        icon: `src/images/squareimage.png`,
       },
     },
     `gatsby-transformer-remark`,

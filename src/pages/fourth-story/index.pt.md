@@ -15,4 +15,4 @@ E assim foi, conhecemos a sua oficina, as suas máquinas de trabalho, agora não
 
 Sem dúvida que foi das pessoas mais engraçadas e animadas que entrevistamos, a sua alegria ao contar as peripécias de infância e o tom com que nos contou as suas desventuras de adulto cativou-nos de imediato. 
 
-Poderás conhecer mais sobre o senhor Edgar no nosso segundo <a href="/videos#three">vídeo</a>.
+Poderás conhecer mais sobre o senhor Edgar no nosso segundo <a style="text-decoration: none; background-color: #C8F7C5; color: black; font-family: Verdana, sans-serif;" href="/videos#three">vídeo</a>.

@@ -14,4 +14,4 @@ Beyond his store, by the main street of Famalicão, we also visited his workshop
 
 And after using approximately 2 hours of his time for the recording of his story, he treated us to some coffee afterwards.
 
-You can find out more about Mr. Arménio on our first <a href="/en/videos#two">episode</a>.
+You can find out more about Mr. Arménio on our first <a style="text-decoration: none; background-color: #C8F7C5; color: black; font-family: Verdana, sans-serif;" href="/en/videos#two">episode</a>.

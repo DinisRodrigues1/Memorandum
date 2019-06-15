@@ -23,26 +23,17 @@ const media = Object.keys(sizes).reduce((acc, label) => {
 }, {})
 
 const HeadDiv = styled.div`
-    height: 100vh;
-    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 0.3fr);  
+    
 
-    ${media.desktop`
-      height: 32vh;
-      width: 100%;
-    `}
-    
-    ${media.tablet`
-      height: 30vh;
-    `}
-    
-    ${media.phone`
-      height: 28vh;
-      `}
 `
 const SpanBlock = styled.span`
     position: absolute;
     top: 1%;
     left: 0.8%;
+    z-index: 3;
 
     ${media.desktop`
       top: 0.6%;
@@ -61,7 +52,7 @@ const LinkStyleOne = styled(Link)`
     color: black;
     text-decoration: none;
     position: absolute:
-    z-index: 1;
+    z-index: 3;
     top: 1%;
     left: 2000px;
     font-family: Verdana, sans-serif;
@@ -89,9 +80,10 @@ const TextStyle = styled.span`
     position: absolute;
     top: 1%;
     left: 2.5%;
-    z-index: 1;
+    z-index: 3;
     fontFamily: Verdana, sans-serif;
-    
+    grid-column-start: 1;
+    grid-column-end: 4;
 
     ${media.desktop`
       top: 0.6%;
@@ -137,35 +129,31 @@ const LinkStyleTwo = styled(Link)`
 
 const Logo = styled(LogoOverlay)``
 
-const BgImg = styled(BgImage)``
+const BgContainer = styled.div`
+    grid-column: 1;
+    grid-row: 1 / span 5;
+    width: 100%;
+    height: 100%;
+   
+  }
+`
+
+const BgImg = styled(BgImage)`
+
+    `
 
 const LogoBlock = styled.div`
-    position: relative;
-    top: -85%;
-    z-index: 1;
-    height: 292px;
-    width: 812px;
-    margin: 0 auto;
+grid-column: 1;
+grid-row: 3;
+width: 50%;
+height: auto;
+align-self: center;
+justify-self: center;
+z-index: 2;
+    
+    
 
-    ${media.desktop`
-      top: -85%;
-      height: 70%;
-      width: 70%;
-      margin: 0 auto;
-    `}
 
-    ${media.tablet`
-      top: -105%;
-      height: 65%;
-      width: 65%;
-      margin: 0 auto;
-    `}
-
-    ${media.phone`
-      top: -75%;
-      height: 60%;
-      width: 60%;
-    `}
   `
 
 const Header = () => (
@@ -176,9 +164,11 @@ const Header = () => (
         content="width=device-width, initial-scale=1.0, user-scalable=no"
       />
     </Helmet>
-    <BgImg />
+    <BgContainer>
+    <BgImg className="bg"/>
+    </BgContainer>
     <LogoBlock>
-      <Logo />
+    <Logo classname="logo"/>
     </LogoBlock>
     <SpanBlock>
       <LinkStyleOne to="/">{"PT"}</LinkStyleOne>

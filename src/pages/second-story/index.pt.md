@@ -11,4 +11,4 @@ Conhecemos o Senhor Arménio Varela, um Artesão de Famalicão, Nazaré,  no dia
 Vimos inúmeras peças de artesanato, quer em palha, bambu, bunho ou madeira, e percebemos que, felizmente, não tínhamos sidos os primeiros a descobrir o talento deste homem. O Senhor Arménio é reconhecido internacionalmente e trabalho é o que não lhe falta, mas mesmo assim arranjou um tempinho para nos contar a sua experiência, neste mundo que não encara como seu.
 Para além do posto de venda, logo na rua principal de Famalicão, ainda fomos conhecer a sua oficina de trabalho. Aqui encontrámos os seus teares antigos, com que ainda hoje faz as suas peças em palhinha, e várias peças em madeira recolhida do mar.
 E após já lhe termos roubado cerca de 2 horas de trabalho, ainda nos convidou para tomar café.
-Poderás conhecer mais sobre o Senhor Arménio no nosso primeiro <a href="/videos#one">vídeo</a>. 
+Poderás conhecer mais sobre o Senhor Arménio no nosso primeiro <a style="text-decoration: none; background-color: #C8F7C5; color: black; font-family: Verdana, sans-serif;" href="/videos#one">vídeo</a>. 

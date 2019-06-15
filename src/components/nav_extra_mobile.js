@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import styled, { css } from "styled-components"
-import LogoImage from "./logoImage"
 import { FormattedMessage } from "react-intl"
 import Provider from "./provider"
 import LinkWrapper from "./linkWrapper"
@@ -23,29 +22,29 @@ const media = Object.keys(sizes).reduce((acc, label) => {
 
 const NavDiv = styled.div`
     height: 8vh;
-    width: 60vw;
+    width: 100vw;
     z-index: 2;
     text-align: center;
-    margin: 0 auto;
+    margin: auto;
     overflow: hidden;
     
     
     ${media.desktop`
-        width: 80%;
+        width: 100%;
 
     `}
 
     ${media.tablet`
-        width: 85%;
+        width: 100%;
     `}
 
     ${media.phone`
-        height: 8.5vh;
-        position: absolute;
+        height: 15vh;
+        width: 95vw;
+        margin: 0 auto;
         top: 2%;
+        position: fixed;
         z-index: 3;
-        left: 12%;
-        margin-bottom: 20em;
     `}
 `
 
@@ -71,11 +70,44 @@ const LogoImageStyle = styled.button`
   display: none;
 
   ${media.phone`
-      display: inline-block;  
-      padding-top: 0.25em;
-      background: none; 
+      margin: 0.3em;
+      display: block; 
+      width: 40px;  
       border: none;
- 
+      color: white;
+      cursor: pointer;
+      
+       
+      &:after, &:before, & > div {
+        background-color: black;
+        border-color: #fff;
+        border-radius: 2px;
+        content: '';
+        display: block;
+        height: 4px;
+        margin 4px 0;
+        transition: all .2s ease-in-out;
+        
+      }
+  
+      &:before {
+        transform: ${props =>
+          props.showMenu
+            ? "translateY(8px) rotate(135deg)"
+            : "translateY(0) rotate(0)"};
+      }
+
+      &:after {
+        transform: ${props =>
+          props.showMenu
+            ? "translateY(-8px) rotate(-135deg)"
+            : "translateY(0) rotate(0)"};       
+      }
+
+      & > div {
+        transform: ${props => (props.showMenu ? "scale(0)" : "")};
+      }
+    
     `}
 `
 
@@ -195,8 +227,8 @@ const MobileMenu = styled.div`
     position: fixed;
     z-index: 2;
     padding: 1% 1% 0 1%;
-    right: 5%; 
-    width: 10em; 
+    right: 0; 
+    width: 100vw; 
     -moz-box-shadow:    1px 1px 7px 1px #D4D0AB;
     -webkit-box-shadow: 1px 1px 7px 1px #D4D0AB;
     box-shadow:         1px 1px 7px 1px #D4D0AB;
@@ -213,7 +245,6 @@ class NavMobile extends Component {
 
   render() {
     const { showMenu } = this.state
-
     const locale = this.props.locale
 
     return (
@@ -221,11 +252,12 @@ class NavMobile extends Component {
         <NavDiv>
           <UnList>
             <LogoImageStyle
+              showMenu={this.state.showMenu}
               onClick={() => {
                 this.setState({ showMenu: !showMenu })
               }}
             >
-              <LogoImage />
+              <div />
               {showMenu ? true : false}
             </LogoImageStyle>
             {showMenu && (

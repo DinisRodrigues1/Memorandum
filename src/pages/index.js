@@ -336,14 +336,14 @@ const IndexPage = props => {
                 <SectionImagePos>
                   <SectionImage />
                 </SectionImagePos>
-                {postList.edges[1].node.frontmatter.lang === locale &&
+                {postList.edges[0].node.frontmatter.lang === locale &&
                 locale === "pt" ? (
-                  <LinkTo to="fourth-story/index.pt">
-                    <Text>{postList.edges[1].node.excerpt}</Text>
+                  <LinkTo to="sixth-story/index.pt">
+                    <Text>{postList.edges[0].node.excerpt}</Text>
                   </LinkTo>
                 ) : (
-                  <LinkTo to="fourth-story/index.en">
-                    <Text>{postList.edges[0].node.excerpt}</Text>
+                  <LinkTo to="sixth-story/index.en">
+                    <Text>{postList.edges[1].node.excerpt}</Text>
                   </LinkTo>
                 )}
               </SectionLatestText>
@@ -445,7 +445,7 @@ export const listQuery = graphql`
   query ListQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { fileAbsolutePath: { regex: "/fourth-story/" } }
+      filter: { fileAbsolutePath: { regex: "/sixth-story/" } }
     ) {
       edges {
         node {

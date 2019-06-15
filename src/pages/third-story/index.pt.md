@@ -13,4 +13,4 @@ A Dona Maria já se encontra reformada neste momento, a tecelagem já só lhe oc
 
 Depressa percebemos que é uma senhora muito agarrada à família e ao ofício, e por isso nos confessou que um dia “só quero ser lembrada por ter sido boa filha, boa mãe e boa pessoa”.
 
-Poderás conhecer mais sobre a Dona Maria no nosso segundo <a href="/videos#three">episódio</a>.
+Poderás conhecer mais sobre a Dona Maria no nosso segundo <a style="text-decoration: none; background-color: #C8F7C5; color: black; font-family: Verdana, sans-serif;" href="/videos#three">episódio</a>.
