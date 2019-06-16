@@ -12,4 +12,4 @@ We met Ms. Maria Adelaide, a seller of the traditional Nazaré dried fish, on 29
 Towards that situation we were bound to stop, we tried to talk with other sellers, but Ms. Maria wasn’t afraid of the cameras and with pleasure had a conversation with us. Soon we realized that she was used to the tourists and being more photographed than to sell her product.
 
 But she is not saddened by the lack of customers, she enjoys what she does, and she still works at her stand come rain or shine. She explained the process of drying the fish and how her life which since childhood was based on work has changed over the years to the calm life that she lives nowadays.
-You can learn more about Ms. Maria on our first <a href="/en/videos#two">episode</a>.
+You can learn more about Ms. Maria on our first <a style="text-decoration: none; background-color: #C8F7C5; color: black; font-family: Verdana, sans-serif;" href="/en/videos#two">episode</a>.

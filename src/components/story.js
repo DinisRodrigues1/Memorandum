@@ -78,11 +78,12 @@ const FakeH1 = styled.h2`
   font-size: 1.5em;
 `
 
-function Story(props) {
+const  Story = props => {
   const post = props.data.markdownRemark
   const { title } = post.frontmatter
   const { description } = post.frontmatter
   const locale = props.pageContext.locale
+
 
   return (
     <Provider locale={locale}>
@@ -128,7 +129,7 @@ function Story(props) {
         )}
 
         <Navigation locale={locale} />
-        <NavMobile />
+        <NavMobile locale={locale}/>
         <OuterPostContainer>
           <PageTitle>
             <TextSepSpecial />

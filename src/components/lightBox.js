@@ -28,12 +28,14 @@ const ImagesContainer = styled.section`
   display: grid;
   grid-gap: 0;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  z-index: 4;
 `
 const Imgg = styled(Img)`
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
+  cursor: pointer;
 `
 
 const PreviewButton = styled.button`
@@ -71,6 +73,7 @@ const DialogButton = styled.button`
   background-repeat: repeat-x;
   background-size: 2px 2px;
   transition: background-size 0.2s;
+  cursor: pointer;
 
   &:hover {
     background-size: 4px 50px;

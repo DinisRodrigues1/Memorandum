@@ -13,6 +13,6 @@ Mrs. Maria is retired, these days weaving only occupies her thoughts, as she con
 
 We learnt Mrs. Maria is quite attached to her family and her craft, and because of that she confessed that one day “I only want to be remembered as a good daughter, good mother, and good person”.
 
-You can learn more about Mrs. Maria in our second <a href="/en/videos#four">episode.</a>
+You can learn more about Mrs. Maria in our second <a style="text-decoration: none; background-color: #C8F7C5; color: black; font-family: Verdana, sans-serif;" href="/en/videos#four">episode.</a>
 
 
