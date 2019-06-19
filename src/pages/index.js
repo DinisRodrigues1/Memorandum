@@ -336,14 +336,14 @@ const IndexPage = props => {
                 <SectionImagePos>
                   <SectionImage />
                 </SectionImagePos>
-                {postList.edges[1].node.frontmatter.lang === locale &&
+                {postList.edges[0].node.frontmatter.lang === locale &&
                 locale === "pt" ? (
                   <LinkTo to="sixth-story/index.pt">
-                    <Text>{postList.edges[1].node.excerpt}</Text>
+                    <Text>{postList.edges[0].node.excerpt}</Text>
                   </LinkTo>
                 ) : (
                   <LinkTo to="sixth-story/index.en">
-                    <Text>{postList.edges[0].node.excerpt}</Text>
+                    <Text>{postList.edges[1].node.excerpt}</Text>
                   </LinkTo>
                 )}
               </SectionLatestText>
