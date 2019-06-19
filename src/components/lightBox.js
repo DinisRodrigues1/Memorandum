@@ -26,16 +26,19 @@ const media = Object.keys(sizes).reduce((acc, label) => {
 
 const ImagesContainer = styled.section`
   display: grid;
-  grid-gap: 0;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
   z-index: 4;
+  grid-gap: 0;
+  align-items: stretch
+  
 `
 const Imgg = styled(Img)`
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
   cursor: pointer;
+  
 `
 
 const PreviewButton = styled.button`
@@ -43,6 +46,8 @@ const PreviewButton = styled.button`
   border: none;
   padding: 0;
   margin: 0;
+  object-fit: fill;
+  height: 100%;
 `
 
 const DialogStyle = styled(Dialog)`
@@ -97,6 +102,7 @@ export default class Lightbox extends Component {
     const locale = this.props.locale
     const { galImages } = this.props
     const { selectedImage, showLightbox } = this.state
+    
 
     return (
       <Provider locale={locale}>
