@@ -129,7 +129,7 @@ const FooterPRight = styled.p`
 
 const Footer = styled.footer`
     width: 100%;
-    height: 28vh;
+    height: 32vh;
     background-color: #D4D0AB;
     color: black;
     bottom: 0;
@@ -141,13 +141,14 @@ const Footer = styled.footer`
     box-shadow:         0 -2px 4px 1px #D4D0AB;
     border-top: thin solid #D4D0AB;
     padding-top: 1%;
+    overflow: hidden;
     font-size: 90%;
 
     ${media.desktop`
       width: 100%;
       height: 24vh;
       min-width: 100%;
-      min-height: 24vh;
+      min-height: 29vh;
       font-size: 95%;
       background-color: #D4D0AB;
       color: black;
@@ -287,7 +288,7 @@ const IndexPage = props => {
             <Helmet>
               <meta
                 name="viewport"
-                content="width=device-width, initial-scale=1.0, user-scalable=no"
+                content="width=device-width, initial-scale=1.0"
               />
               <meta
                 name="keywords"
@@ -299,6 +300,7 @@ const IndexPage = props => {
                 content="Website criado no âmbito do projeto Memorandum, cujo objetivo é fomentar a comunicação intergeracional através de entrevistas 
                 gravadas e mais tarde disponiblizadas online para, principalmente, as gerações mais novas, como também todos os interessados."
               />
+              <html lang="pt" />
               <title>Memorandum | Página principal</title>
               <link rel="canonical" href="https://memorandum.website" />
             </Helmet>
@@ -308,7 +310,7 @@ const IndexPage = props => {
             <Helmet>
               <meta
                 name="viewport"
-                content="width=device-width, initial-scale=1.0, user-scalable=no"
+                content="width=device-width, initial-scale=1.0"
               />
               <meta
                 name="keywords"
@@ -320,6 +322,7 @@ const IndexPage = props => {
                 content="Website created for the Memorandum project, with the objective of promoting intergenerational communication through recorded interviews,
                 which are later posted online for the younger generations, or any interested in the initiative"
               />
+              <html lang="en" />
               <title>Memorandum | Homepage</title>
               <link rel="canonical" href="https://memorandum.website/en/" />
             </Helmet>
@@ -412,19 +415,25 @@ const IndexPage = props => {
             <FooterPRight>
               <SocialLogos>
                 <FBook
+                  aria-label="Visit our Facebook page"
                   target="_blank"
+                  rel="noopener"
                   href="https://www.facebook.com/projetomemorandum/"
                 >
                   <SocialImageFacebook />
                 </FBook>
                 <IGram
+                  aria-label="Visit our Instagram page"
                   target="_blank"
+                  rel="noopener"
                   href="https://www.instagram.com/projetomemorandum/"
                 >
                   <SocialImageInstagram />
                 </IGram>
                 <YTube
+                  aria-label="Visit our Youtube page"
                   target="_blank"
+                  rel="noopener"
                   href="https://www.youtube.com/channel/UCvAXx7q7CPpz0n5_I-OQX9w"
                 >
                   <SocialImageYoutube />

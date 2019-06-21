@@ -57,7 +57,6 @@ const BodyDiv = styled.div`
   -webkit-box-shadow: 0 0 7px 1px #d4d0ab;
   box-shadow: 0 0 7px 1px #d4d0ab;
   border: thin solid #f1f1f1;
- 
 
   ${media.phone`
   margin-top: 30%; `}
@@ -130,7 +129,7 @@ const Historias = props => {
             <Helmet>
               <meta
                 name="viewport"
-                content="width=device-width, initial-scale=1.0, user-scalable=no"
+                content="width=device-width, initial-scale=1.0"
               />
               <meta
                 name="keywords"
@@ -138,9 +137,10 @@ const Historias = props => {
     DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios, Página, Histórias, Entrevistas"
               />
               <meta
-              name="description"
-              content="Página com as diferentes histórias de cada entrevistado pelo projeto."
-            />
+                name="description"
+                content="Página com as diferentes histórias de cada entrevistado pelo projeto."
+              />
+              <html lang="pt" />
               <title>Memorandum | Histórias</title>
               <link
                 rel="canonical"
@@ -153,7 +153,7 @@ const Historias = props => {
             <Helmet>
               <meta
                 name="viewport"
-                content="width=device-width, initial-scale=1.0, user-scalable=no"
+                content="width=device-width, initial-scale=1.0"
               />
               <meta
                 name="keywords"
@@ -161,9 +161,10 @@ const Historias = props => {
     University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades, Page, Stories, Interviews"
               />
               <meta
-              name="description"
-              content="Page containing the stories of each interviewee of the project."
-            />
+                name="description"
+                content="Page containing the stories of each interviewee of the project."
+              />
+              <html lang="en" />
               <title>Memorandum | Stories</title>
               <link
                 rel="canonical"

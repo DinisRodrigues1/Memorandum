@@ -252,6 +252,7 @@ class NavMobile extends Component {
         <NavDiv>
           <UnList>
             <LogoImageStyle
+              aria-label="Hamburger Menu"
               showMenu={this.state.showMenu}
               onClick={() => {
                 this.setState({ showMenu: !showMenu })

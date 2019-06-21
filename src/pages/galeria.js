@@ -88,7 +88,7 @@ const ImageGallery = ({ pageContext: { locale } }) => {
             <Helmet>
               <meta
                 name="viewport"
-                content="width=device-width, initial-scale=1.0, user-scalable=no"
+                content="width=device-width, initial-scale=1.0"
               />
               <meta
                 name="keywords"
@@ -97,9 +97,10 @@ const ImageGallery = ({ pageContext: { locale } }) => {
     Imagens, Galeria de Imagens, Fotos de viagem, Fotos, Viagem"
               />
               <meta
-              name="description"
-              content="Galeria de fotografias tiradas pelo grupo ao longo da fase de gravações do projeto."
-            />
+                name="description"
+                content="Galeria de fotografias tiradas pelo grupo ao longo da fase de gravações do projeto."
+              />
+              <html lang="pt" />
               <title>Memorandum | Galeria</title>
               <link
                 rel="canonical"
@@ -112,7 +113,7 @@ const ImageGallery = ({ pageContext: { locale } }) => {
             <Helmet>
               <meta
                 name="viewport"
-                content="width=device-width, initial-scale=1.0, user-scalable=no"
+                content="width=device-width, initial-scale=1.0"
               />
               <meta
                 name="keywords"
@@ -121,9 +122,10 @@ const ImageGallery = ({ pageContext: { locale } }) => {
     Travel Photos, Photos, Travel"
               />
               <meta
-              name="description"
-              content="Gallery containing photographs taken by the group during the filming stage of the project."
-            />
+                name="description"
+                content="Gallery containing photographs taken by the group during the filming stage of the project."
+              />
+              <html lang="en" />
               <title>Memorandum | Gallery</title>
               <link
                 rel="canonical"

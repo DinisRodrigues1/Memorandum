@@ -79,7 +79,7 @@ const NotFoundPage = ({ pageContext: { locale } }) => (
           <Helmet>
             <meta
               name="viewport"
-              content="width=device-width, initial-scale=1.0, user-scalable=no"
+              content="width=device-width, initial-scale=1.0"
             />
             <meta
               name="keywords"
@@ -91,6 +91,7 @@ const NotFoundPage = ({ pageContext: { locale } }) => (
               name="description"
               content="Página criada para enviar utilizadores para a última página visitada antes da atual em caso de links corrumpidos ou 404s."
             />
+            <html lang="pt" />
             <title>Memorandum | 404 Página não encontrada</title>
             <link rel="canonical" href="https://memorandum.website/404/" />
           </Helmet>
@@ -100,7 +101,7 @@ const NotFoundPage = ({ pageContext: { locale } }) => (
           <Helmet>
             <meta
               name="viewport"
-              content="width=device-width, initial-scale=1.0, user-scalable=no"
+              content="width=device-width, initial-scale=1.0"
             />
             <meta
               name="keywords"
@@ -111,6 +112,7 @@ const NotFoundPage = ({ pageContext: { locale } }) => (
               name="description"
               content="Page created to send users back to their last visited page in case of corrupted links or 404s.."
             />
+            <html lang="en" />
             <title>Memorandum | 404 Page not found</title>
             <link rel="canonical" href="https://memorandum.website/en/404/" />
           </Helmet>

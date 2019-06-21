@@ -78,12 +78,11 @@ const FakeH1 = styled.h2`
   font-size: 1.5em;
 `
 
-const  Story = props => {
+const Story = props => {
   const post = props.data.markdownRemark
   const { title } = post.frontmatter
   const { description } = post.frontmatter
   const locale = props.pageContext.locale
-
 
   return (
     <Provider locale={locale}>
@@ -93,7 +92,7 @@ const  Story = props => {
             <Helmet>
               <meta
                 name="viewport"
-                content="width=device-width, initial-scale=1.0, user-scalable=no"
+                content="width=device-width, initial-scale=1.0"
               />
               <meta
                 name="keywords"
@@ -103,6 +102,7 @@ const  Story = props => {
                   ""
                 }
               />
+              <html lang="pt" />
               <meta name="description" content={"" + description + ""} />
               <title>Memorandum | {title}</title>
             </Helmet>
@@ -112,7 +112,7 @@ const  Story = props => {
             <Helmet>
               <meta
                 name="viewport"
-                content="width=device-width, initial-scale=1.0, user-scalable=no"
+                content="width=device-width, initial-scale=1.0"
               />
               <meta
                 name="keywords"
@@ -122,6 +122,7 @@ const  Story = props => {
                   ""
                 }
               />
+              <html lang="en" />
               <meta name="description" content={"" + description + ""} />
               <title>Memorandum | {title}</title>
             </Helmet>
@@ -129,7 +130,7 @@ const  Story = props => {
         )}
 
         <Navigation locale={locale} />
-        <NavMobile locale={locale}/>
+        <NavMobile locale={locale} />
         <OuterPostContainer>
           <PageTitle>
             <TextSepSpecial />

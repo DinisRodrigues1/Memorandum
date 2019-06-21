@@ -119,7 +119,7 @@ const Videos = ({ pageContext: { locale } }) => (
           <Helmet>
             <meta
               name="viewport"
-              content="width=device-width, initial-scale=1.0, user-scalable=no"
+              content="width=device-width, initial-scale=1.0"
             />
             <meta
               name="keywords"
@@ -130,6 +130,7 @@ const Videos = ({ pageContext: { locale } }) => (
               name="description"
               content="Página com vídeos de entrevistas realizadas para o projeto Memorandum."
             />
+            <html lang="pt" />
             <title>Memorandum | Vídeos</title>
             <link rel="canonical" href="https://memorandum.website/videos/" />
           </Helmet>
@@ -139,7 +140,7 @@ const Videos = ({ pageContext: { locale } }) => (
           <Helmet>
             <meta
               name="viewport"
-              content="width=device-width, initial-scale=1.0, user-scalable=no"
+              content="width=device-width, initial-scale=1.0"
             />
             <meta
               name="keywords"
@@ -150,6 +151,7 @@ const Videos = ({ pageContext: { locale } }) => (
               name="description"
               content="Page containing videos of interviews conducted for the Memorandum project."
             />
+            <html lang="en" />
             <title>Memorandum | Videos</title>
             <link
               rel="canonical"
