@@ -182,19 +182,19 @@ const Historias = props => {
               <TextSepSpecial />
               <FormattedMessage id="Stories" />
             </PageTitle>
-              <>
+            <>
               {postList.edges.map(({ node }, i) =>
                 node.frontmatter.lang === locale ? (
                   <PostContainer>
-                  <PostLink to={node.fields.slug} className="link">
-                    <PostList>
-                      <PostTitle>{node.frontmatter.title}</PostTitle>
-                      <PostDate>{node.frontmatter.date}</PostDate>
-                      <p>{node.excerpt}</p>
-                    </PostList>
-                    <TextSepSecond />
-                  </PostLink>
-                </PostContainer>
+                    <PostLink to={node.fields.slug} className="link">
+                      <PostList>
+                        <PostTitle>{node.frontmatter.title}</PostTitle>
+                        <PostDate>{node.frontmatter.date}</PostDate>
+                        <p>{node.excerpt}</p>
+                      </PostList>
+                      <TextSepSecond />
+                    </PostLink>
+                  </PostContainer>
                 ) : (
                   <></>
                 )
