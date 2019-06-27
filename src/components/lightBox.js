@@ -27,7 +27,6 @@ const media = Object.keys(sizes).reduce((acc, label) => {
 const ImagesContainer = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
-  z-index: 4;
   grid-gap: 0;
   align-items: stretch
   
@@ -50,17 +49,31 @@ const PreviewButton = styled.button`
   height: 100%;
 `
 
-const DialogStyle = styled(Dialog)`
+const DialogStyle = styled.div`
   font-family: Verdana, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  margin: auto;
+  margin: 0 auto;
   -moz-box-shadow: 0 0 7px 1px #000000;
   -webkit-box-shadow: 0 0 7px 1px #000000;
   box-shadow: 0 0 7px 1px #000000;
   border: thin solid #f1f1f1;
+  background-color: blue;
+
+  ${media.desktop`
+    background-color: blue;
+
+  `}
+  
+  ${media.tablet`
+  
+  `}
+
+  ${media.phone`
+  
+  `}
 `
 
 const DialogButton = styled.button`
@@ -68,7 +81,7 @@ const DialogButton = styled.button`
   border: none;
   color: black;
   font-family: Verdana, sans-serif;
-  z-index: 2;
+  z-index: 5;
   border-bottom: 2px solid #d4d0ab;
   padding: 0 1.1rem 0 1.1rem;
   margin: 0.5em 0 0 0;
@@ -122,6 +135,7 @@ export default class Lightbox extends Component {
           </ImagesContainer>
           {showLightbox && (
             <DialogStyle>
+            <Dialog>
               <Img fluid={selectedImage.node.childImageSharp.fluid} />
               <DialogButton
                 type="button"
@@ -129,7 +143,8 @@ export default class Lightbox extends Component {
               >
                 <FormattedMessage id="Close" />
               </DialogButton>
-            </DialogStyle>
+            </Dialog>
+            </DialogStyle> 
           )}
         </>
       </Provider>

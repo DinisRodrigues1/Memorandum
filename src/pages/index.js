@@ -32,16 +32,7 @@ const Text = styled.span``
 const SectionLatestBody = styled.section`
     padding-bottom: 7.5%;
 
-    ${media.desktop`
-    padding-bottom: 18%;
-    `}
-
-    ${media.tablet`
-    padding-bottom: 20%;
-    `}
-
-    ${media.phone`
-    padding-bottom: 40%;`}
+   
 
 `
 
@@ -74,6 +65,7 @@ const BodyDiv = styled.div`
     ${media.phone`
       width: 95%;
       margin-top: 20%;
+      grid-template-rows: 1fr 3fr;
     `}
 `
 const TextSep = styled.hr`
@@ -105,7 +97,7 @@ const SectionImagePos = styled.div`
       float: left;
       margin 0 1%;
       padding: 0;
-      border: thick solid #C8F7C5; //border for image --> can be later changed to match theme;
+      border: thick solid #C8F7C5;
 
 `
 const SectionAbout = styled.section`
@@ -339,11 +331,11 @@ const IndexPage = props => {
               </SectionTitle>
               <p />
               <p>
-                <p>
-                  <b>
+                <h3>
+                  <strong>
                     <FormattedMessage id="Tit1" />
-                  </b>
-                </p>
+                  </strong>
+                </h3>
                 <p>
                   <strong>
                     <FormattedMessage id="Mem" />
@@ -351,11 +343,11 @@ const IndexPage = props => {
                   <FormattedMessage id="Txt1" />
                 </p>
                 <p />
-                <p>
-                  <b>
+                <h3>
+                  <strong>
                     <FormattedMessage id="Tit2" />
-                  </b>
-                </p>
+                  </strong>
+                </h3>
                 <p>
                   <strong>
                     <FormattedMessage id="Mem2" />
@@ -367,9 +359,9 @@ const IndexPage = props => {
                     <FormattedMessage id="Mem3" />
                   </strong>{" "}
                   <FormattedMessage id="Txt3" />
-                  <i>
+                  <em>
                     <FormattedMessage id="Ital" />
-                  </i>
+                  </em>
                 </p>
               </p>
             </SectionAbout>
