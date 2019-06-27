@@ -78,6 +78,8 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-catch-links`,
 
+    `gatsby-transformer-remark`,
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -86,11 +88,10 @@ module.exports = {
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/squareimage.png`,
       },
     },
-    `gatsby-transformer-remark`,
     "gatsby-plugin-offline",
     {
       resolve: `gatsby-source-filesystem`,

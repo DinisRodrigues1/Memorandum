@@ -65,7 +65,7 @@ const LinkStyleOne = styled(Link)`
 
     ${media.tablet`
       top: 1.5%
-      margin-left: 1.5vw
+      margin-left: 2vw;
     `}
 
     ${media.phone`
@@ -93,8 +93,10 @@ const TextStyle = styled.span`
     ${media.tablet`
       top: 1.5%;
       left: 6%;
+      margin-left: 1%;
     `}
   ${media.phone`
+      margin-left: 2%;
       top: 2.5%;
       left: 8%;
   `}
@@ -122,7 +124,7 @@ const LinkStyleTwo = styled(Link)`
 
     ${media.phone`
       top: 2.5%;
-      left: 11%;
+      left: 13%;
     `}
 
 `

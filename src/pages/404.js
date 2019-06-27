@@ -22,49 +22,63 @@ const media = Object.keys(sizes).reduce((acc, label) => {
 }, {})
 
 const Outer404Container = styled.div`
-  margin: 5% auto;
-  padding: 2% 1% 0 2%;
+  height: 100vh;
+  width: auto;
+  display: grid;
+  grid-template-columns: 3fr;
+  grid-template-rows: auto;
+  justify-items: center;
+  align-items: center;
+`
+
+const TextContainer = styled.div`
+  margin: 0 auto; 
   -moz-box-shadow:    0 0 7px 1px #D4D0AB;
   -webkit-box-shadow: 0 0 7px 1px #D4D0AB;
   box-shadow:         0 0 7px 1px #D4D0AB;
   border: thin solid #f1f1f1;
+  padding: 2%;
+  height: 50vh;
   width: 80%;
   font-family: Verdana, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  
-  
-  ${media.desktop`
-    width: 82%;
-    padding: 5% 0;
-    `}
+  color: black;
 
-  ${media.tablet`
-    width: 85%;
-    padding: 7% 0;
-    `}
 
-  ${media.phone`
-    width: 95%;
-    padding: 9% 0;
-    margin-top: 30%;
-    `}
+${media.desktop`
+  width: 90%;
+  padding: 5% 1% 0 5%;
+  
+  `}
+
+${media.tablet`
+  width: 92%;
+  padding: 7% 1% 0 7%;
+  `}
+
+${media.phone`
+  width: 95%;
+  padding: 9% 1% 0 9%;
+  margin: 30% auto 0 auto;
+  `}
+
 
 `
 
-const TextContainer = styled.div`
-  margin: 25vh 0;
-`
-
-const FakeH2 = styled.h1`
+const Title = styled.h1`
   font-size: 1.8em;
+  margin: 5%;
+  
 `
 
 const GoBack = styled(LinkWrapper)`
   text-decoration: none;
+  background-color: #c8f7c5;
   color: black;
+  margin: 5%;
 `
 
 let goBack = () => {
@@ -119,11 +133,11 @@ const NotFoundPage = ({ pageContext: { locale } }) => (
         </>
       )}
       <TextContainer>
-        <FakeH2>
+        <Title>
           <FormattedMessage id="PageNotFound" />
-        </FakeH2>
+        </Title>
         <GoBack onClick={goBack}>
-          <FormattedMessage id="404Help" />
+          <FormattedMessage id="404Help"/>
         </GoBack>
       </TextContainer>
     </Outer404Container>

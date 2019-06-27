@@ -34,11 +34,13 @@ const OuterContainer = styled.div`
   margin: auto;
 
   ${media.desktop`
-    width: 82%;
+    width: 90%;
+    padding: 5% 0;
   `}
 
   ${media.tablet`
-    width: 85%;
+    width: 92%;
+    padding: 7% 0;
   `}
 
   ${media.phone`

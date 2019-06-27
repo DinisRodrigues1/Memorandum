@@ -4,7 +4,6 @@ import Navigation from "./navigation_extra"
 import { Helmet } from "react-helmet"
 import styled, { css } from "styled-components"
 import NavMobile from "./nav_extra_mobile"
-import { FormattedMessage } from "react-intl"
 import Provider from "./provider"
 
 const sizes = {
@@ -24,7 +23,7 @@ const media = Object.keys(sizes).reduce((acc, label) => {
 }, {})
 
 const OuterContainer = styled.div`
-    padding: 3% 0;
+    padding: 2% 0;
     font-family: Verdana, sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -34,22 +33,25 @@ const OuterContainer = styled.div`
     margin: auto;
     
     ${media.desktop`
-    width: 82%;
+    width: 90%;
     padding: 5% 0;
     `}
 
     ${media.tablet`
-    width: 85%;
+    width: 92%;
     padding: 7% 0;
     `}
 
     ${media.phone`
     width: 95%;
-    padding: 9% 0;`}
+    padding: 9% 0;
+    `}
 `
 
 const OuterPostContainer = styled.div`
-  margin-top: 10%;
+  display: grid;
+  grid-template-rows: 1fr;
+  margin-top: 5%;
   padding: 1% 1% 0 1%;
   -moz-box-shadow: 0 0 7px 1px #d4d0ab;
   -webkit-box-shadow: 0 0 7px 1px #d4d0ab;
@@ -68,15 +70,15 @@ const TextSepSpecial = styled.hr`
   background-color: #dadfe1;
 `
 
-const PageTitle = styled.h1`
-  font-size: 1.8em;
+const PageTitle = styled.h2`
   margin-top: 15%;
-  margin-bottom: 10%;
+  font-size: 1.5em;
+  color: black;
+`
+const Text = styled.div`
+  color: black;
 `
 
-const FakeH1 = styled.h2`
-  font-size: 1.5em;
-`
 
 const Story = props => {
   const post = props.data.markdownRemark
@@ -134,12 +136,11 @@ const Story = props => {
         <OuterPostContainer>
           <PageTitle>
             <TextSepSpecial />
-            <FormattedMessage id="Stories" />
+            {title}
           </PageTitle>
-          <div>
-            <FakeH1>{title}</FakeH1>
+          <Text>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          </div>
+          </Text>
         </OuterPostContainer>
       </OuterContainer>
     </Provider>

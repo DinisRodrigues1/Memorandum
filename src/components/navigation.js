@@ -22,7 +22,6 @@ const media = Object.keys(sizes).reduce((acc, label) => {
 
 const NavDiv = styled.nav`
     height: 5vh;
-    width: 60vw;
     margin: 0 auto;
     text-align: center;
     z-index: 1;
@@ -30,13 +29,12 @@ const NavDiv = styled.nav`
     margin-top: 2%;
 
     ${media.desktop`
-        width: 80%;
+        
         
     `}
 
     ${media.tablet`
-        width: 85%;
-
+        
     `}
 
     ${media.phone`
@@ -52,6 +50,15 @@ const UnList = styled.ul`
   overflow: hidden;
   margin: 0;
   padding: 0;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-column-gap: 6.5em;
+  justify-items: center;
+ 
+  ${media.desktop`
+    grid-column-gap: 5.5em
+    `}
 
   ${media.phone`
       float: right;
@@ -61,6 +68,7 @@ const UnList = styled.ul`
 
 const ListItems = styled.li`
   display: inline;
+  
 
   ${media.phone`
     display: block;`}
@@ -91,11 +99,10 @@ const Videos = styled(LinkWrapper)`
 `
 
 const Historias = styled(LinkWrapper)`
-  text-decoration: none;
+  text-decoration: none;  
   color: black;
   font-family: Verdana, sans-serif;
   z-index: 1;
-  margin-left: 15%;
   border-bottom: 2px solid #d4d0ab;
   padding: 0 1rem 2px 1rem;
   display: inline-block;
@@ -120,7 +127,6 @@ const Galeria = styled(LinkWrapper)`
   color: black;
   font-family: Verdana, sans-serif;
   z-index: 1;
-  margin-left: 15%;
   border-bottom: 2px solid #d4d0ab;
   padding: 0 1rem 2px 1rem;
   display: inline-block;

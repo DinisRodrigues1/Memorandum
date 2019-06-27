@@ -23,7 +23,7 @@ const media = Object.keys(sizes).reduce((acc, label) => {
 }, {})
 
 const OuterContainer = styled.div`
-  padding: 3% 0;
+  padding: 2% 0;
   font-family: Verdana, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -31,15 +31,15 @@ const OuterContainer = styled.div`
   overflow-x: hidden;
   width: 80%;
   margin: 0 auto;
-  margin-bottom: 0;
+
 
   ${media.desktop`
-      width: 82%;
+      width: 90%;
       padding: 5% 0;
   `}
 
   ${media.tablet`
-      width: 85%;
+      width: 92%;
       padding: 7% 0;
       `}
   
@@ -48,13 +48,15 @@ const OuterContainer = styled.div`
       padding: 9% 0;`}
 `
 const OuterVideoContainer = styled.div`
-  margin-top: 10%;
+  margin-top: 5%;
+  display: grid;
+  grid-template: rows: 1fr;
   padding: 1% 1% 0 1%;
-  margin-bottom: 6%;
   -moz-box-shadow: 0 0 7px 1px #d4d0ab;
   -webkit-box-shadow: 0 0 7px 1px #d4d0ab;
   box-shadow: 0 0 7px 1px #d4d0ab;
   border: thin solid #f1f1f1;
+ 
 
   ${media.phone`
   margin-top: 30%;`}
@@ -79,7 +81,7 @@ const TextSepSpecial = styled.hr`
 const PageTitle = styled.h1`
   font-size: 1.8em;
   margin-top: 15%;
-  margin-bottom: 10%;
+  color: black;
 `
 
 const VideoContainer = styled.div`
@@ -100,7 +102,7 @@ const VideoContainer = styled.div`
 `
 
 const VideoArticle = styled.article`
-  margin-top: 10%;
+  
 `
 
 const VideoText = styled.p`
@@ -253,12 +255,12 @@ const Videos = ({ pageContext: { locale } }) => (
               <VideoText>Mrs. Maria de Jesus e Mr. Edgar</VideoText>
               <TextSep />
             </VideoArticle>
-            <VideoArticle id="four">
+            <VideoArticle id="six">
               <VideoContainer>
                 <IFrame
                   width="100%"
                   height="75%"
-                  src="https://www.youtube.com/embed/IQ2wRsmLJ5o"
+                  src="https://www.youtube.com/embed/Y1iI53d9hpI"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   frameBorder="0"
                   webkitallowfullscreen="true"

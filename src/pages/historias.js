@@ -29,17 +29,17 @@ const OuterContainer = styled.div`
   -webkit-text-size-adjust: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  padding: 3% 0;
+  padding: 2% 0;
   width: 80%;
   margin: auto;
 
   ${media.desktop`
-    width: 82%;
+    width: 90%;
     padding: 5% 0;
   `}
 
   ${media.tablet`
-    width: 85%;
+    width: 92%;
     padding: 7% 0;
   `}
 
@@ -50,9 +50,10 @@ const OuterContainer = styled.div`
 `
 
 const BodyDiv = styled.div`
-  margin-top: 10%;
+  margin-top: 5%;
+  display: grid;
+  grid-template-rows: 1fr;
   padding: 1% 1% 0 1%;
-  margin-bottom: 6%;
   -moz-box-shadow: 0 0 7px 1px #d4d0ab;
   -webkit-box-shadow: 0 0 7px 1px #d4d0ab;
   box-shadow: 0 0 7px 1px #d4d0ab;
@@ -84,7 +85,7 @@ const TextSepSpecial = styled.hr`
 const PageTitle = styled.h1`
   font-size: 1.8em;
   margin-top: 15%;
-  margin-bottom: 10%;
+  color: black;
 `
 
 const PostLink = styled(Link)`
@@ -181,9 +182,10 @@ const Historias = props => {
               <TextSepSpecial />
               <FormattedMessage id="Stories" />
             </PageTitle>
-            <PostContainer>
+              <>
               {postList.edges.map(({ node }, i) =>
                 node.frontmatter.lang === locale ? (
+                  <PostContainer>
                   <PostLink to={node.fields.slug} className="link">
                     <PostList>
                       <PostTitle>{node.frontmatter.title}</PostTitle>
@@ -192,11 +194,12 @@ const Historias = props => {
                     </PostList>
                     <TextSepSecond />
                   </PostLink>
+                </PostContainer>
                 ) : (
-                  <div />
+                  <></>
                 )
               )}
-            </PostContainer>
+            </>
           </BodyDiv>
         </OuterContainer>
       </>

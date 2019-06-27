@@ -29,6 +29,7 @@ const NavDiv = styled.div`
     overflow: hidden;
     
     
+    
     ${media.desktop`
         width: 100%;
 

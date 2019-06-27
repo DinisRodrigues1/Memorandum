@@ -46,6 +46,8 @@ const SectionLatestBody = styled.section`
 `
 
 const BodyDiv = styled.div`
+    display: grid;
+    grid-template-rows: 1fr 2fr;
     width: 80%;
     min-width: 70%;
     min-height: 90%;
@@ -60,12 +62,12 @@ const BodyDiv = styled.div`
     
 
     ${media.desktop`
-      width: 82%;  
+      width: 90%;  
 
     `}
 
     ${media.tablet`
-      width: 85%;
+      width: 92%;
 
     `}
 
@@ -107,8 +109,8 @@ const SectionImagePos = styled.div`
 
 `
 const SectionAbout = styled.section`
-  padding-top: 7.5%;
-  padding-bottom: 11%;
+    padding-bottom: 7.5%;
+  
 
   ${media.phone`
     padding-top: 15.5%;`}
@@ -119,21 +121,52 @@ const LinkTo = styled(Link)`
 `
 
 const FooterPLeft = styled.p`
-  width: 20%;
-  font-size: 90%;
+  width: 50%;
+  margin: 0 auto;
+  
+  ${media.desktop`
+  width: 65%;
+  `}
+
+  ${media.tablet`
+  width: 75%;
+  `}
+
+  ${media.phone`
+    width: 80%;
+  `}
 `
 
+
 const FooterPRight = styled.p`
-  width: 20%;
+  width: 50%;
+  margin: 0 auto;
+  
+  ${media.desktop`
+  width: 65%;
+  `}
+
+  ${media.tablet`
+  width: 75%;
+  `}
+
+  ${media.phone`
+    width: 80%;
+  `}
 `
 
 const Footer = styled.footer`
     width: 100%;
     height: 32vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 3fr;
+    justify-items: center;
+    align-items: center;
     background-color: #D4D0AB;
     color: black;
-    bottom: 0;
-    position: relative;
+    background-size: cover;
+    
     min-width: 100%;
     min-height: 28vh;
     -moz-box-shadow:    0 -2px 4px 1px #D4D0AB;
@@ -145,96 +178,28 @@ const Footer = styled.footer`
     font-size: 90%;
 
     ${media.desktop`
-      width: 100%;
-      height: 24vh;
-      min-width: 100%;
-      min-height: 29vh;
-      font-size: 95%;
-      background-color: #D4D0AB;
-      color: black;
-      bottom: 0;
-      position: relative;
-      padding-top: 5%
+      height: 35vh;
+      
     `}
-    
+
     ${media.tablet`
-      width: 100%;
-      height: 29vh;
-      min-width: 100%;
-      min-height: 29vh;
-      background-color: #D4D0AB;
-      color: black;
-      bottom: 0;
-      position: relative;
-      padding: top: 7%;
+      height: 39vh;
+      font-size: 105%;
+      
     `}
 
     ${media.phone`
-      width: 100%;
-      height: 58vh;
-      min-width: 100%;
-      min-height: 58vh%;
-      background-color: #D4D0AB;
-      color: black;
-      bottom: 0;
-      position: relative;
-      padding-top: 10%;
-      font-size: 110%;`}
-    
+      height: 60vh; 
+      font-size: 106%;
+     
+    `}
 
-    & > ${FooterPLeft} {
-        float: left;
-        width: 40%;
-        display: inline-block;
-        margin-bottom: 3%;
-        padding: 2%;
-        height: 40%;
-        margin-left: 10%;
+`    
 
-        ${media.phone`
-          width: 66%;
-          float: none;
-          height: 25%;
-          margin: 0 auto;
-          display: block;
-          `}
-
-        
-    }
-    & > ${FooterPRight} {
-        float: right;
-        width: 40%;
-        display: inline-block;
-        padding: 2%;
-        margin-right: -2%;
-        height: 30%;
-        
-        ${media.desktop`
-        margin-right: 2.5%;`}
-
-        
-
-        ${media.phone`
-          width: 80%;
-          height: 25%;
-          float: none;
-          margin: 40% auto 0 auto;
-          display: block;
-          text-align: center;
-          
-        `}
-
-  }
-
-`
 const BodyBottom = styled.div`
   font-family: Verdana, sans-serif;
   min-width: 70%;
   min-height: 90%;
-`
-
-const ClearFix = styled.div`
-  clear: both;
 `
 
 const SocialLogos = styled.div`
@@ -279,7 +244,7 @@ const Space = styled.span`
 const IndexPage = props => {
   const postList = props.data.allMarkdownRemark
   const locale = props.pageContext.locale
-  console.log(postList)
+  //console.log(postList)
   return (
     <>
       <Layout locale={locale}>
@@ -398,7 +363,7 @@ const IndexPage = props => {
               <Space>
                 <FormattedMessage id="Dev" />
               </Space>
-              <br />{" "}
+              <br />
               <Space>
                 <FormattedMessage id="Coor" />
               </Space>
@@ -406,10 +371,7 @@ const IndexPage = props => {
               <Space>
                 <FormattedMessage id="Contact" />
                 <TextMail>
-                  projetomemorandum@gmail
-                  <wbr />
-                  .com{" "}
-                </TextMail>
+                  projetomemorandum<wbr />@gmail.com           </TextMail>
               </Space>
             </FooterPLeft>
             <FooterPRight>
@@ -440,7 +402,6 @@ const IndexPage = props => {
                 </YTube>
               </SocialLogos>
             </FooterPRight>
-            <ClearFix />
           </Footer>
         </BodyBottom>
       </Layout>
