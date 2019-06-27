@@ -109,8 +109,7 @@ const SectionImagePos = styled.div`
 
 `
 const SectionAbout = styled.section`
-    padding-bottom: 7.5%;
-  
+  padding-bottom: 7.5%;
 
   ${media.phone`
     padding-top: 15.5%;`}
@@ -136,7 +135,6 @@ const FooterPLeft = styled.p`
     width: 80%;
   `}
 `
-
 
 const FooterPRight = styled.p`
   width: 50%;
@@ -194,7 +192,7 @@ const Footer = styled.footer`
      
     `}
 
-`    
+`
 
 const BodyBottom = styled.div`
   font-family: Verdana, sans-serif;
@@ -261,6 +259,7 @@ const IndexPage = props => {
     DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios, Website, Site, Aveiro, Portugal"
               />
               <meta
+                property="og:description"
                 name="description"
                 content="Website criado no âmbito do projeto Memorandum, cujo objetivo é fomentar a comunicação intergeracional através de entrevistas 
                 gravadas e mais tarde disponiblizadas online para, principalmente, as gerações mais novas, como também todos os interessados."
@@ -268,6 +267,13 @@ const IndexPage = props => {
               <html lang="pt" />
               <title>Memorandum | Página principal</title>
               <link rel="canonical" href="https://memorandum.website" />
+              <meta property="og:url" content="https://memorandum.website/" />
+              <meta
+                property="og:title"
+                content="Memorandum | Página principal"
+              />
+              <meta property="og:site_name" content="Memorandum" />
+              <meta property="og:locale" content="pt_PT" />
             </Helmet>
           </>
         ) : (
@@ -290,6 +296,16 @@ const IndexPage = props => {
               <html lang="en" />
               <title>Memorandum | Homepage</title>
               <link rel="canonical" href="https://memorandum.website/en/" />
+              <meta
+                property="og:url"
+                content="https://memorandum.website/en/"
+              />
+              <meta
+                property="og:title"
+                content="Memorandum | Homepage"
+              />
+              <meta property="og:site_name" content="Memorandum" />
+              <meta property="og:locale" content="en_US" />
             </Helmet>
           </>
         )}
@@ -371,7 +387,10 @@ const IndexPage = props => {
               <Space>
                 <FormattedMessage id="Contact" />
                 <TextMail>
-                  projetomemorandum<wbr />@gmail.com           </TextMail>
+                  projetomemorandum
+                  <wbr />
+                  @gmail.com{" "}
+                </TextMail>
               </Space>
             </FooterPLeft>
             <FooterPRight>

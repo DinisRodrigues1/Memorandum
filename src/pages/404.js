@@ -71,7 +71,6 @@ ${media.phone`
 const Title = styled.h1`
   font-size: 1.8em;
   margin: 5%;
-  
 `
 
 const GoBack = styled(LinkWrapper)`
@@ -102,12 +101,20 @@ const NotFoundPage = ({ pageContext: { locale } }) => (
     Página não encontrada"
             />
             <meta
+              property="og:description"
               name="description"
               content="Página criada para enviar utilizadores para a última página visitada antes da atual em caso de links corrumpidos ou 404s."
             />
             <html lang="pt" />
             <title>Memorandum | 404 Página não encontrada</title>
             <link rel="canonical" href="https://memorandum.website/404/" />
+            <meta property="og:url" content="https://memorandum.website/404/" />
+            <meta
+              property="og:title"
+              content="Memorandum | 404 Página não encontrada"
+            />
+            <meta property="og:site_name" content="Memorandum" />
+            <meta property="og:locale" content="pt_PT" />
           </Helmet>
         </>
       ) : (
@@ -123,12 +130,23 @@ const NotFoundPage = ({ pageContext: { locale } }) => (
     University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades, Page, 404, not, found, Page not found"
             />
             <meta
+              property="og:description"
               name="description"
               content="Page created to send users back to their last visited page in case of corrupted links or 404s.."
             />
             <html lang="en" />
             <title>Memorandum | 404 Page not found</title>
             <link rel="canonical" href="https://memorandum.website/en/404/" />
+            <meta
+              property="og:url"
+              content="https://memorandum.website/en/404/"
+            />
+            <meta
+              property="og:title"
+              content="Memorandum | 404 Page not found"
+            />
+            <meta property="og:site_name" content="Memorandum" />
+            <meta property="og:locale" content="en_US" />
           </Helmet>
         </>
       )}
@@ -137,7 +155,7 @@ const NotFoundPage = ({ pageContext: { locale } }) => (
           <FormattedMessage id="PageNotFound" />
         </Title>
         <GoBack onClick={goBack}>
-          <FormattedMessage id="404Help"/>
+          <FormattedMessage id="404Help" />
         </GoBack>
       </TextContainer>
     </Outer404Container>

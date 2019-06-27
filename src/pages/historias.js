@@ -138,6 +138,7 @@ const Historias = props => {
     DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios, Página, Histórias, Entrevistas"
               />
               <meta
+                property="og:description"
                 name="description"
                 content="Página com as diferentes histórias de cada entrevistado pelo projeto."
               />
@@ -147,6 +148,13 @@ const Historias = props => {
                 rel="canonical"
                 href="https://memorandum.website/historias/"
               />
+              <meta
+                property="og:url"
+                content="https://memorandum.website/historias/"
+              />
+              <meta property="og:title" content="Memorandum | Histórias" />
+              <meta property="og:site_name" content="Memorandum" />
+              <meta property="og:locale" content="pt_PT" />
             </Helmet>
           </>
         ) : (
@@ -162,6 +170,7 @@ const Historias = props => {
     University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades, Page, Stories, Interviews"
               />
               <meta
+                property="og:description"
                 name="description"
                 content="Page containing the stories of each interviewee of the project."
               />
@@ -171,6 +180,13 @@ const Historias = props => {
                 rel="canonical"
                 href="https://memorandum.website/en/historias/"
               />
+              <meta
+                property="og:url"
+                content="https://memorandum.website/en/historias/"
+              />
+              <meta property="og:title" content="Memorandum | Stories" />
+              <meta property="og:site_name" content="Memorandum" />
+              <meta property="og:locale" content="en_US" />
             </Helmet>
           </>
         )}

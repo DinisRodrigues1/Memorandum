@@ -101,9 +101,7 @@ const VideoContainer = styled.div`
     `}
 `
 
-const VideoArticle = styled.article`
-  
-`
+const VideoArticle = styled.article``
 
 const VideoText = styled.p`
   margin-top: -10%;
@@ -129,12 +127,23 @@ const Videos = ({ pageContext: { locale } }) => (
     DECA, Novas Tecnologias da Comunicação, NTC, Intergeracional, Comunicação, Tradição, Costumes, Oficios, Página, Vídeos"
             />
             <meta
+              property="og:description"
               name="description"
               content="Página com vídeos de entrevistas realizadas para o projeto Memorandum."
             />
             <html lang="pt" />
             <title>Memorandum | Vídeos</title>
             <link rel="canonical" href="https://memorandum.website/videos/" />
+            <meta
+              property="og:url"
+              content="https://memorandum.website/videos/"
+            />
+            <meta
+              property="og:title"
+              content="Memorandum | Vídeos"
+            />
+            <meta property="og:site_name" content="Memorandum" />
+            <meta property="og:locale" content="pt_PT" />
           </Helmet>
         </>
       ) : (
@@ -150,6 +159,7 @@ const Videos = ({ pageContext: { locale } }) => (
     University Project, University, Project, Communication, Intergenerational, Tradition, Custom, Trades, Page, Videos"
             />
             <meta
+              property="og:description"
               name="description"
               content="Page containing videos of interviews conducted for the Memorandum project."
             />
@@ -159,6 +169,16 @@ const Videos = ({ pageContext: { locale } }) => (
               rel="canonical"
               href="https://memorandum.website/en/videos/"
             />
+            <meta
+              property="og:url"
+              content="https://memorandum.website/en/videos/"
+            />
+            <meta
+              property="og:title"
+              content="Memorandum | Videos"
+            />
+            <meta property="og:site_name" content="Memorandum" />
+            <meta property="og:locale" content="en_US" />
           </Helmet>
         </>
       )}

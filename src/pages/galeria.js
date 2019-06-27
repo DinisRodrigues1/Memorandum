@@ -24,7 +24,7 @@ const media = Object.keys(sizes).reduce((acc, label) => {
 }, {})
 
 const OuterContainer = styled.div`
-  padding: 3% 0;
+  padding: 2% 0;
   font-family: Verdana, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -55,7 +55,9 @@ const PageTitle = styled.h1`
   margin-bottom: 10%;
 `
 const BodyDiv = styled.div`
-  margin-top: 10%;
+  margin-top: 5%;
+  display: grid;
+  grid-template-rows: 1fr;
   padding: 1% 1% 0 1%;
   margin-bottom: 6%;
   -moz-box-shadow: 0 0 7px 1px #d4d0ab;
@@ -99,6 +101,7 @@ const ImageGallery = ({ pageContext: { locale } }) => {
     Imagens, Galeria de Imagens, Fotos de viagem, Fotos, Viagem"
               />
               <meta
+                property="og:description"
                 name="description"
                 content="Galeria de fotografias tiradas pelo grupo ao longo da fase de gravações do projeto."
               />
@@ -108,6 +111,13 @@ const ImageGallery = ({ pageContext: { locale } }) => {
                 rel="canonical"
                 href="https://memorandum.website/galeria/"
               />
+              <meta
+                property="og:url"
+                content="https://memorandum.website/galeria/"
+              />
+              <meta property="og:title" content="Memorandum | Galeria" />
+              <meta property="og:site_name" content="Memorandum" />
+              <meta property="og:locale" content="pt_PT" />
             </Helmet>
           </>
         ) : (
@@ -124,6 +134,7 @@ const ImageGallery = ({ pageContext: { locale } }) => {
     Travel Photos, Photos, Travel"
               />
               <meta
+                property="og:description"
                 name="description"
                 content="Gallery containing photographs taken by the group during the filming stage of the project."
               />
@@ -133,6 +144,16 @@ const ImageGallery = ({ pageContext: { locale } }) => {
                 rel="canonical"
                 href="https://memorandum.website/en/galeria/"
               />
+              <meta
+                property="og:url"
+                content="https://memorandum.website/en/galeria/"
+              />
+              <meta
+                property="og:title"
+                content="Memorandum | Gallery"
+              />
+              <meta property="og:site_name" content="Memorandum" />
+              <meta property="og:locale" content="en_US" />
             </Helmet>
           </>
         )}

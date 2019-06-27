@@ -79,7 +79,6 @@ const Text = styled.div`
   color: black;
 `
 
-
 const Story = props => {
   const post = props.data.markdownRemark
   const { title } = post.frontmatter
@@ -105,8 +104,18 @@ const Story = props => {
                 }
               />
               <html lang="pt" />
-              <meta name="description" content={"" + description + ""} />
+              <meta
+                name="description"
+                property="og:description"
+                content={"" + description + ""}
+              />
               <title>Memorandum | {title}</title>
+              <meta
+                property="og:title"
+                content={"Memorandum | " + title + ""}
+              />
+              <meta property="og:site_name" content="Memorandum" />
+              <meta property="og:locale" content="pt_PT" />
             </Helmet>
           </>
         ) : (
@@ -125,8 +134,18 @@ const Story = props => {
                 }
               />
               <html lang="en" />
-              <meta name="description" content={"" + description + ""} />
+              <meta
+                name="description"
+                property="og:description"
+                content={"" + description + ""}
+              />
               <title>Memorandum | {title}</title>
+              <meta
+                property="og:title"
+                content={"Memorandum | " + title + ""}
+              />
+              <meta property="og:site_name" content="Memorandum" />
+              <meta property="og:locale" content="en_US" />
             </Helmet>
           </>
         )}
