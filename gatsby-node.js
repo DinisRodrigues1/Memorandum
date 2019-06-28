@@ -27,6 +27,7 @@ exports.onCreatePage = ({ page, actions }) => {
 }
 
 exports.createPages = ({ actions, graphql }) => {
+  const { createRedirect } = actions
   createRedirect({ fromPath: "https://memorandum.netlify.com", toPath: "https://memorandum.website", isPermanent: true })
 
   const { createPage } = actions
