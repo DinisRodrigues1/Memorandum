@@ -27,6 +27,8 @@ exports.onCreatePage = ({ page, actions }) => {
 }
 
 exports.createPages = ({ actions, graphql }) => {
+  createRedirect({ fromPath: "https://memorandum.netlify.com", toPath: "https://memorandum.website", isPermanent: true })
+
   const { createPage } = actions
 
   const postTemplate = path.resolve(`src/components/story.js`)
