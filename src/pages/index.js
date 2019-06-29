@@ -234,7 +234,7 @@ const Space = styled.span`
 const IndexPage = props => {
   const postList = props.data.allMarkdownRemark
   const locale = props.pageContext.locale
-  console.log(postList)
+
   return (
     <>
       <Layout locale={locale}>
