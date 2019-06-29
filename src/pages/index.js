@@ -426,7 +426,7 @@ export const listQuery = graphql`
   query ListQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { fileAbsolutePath: { regex: "/sixth-story/" } }
+      filter: { fileAbsolutePath: { regex: "/tenth-story/" } }
     ) {
       edges {
         node {

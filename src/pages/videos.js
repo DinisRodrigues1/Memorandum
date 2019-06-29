@@ -240,6 +240,38 @@ const Videos = ({ pageContext: { locale } }) => (
               <VideoText>Dona Fátima e Sr. Zé e Júlia Costa</VideoText>
               <TextSep />
             </VideoArticle>
+            <VideoArticle id="seven">
+              <VideoContainer>
+                <IFrame
+                  width="100%"
+                  height="75%"
+                  src="https://www.youtube.com/embed/co04b-C7_B4"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  frameBorder="0"
+                  webkitallowfullscreen="true"
+                  mozallowfullscreen="true"
+                  allowFullScreen
+                />
+              </VideoContainer>
+              <VideoText>Dona Inês e Sr. Fernando</VideoText>
+              <TextSep />
+            </VideoArticle>
+            <VideoArticle id="nine">
+              <VideoContainer>
+                <IFrame
+                  width="100%"
+                  height="75%"
+                  src="https://www.youtube.com/embed/_hcXGbK693c"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  frameBorder="0"
+                  webkitallowfullscreen="true"
+                  mozallowfullscreen="true"
+                  allowFullScreen
+                />
+              </VideoContainer>
+              <VideoText>Dona Rita e Dona Fátima, e Sr. Mário</VideoText>
+              <TextSep />
+            </VideoArticle>
           </>
         ) : (
           <>
@@ -289,6 +321,38 @@ const Videos = ({ pageContext: { locale } }) => (
                 />
               </VideoContainer>
               <VideoText>Mrs. Fátima and Mr. Zé and Mrs. Júlia Costa</VideoText>
+              <TextSep />
+            </VideoArticle>
+            <VideoArticle id="eight">
+              <VideoContainer>
+                <IFrame
+                  width="100%"
+                  height="75%"
+                  src="https://www.youtube.com/embed/A6z42085K5U"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  frameBorder="0"
+                  webkitallowfullscreen="true"
+                  mozallowfullscreen="true"
+                  allowFullScreen
+                />
+              </VideoContainer>
+              <VideoText>Mrs. Inês and Mr. Fernando</VideoText>
+              <TextSep />
+            </VideoArticle>
+            <VideoArticle id="ten">
+              <VideoContainer>
+                <IFrame
+                  width="100%"
+                  height="75%"
+                  src="https://www.youtube.com/embed/XDIV_Plz74Q"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  frameBorder="0"
+                  webkitallowfullscreen="true"
+                  mozallowfullscreen="true"
+                  allowFullScreen
+                />
+              </VideoContainer>
+              <VideoText>Ms. Rita and Mrs. Fátima, and Mr. Mário</VideoText>
               <TextSep />
             </VideoArticle>
           </>
