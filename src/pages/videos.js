@@ -56,6 +56,7 @@ const OuterVideoContainer = styled.div`
   -webkit-box-shadow: 0 0 7px 1px #d4d0ab;
   box-shadow: 0 0 7px 1px #d4d0ab;
   border: thin solid #f1f1f1;
+  overflow: hidden;
  
 
   ${media.phone`
