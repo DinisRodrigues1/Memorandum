@@ -234,7 +234,7 @@ const Space = styled.span`
 const IndexPage = props => {
   const postList = props.data.allMarkdownRemark
   const locale = props.pageContext.locale
-  //console.log(postList)
+  console.log(postList)
   return (
     <>
       <Layout locale={locale}>
@@ -314,11 +314,11 @@ const IndexPage = props => {
                 </SectionImagePos>
                 {postList.edges[0].node.frontmatter.lang === locale &&
                 locale === "pt" ? (
-                  <LinkTo to="sixth-story/index.pt">
+                  <LinkTo to="tenth-story/index.pt">
                     <Text>{postList.edges[0].node.excerpt}</Text>
                   </LinkTo>
                 ) : (
-                  <LinkTo to="sixth-story/index.en">
+                  <LinkTo to="tenth-story/index.en">
                     <Text>{postList.edges[1].node.excerpt}</Text>
                   </LinkTo>
                 )}
