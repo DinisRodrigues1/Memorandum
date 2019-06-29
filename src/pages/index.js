@@ -30,10 +30,7 @@ const SectionImage = styled(SquareImg)``
 const Text = styled.span``
 
 const SectionLatestBody = styled.section`
-    padding-bottom: 7.5%;
-
-   
-
+  padding-bottom: 7.5%;
 `
 
 const BodyDiv = styled.div`
@@ -292,10 +289,7 @@ const IndexPage = props => {
                 property="og:url"
                 content="https://memorandum.website/en/"
               />
-              <meta
-                property="og:title"
-                content="Memorandum | Homepage"
-              />
+              <meta property="og:title" content="Memorandum | Homepage" />
               <meta property="og:site_name" content="Memorandum" />
               <meta property="og:locale" content="en_US" />
             </Helmet>
@@ -312,8 +306,7 @@ const IndexPage = props => {
                 <SectionImagePos>
                   <SectionImage />
                 </SectionImagePos>
-                {postList.edges[0].node.frontmatter.lang === locale &&
-                locale === "pt" ? (
+                {postList.edges[0].node.frontmatter.lang === locale ? (
                   <LinkTo to="tenth-story/index.pt">
                     <Text>{postList.edges[0].node.excerpt}</Text>
                   </LinkTo>
