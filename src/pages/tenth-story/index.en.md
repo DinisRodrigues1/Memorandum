@@ -11,4 +11,4 @@ We travelled to Mirandela, where we met a jeweler, Mr. Mário, on the 16th April
 
 During his youth he played football, was part of Mirandela’s philharmonic and learnt to repair watches. His attitude towards life, having taken every opportunity given to him, was, without a doubt, a great inspiration for us.
 
-You can learn more about Mr. Mário on our fifth <a style="text-decoration: none; background-color: #C8F7C5; color: black; font-family: Verdana, sans-serif;" href="/videos#ten">video</a>.
+You can learn more about Mr. Mário on our fifth <a style="text-decoration: none; background-color: #C8F7C5; color: black; font-family: Verdana, sans-serif;" href="/en/videos#ten">video</a>.
